@@ -1,6 +1,6 @@
 # AdTripwire exposure trend
 
-Generated 2026-11-05 19:41 UTC from 17 run(s) in `~/.cache/adtripwire-exposure`.
+Generated 2026-11-05 21:24 UTC from 19 run(s) in `~/.cache/adtripwire-exposure`.
 
 Period: 2026-11-02 – 2026-11-05 (4 day(s)).
 
@@ -42,6 +42,8 @@ Period: 2026-11-02 – 2026-11-05 (4 day(s)).
 | 2026-11-04 | chromium / Pixel 5 | 50/50 | 1 | 34066 | 50 | 0 | 0 | 0 | 0 | 168 |
 | 2026-11-04 | firefox | 50/50 | 1 | 45583 | 49 | 0 | 0 | 9 | 41 | 641 |
 | 2026-11-05 | chromium | 50/50 | 0 | 22145 | 30 | 0 | 0 | 0 | 0 | 66 |
+| 2026-11-05 | chromium / iPhone 15 | 50/50 | 2 | 28521 | 32 | 0 | 0 | 0 | 0 | 108 |
+| 2026-11-05 | chromium / Pixel 5 | 50/50 | 1 | 36126 | 44 | 0 | 0 | 0 | 0 | 171 |
 
 ## Reading this
 
