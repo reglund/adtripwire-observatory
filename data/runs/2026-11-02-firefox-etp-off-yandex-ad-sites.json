@@ -1,0 +1,189 @@
+{
+  "date": "2026-11-02",
+  "browser": "firefox",
+  "device": null,
+  "sites": "tests/fixtures/yandex-ad-sites.txt",
+  "etpOff": true,
+  "seconds": 75,
+  "totals": {
+    "sites": 12,
+    "loaded": 12,
+    "consent": 2,
+    "article": 12,
+    "events": 6398,
+    "thirdPartyMedian": 22,
+    "lowAuction": 1,
+    "detections": [
+      {
+        "ruleId": "ad_delivery.redirect_chain",
+        "severity": "informational"
+      },
+      {
+        "ruleId": "ad_delivery.redirect_chain",
+        "severity": "informational"
+      },
+      {
+        "ruleId": "ad_delivery.redirect_chain",
+        "severity": "informational"
+      },
+      {
+        "ruleId": "profiling.identifier_rich_request",
+        "severity": "informational"
+      },
+      {
+        "ruleId": "profiling.identifier_rich_request",
+        "severity": "informational"
+      },
+      {
+        "ruleId": "profiling.identifier_rich_request",
+        "severity": "informational"
+      },
+      {
+        "ruleId": "profiling.identifier_rich_request",
+        "severity": "informational"
+      }
+    ]
+  },
+  "results": [
+    {
+      "site": "ria.ru",
+      "loaded": true,
+      "consent": null,
+      "article": true,
+      "events": 474,
+      "thirdPartyDomains": 22,
+      "detections": []
+    },
+    {
+      "site": "lenta.ru",
+      "loaded": true,
+      "consent": null,
+      "article": true,
+      "events": 1012,
+      "thirdPartyDomains": 48,
+      "detections": [
+        {
+          "ruleId": "ad_delivery.redirect_chain",
+          "severity": "informational"
+        }
+      ]
+    },
+    {
+      "site": "www.gazeta.ru",
+      "loaded": true,
+      "consent": null,
+      "article": true,
+      "events": 805,
+      "thirdPartyDomains": 22,
+      "detections": []
+    },
+    {
+      "site": "www.rbc.ru",
+      "loaded": true,
+      "consent": null,
+      "article": true,
+      "events": 351,
+      "thirdPartyDomains": 20,
+      "detections": []
+    },
+    {
+      "site": "www.kp.ru",
+      "loaded": true,
+      "consent": null,
+      "article": true,
+      "events": 253,
+      "thirdPartyDomains": 32,
+      "detections": [
+        {
+          "ruleId": "ad_delivery.redirect_chain",
+          "severity": "informational"
+        }
+      ]
+    },
+    {
+      "site": "www.mk.ru",
+      "loaded": true,
+      "consent": "text \"OK\"",
+      "article": true,
+      "events": 546,
+      "thirdPartyDomains": 80,
+      "detections": [
+        {
+          "ruleId": "ad_delivery.redirect_chain",
+          "severity": "informational"
+        },
+        {
+          "ruleId": "profiling.identifier_rich_request",
+          "severity": "informational"
+        },
+        {
+          "ruleId": "profiling.identifier_rich_request",
+          "severity": "informational"
+        }
+      ]
+    },
+    {
+      "site": "iz.ru",
+      "loaded": true,
+      "consent": null,
+      "article": true,
+      "events": 498,
+      "thirdPartyDomains": 28,
+      "detections": []
+    },
+    {
+      "site": "www.sports.ru",
+      "loaded": true,
+      "consent": null,
+      "article": true,
+      "events": 471,
+      "thirdPartyDomains": 12,
+      "detections": []
+    },
+    {
+      "site": "www.championat.com",
+      "loaded": true,
+      "consent": null,
+      "article": true,
+      "events": 488,
+      "thirdPartyDomains": 22,
+      "detections": []
+    },
+    {
+      "site": "www.kinopoisk.ru",
+      "loaded": true,
+      "consent": "text \"Allow all\"",
+      "article": true,
+      "events": 766,
+      "thirdPartyDomains": 12,
+      "detections": []
+    },
+    {
+      "site": "habr.com",
+      "loaded": true,
+      "consent": null,
+      "article": true,
+      "events": 416,
+      "thirdPartyDomains": 16,
+      "detections": []
+    },
+    {
+      "site": "www.drom.ru",
+      "loaded": true,
+      "consent": null,
+      "article": true,
+      "events": 318,
+      "thirdPartyDomains": 4,
+      "detections": [
+        {
+          "ruleId": "profiling.identifier_rich_request",
+          "severity": "informational"
+        },
+        {
+          "ruleId": "profiling.identifier_rich_request",
+          "severity": "informational"
+        }
+      ]
+    }
+  ]
+}
