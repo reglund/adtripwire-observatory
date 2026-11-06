@@ -13,18 +13,23 @@ device.
 |---|---|
 | `index.json` | Summary used by the site (fields below). |
 | `trend.md` | Markdown trend report over all runs. |
-| `runs/<date>-<variant>.json` | One run, as written by the run script (fields below). |
-| `runs/<date>-<variant>.evidence.json` | Optional. The extension's evidence export (default redaction profile) for that run. |
-| `reports/<date>-<variant>.md` | Optional. The Markdown report of that run. |
+| `runs/<date>-<rig>-<variant>.json` | One run, as written by the run script (fields below). |
+| `runs/<date>-<rig>-<variant>.evidence.json` | Optional. The extension's evidence export (default redaction profile) for that run. |
+| `reports/<date>-<rig>-<variant>.md` | Optional. The Markdown report of that run. |
 
-`<variant>` is the slug of browser, device, ETP setting and site list, for example `chromium`,
-`chromium-pixel-5` or `firefox-etp-off-yandex-ad-sites`.
+`<rig>` is the name of the measurement machine that made the run (lower case letters, digits and
+hyphens, for example `rig-1`); several rigs may contribute. `<variant>` is the slug of browser,
+device, ETP setting and site list, for example `chromium`, `chromium-pixel-5` or
+`firefox-etp-off-yandex-ad-sites`.
 
 ## Run file
 
 | Field | Meaning |
 |---|---|
 | `date` | Day of the run, `YYYY-MM-DD`. |
+| `rig` | Name of the rig that made the run. Absent in runs from before rigs existed; those are attributed to `rig-1`. |
+| `rigCountry` | Optional. ISO 3166-1 alpha-2 country declared by the rig owner. Not verified. |
+| `rigNetwork` | Optional. Network class declared by the rig owner: `home`, `mobile`, `office` or `datacentre`. Not verified. |
 | `browser` | `firefox` or `chromium`. |
 | `device` | Emulated device name, or `null` for a desktop profile. |
 | `sites` | Path of the site list used (relative to the repository). |
@@ -68,9 +73,10 @@ A detection always has `ruleId` and `severity` (`informational`, `suspicious`, `
 | `schemaVersion` | `1`. |
 | `generatedAt` | ISO time the site was built. |
 | `period` | `from`, `to`, `days` (days with runs), `calendarDays` (days from first to last). |
-| `runs[]` | One entry per run: `file`, optional `evidence` and `report`, `date`, `variant`, `slug`, `browser`, `device`, `etpOff`, `siteList`, `seconds`, `sites`, `loaded`, `consent`, `requests`, `thirdPartyMedian`, `bySev`, `noisy` (hidden-iframe detections, counted apart), `contacts`, `strong`. |
-| `hosts[]` | Documented hosts: `host`, `first`, `last`, `days[]`, `variants[]`, `sites[]`. |
-| `contacts[]` | Contacts: `date`, `variant`, `slug`, `site`, `ruleId`, `severity`, optional `hostnames[]`. |
+| `rigs[]` | One entry per rig, sorted by name: `rig`, `country` and `network` (declared by the rig owner, or `null`), `days` (days with runs), `runs`, `variants`, `contacts`, `hosts` (distinct documented hosts). |
+| `runs[]` | One entry per run: `file`, optional `evidence` and `report`, `date`, `rig`, `variant`, `slug`, `browser`, `device`, `etpOff`, `siteList`, `seconds`, `sites`, `loaded`, `consent`, `requests`, `thirdPartyMedian`, `bySev`, `noisy` (hidden-iframe detections, counted apart), `contacts`, `strong`. |
+| `hosts[]` | Documented hosts: `host`, `first`, `last`, `days[]`, `variants[]`, `sites[]`, `rigs[]`. |
+| `contacts[]` | Contacts: `date`, `rig`, `variant`, `slug`, `site`, `ruleId`, `severity`, optional `hostnames[]`. |
 
 A contact is a detection from a `known_infra.*` or `correlation.*` rule, or at elevated or above.
 `strong` counts contacts from `correlation.*` rules or at elevated or above.

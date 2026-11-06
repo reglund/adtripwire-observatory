@@ -1,6 +1,6 @@
 # AdTripwire exposure trend
 
-Generated 2026-11-05 21:24 UTC from 19 run(s) in `~/.cache/adtripwire-exposure`.
+Generated 2026-11-06 05:18 UTC from 19 run(s) in `~/.cache/adtripwire-exposure/remote/rigs`.
 
 Period: 2026-11-02 – 2026-11-05 (4 day(s)).
 

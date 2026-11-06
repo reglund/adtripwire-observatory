@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-04",
+  "date": "2026-11-05",
   "browser": "chromium",
   "device": "Pixel 5",
   "sites": "tests/fixtures/exposure-sites.txt",
@@ -9,11 +9,23 @@
     "sites": 50,
     "loaded": 50,
     "consent": 1,
-    "article": 42,
-    "events": 34066,
-    "thirdPartyMedian": 50,
+    "article": 43,
+    "events": 36126,
+    "thirdPartyMedian": 44,
     "lowAuction": 8,
     "detections": [
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious"
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious"
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious"
+      },
       {
         "ruleId": "page.hidden_iframe_after_load",
         "severity": "suspicious"
@@ -694,17 +706,22 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 655,
-      "thirdPartyDomains": 55,
-      "detections": []
+      "events": 648,
+      "thirdPartyDomains": 53,
+      "detections": [
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious"
+        }
+      ]
     },
     {
       "site": "www.dagbladet.no",
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 797,
-      "thirdPartyDomains": 66,
+      "events": 677,
+      "thirdPartyDomains": 43,
       "detections": [
         {
           "ruleId": "page.hidden_iframe_after_load",
@@ -721,25 +738,9 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 879,
-      "thirdPartyDomains": 86,
+      "events": 725,
+      "thirdPartyDomains": 80,
       "detections": [
-        {
-          "ruleId": "page.hidden_iframe_after_load",
-          "severity": "suspicious"
-        },
-        {
-          "ruleId": "page.hidden_iframe_after_load",
-          "severity": "suspicious"
-        },
-        {
-          "ruleId": "page.hidden_iframe_after_load",
-          "severity": "suspicious"
-        },
-        {
-          "ruleId": "page.hidden_iframe_after_load",
-          "severity": "suspicious"
-        },
         {
           "ruleId": "page.hidden_iframe_after_load",
           "severity": "suspicious"
@@ -751,9 +752,13 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 691,
-      "thirdPartyDomains": 69,
+      "events": 696,
+      "thirdPartyDomains": 56,
       "detections": [
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious"
+        },
         {
           "ruleId": "page.hidden_iframe_after_load",
           "severity": "suspicious"
@@ -773,7 +778,7 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 421,
+      "events": 419,
       "thirdPartyDomains": 25,
       "detections": []
     },
@@ -782,13 +787,9 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 669,
-      "thirdPartyDomains": 65,
+      "events": 794,
+      "thirdPartyDomains": 69,
       "detections": [
-        {
-          "ruleId": "page.hidden_iframe_after_load",
-          "severity": "suspicious"
-        },
         {
           "ruleId": "page.hidden_iframe_after_load",
           "severity": "suspicious"
@@ -800,13 +801,9 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 757,
-      "thirdPartyDomains": 74,
+      "events": 619,
+      "thirdPartyDomains": 56,
       "detections": [
-        {
-          "ruleId": "page.hidden_iframe_after_load",
-          "severity": "suspicious"
-        },
         {
           "ruleId": "page.hidden_iframe_after_load",
           "severity": "suspicious"
@@ -822,8 +819,8 @@
       "loaded": true,
       "consent": null,
       "article": false,
-      "events": 442,
-      "thirdPartyDomains": 34,
+      "events": 349,
+      "thirdPartyDomains": 28,
       "detections": [
         {
           "ruleId": "page.hidden_iframe_after_load",
@@ -836,8 +833,17 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 674,
-      "thirdPartyDomains": 58,
+      "events": 510,
+      "thirdPartyDomains": 36,
+      "detections": []
+    },
+    {
+      "site": "www.dailymail.co.uk",
+      "loaded": true,
+      "consent": null,
+      "article": false,
+      "events": 555,
+      "thirdPartyDomains": 92,
       "detections": [
         {
           "ruleId": "page.hidden_iframe_after_load",
@@ -850,22 +856,17 @@
       ]
     },
     {
-      "site": "www.dailymail.co.uk",
-      "loaded": true,
-      "consent": null,
-      "article": false,
-      "events": 569,
-      "thirdPartyDomains": 100,
-      "detections": []
-    },
-    {
       "site": "www.thesun.co.uk",
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 1664,
-      "thirdPartyDomains": 134,
+      "events": 1581,
+      "thirdPartyDomains": 120,
       "detections": [
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious"
+        },
         {
           "ruleId": "page.hidden_iframe_after_load",
           "severity": "suspicious"
@@ -889,9 +890,13 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 1742,
-      "thirdPartyDomains": 160,
+      "events": 1856,
+      "thirdPartyDomains": 138,
       "detections": [
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious"
+        },
         {
           "ruleId": "page.hidden_iframe_after_load",
           "severity": "suspicious"
@@ -915,13 +920,9 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 1127,
-      "thirdPartyDomains": 115,
+      "events": 960,
+      "thirdPartyDomains": 91,
       "detections": [
-        {
-          "ruleId": "page.hidden_iframe_after_load",
-          "severity": "suspicious"
-        },
         {
           "ruleId": "page.hidden_iframe_after_load",
           "severity": "suspicious"
@@ -941,13 +942,9 @@
       "loaded": true,
       "consent": "text \"OK\"",
       "article": true,
-      "events": 845,
-      "thirdPartyDomains": 75,
+      "events": 702,
+      "thirdPartyDomains": 72,
       "detections": [
-        {
-          "ruleId": "page.hidden_iframe_after_load",
-          "severity": "suspicious"
-        },
         {
           "ruleId": "page.hidden_iframe_after_load",
           "severity": "suspicious"
@@ -963,9 +960,17 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 330,
-      "thirdPartyDomains": 55,
+      "events": 736,
+      "thirdPartyDomains": 70,
       "detections": [
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious"
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious"
+        },
         {
           "ruleId": "page.hidden_iframe_after_load",
           "severity": "suspicious"
@@ -980,50 +985,10 @@
       "site": "www.express.co.uk",
       "loaded": true,
       "consent": null,
-      "article": false,
-      "events": 1874,
-      "thirdPartyDomains": 197,
+      "article": true,
+      "events": 2042,
+      "thirdPartyDomains": 125,
       "detections": [
-        {
-          "ruleId": "page.hidden_iframe_after_load",
-          "severity": "suspicious"
-        },
-        {
-          "ruleId": "page.hidden_iframe_after_load",
-          "severity": "suspicious"
-        },
-        {
-          "ruleId": "page.hidden_iframe_after_load",
-          "severity": "suspicious"
-        },
-        {
-          "ruleId": "page.hidden_iframe_after_load",
-          "severity": "suspicious"
-        },
-        {
-          "ruleId": "page.hidden_iframe_after_load",
-          "severity": "suspicious"
-        },
-        {
-          "ruleId": "page.hidden_iframe_after_load",
-          "severity": "suspicious"
-        },
-        {
-          "ruleId": "page.hidden_iframe_after_load",
-          "severity": "suspicious"
-        },
-        {
-          "ruleId": "page.hidden_iframe_after_load",
-          "severity": "suspicious"
-        },
-        {
-          "ruleId": "page.hidden_iframe_after_load",
-          "severity": "suspicious"
-        },
-        {
-          "ruleId": "page.hidden_iframe_after_load",
-          "severity": "suspicious"
-        },
         {
           "ruleId": "page.hidden_iframe_after_load",
           "severity": "suspicious"
@@ -1051,21 +1016,16 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 1393,
-      "thirdPartyDomains": 67,
-      "detections": [
-        {
-          "ruleId": "page.hidden_iframe_after_load",
-          "severity": "suspicious"
-        }
-      ]
+      "events": 1360,
+      "thirdPartyDomains": 59,
+      "detections": []
     },
     {
       "site": "www.sofascore.com",
       "loaded": true,
       "consent": null,
       "article": false,
-      "events": 11,
+      "events": 10,
       "thirdPartyDomains": 1,
       "detections": []
     },
@@ -1074,13 +1034,9 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 909,
-      "thirdPartyDomains": 108,
+      "events": 906,
+      "thirdPartyDomains": 98,
       "detections": [
-        {
-          "ruleId": "page.hidden_iframe_after_load",
-          "severity": "suspicious"
-        },
         {
           "ruleId": "page.hidden_iframe_after_load",
           "severity": "suspicious"
@@ -1104,8 +1060,8 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 1370,
-      "thirdPartyDomains": 72,
+      "events": 1378,
+      "thirdPartyDomains": 73,
       "detections": [
         {
           "ruleId": "page.hidden_iframe_after_load",
@@ -1118,8 +1074,8 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 479,
-      "thirdPartyDomains": 46,
+      "events": 445,
+      "thirdPartyDomains": 47,
       "detections": []
     },
     {
@@ -1127,8 +1083,8 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 2890,
-      "thirdPartyDomains": 142,
+      "events": 6192,
+      "thirdPartyDomains": 187,
       "detections": [
         {
           "ruleId": "page.hidden_iframe_after_load",
@@ -1173,9 +1129,25 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 1903,
-      "thirdPartyDomains": 136,
+      "events": 996,
+      "thirdPartyDomains": 111,
       "detections": [
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious"
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious"
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious"
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious"
+        },
         {
           "ruleId": "page.hidden_iframe_after_load",
           "severity": "suspicious"
@@ -1363,9 +1335,53 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 295,
-      "thirdPartyDomains": 75,
+      "events": 344,
+      "thirdPartyDomains": 74,
       "detections": [
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious"
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious"
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious"
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious"
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious"
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious"
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious"
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious"
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious"
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious"
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious"
+        },
         {
           "ruleId": "page.hidden_iframe_after_load",
           "severity": "suspicious"
@@ -1390,7 +1406,7 @@
       "loaded": true,
       "consent": null,
       "article": false,
-      "events": 17,
+      "events": 21,
       "thirdPartyDomains": 5,
       "detections": []
     },
@@ -1408,7 +1424,7 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 89,
+      "events": 90,
       "thirdPartyDomains": 8,
       "detections": []
     },
@@ -1417,7 +1433,7 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 447,
+      "events": 449,
       "thirdPartyDomains": 11,
       "detections": []
     },
@@ -1426,22 +1442,27 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 631,
-      "thirdPartyDomains": 46,
-      "detections": []
+      "events": 655,
+      "thirdPartyDomains": 44,
+      "detections": [
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious"
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious"
+        }
+      ]
     },
     {
       "site": "www.boredpanda.com",
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 965,
-      "thirdPartyDomains": 129,
+      "events": 1172,
+      "thirdPartyDomains": 128,
       "detections": [
-        {
-          "ruleId": "page.hidden_iframe_after_load",
-          "severity": "suspicious"
-        },
         {
           "ruleId": "page.hidden_iframe_after_load",
           "severity": "suspicious"
@@ -1517,7 +1538,7 @@
       "loaded": true,
       "consent": null,
       "article": false,
-      "events": 90,
+      "events": 95,
       "thirdPartyDomains": 3,
       "detections": []
     },
@@ -1526,8 +1547,8 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 866,
-      "thirdPartyDomains": 33,
+      "events": 862,
+      "thirdPartyDomains": 32,
       "detections": []
     },
     {
@@ -1535,7 +1556,7 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 483,
+      "events": 410,
       "thirdPartyDomains": 17,
       "detections": []
     },
@@ -1544,8 +1565,8 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 444,
-      "thirdPartyDomains": 19,
+      "events": 401,
+      "thirdPartyDomains": 17,
       "detections": []
     },
     {
@@ -1553,8 +1574,8 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 270,
-      "thirdPartyDomains": 50,
+      "events": 276,
+      "thirdPartyDomains": 53,
       "detections": []
     },
     {
@@ -1562,7 +1583,7 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 405,
+      "events": 401,
       "thirdPartyDomains": 15,
       "detections": []
     },
@@ -1571,8 +1592,8 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 297,
-      "thirdPartyDomains": 34,
+      "events": 378,
+      "thirdPartyDomains": 39,
       "detections": []
     },
     {
@@ -1580,9 +1601,21 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 1321,
-      "thirdPartyDomains": 95,
+      "events": 1291,
+      "thirdPartyDomains": 102,
       "detections": [
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious"
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious"
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious"
+        },
         {
           "ruleId": "page.hidden_iframe_after_load",
           "severity": "suspicious"
@@ -1610,9 +1643,13 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 989,
-      "thirdPartyDomains": 89,
+      "events": 872,
+      "thirdPartyDomains": 74,
       "detections": [
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious"
+        },
         {
           "ruleId": "page.hidden_iframe_after_load",
           "severity": "suspicious"
@@ -1644,13 +1681,9 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 484,
-      "thirdPartyDomains": 40,
+      "events": 491,
+      "thirdPartyDomains": 41,
       "detections": [
-        {
-          "ruleId": "page.hidden_iframe_after_load",
-          "severity": "suspicious"
-        },
         {
           "ruleId": "page.hidden_iframe_after_load",
           "severity": "suspicious"
@@ -1686,22 +1719,17 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 374,
+      "events": 427,
       "thirdPartyDomains": 40,
-      "detections": [
-        {
-          "ruleId": "page.hidden_iframe_after_load",
-          "severity": "suspicious"
-        }
-      ]
+      "detections": []
     },
     {
       "site": "www.aljazeera.net",
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 322,
-      "thirdPartyDomains": 20,
+      "events": 388,
+      "thirdPartyDomains": 22,
       "detections": []
     },
     {
@@ -1718,8 +1746,8 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 336,
-      "thirdPartyDomains": 30,
+      "events": 333,
+      "thirdPartyDomains": 31,
       "detections": [
         {
           "ruleId": "page.hidden_iframe_after_load",
@@ -1732,16 +1760,21 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 408,
-      "thirdPartyDomains": 28,
-      "detections": []
+      "events": 449,
+      "thirdPartyDomains": 29,
+      "detections": [
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious"
+        }
+      ]
     },
     {
       "site": "punchng.com",
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 294,
+      "events": 267,
       "thirdPartyDomains": 21,
       "detections": []
     },
@@ -1759,8 +1792,8 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 482,
-      "thirdPartyDomains": 56,
+      "events": 510,
+      "thirdPartyDomains": 58,
       "detections": [
         {
           "ruleId": "page.hidden_iframe_after_load",
@@ -1825,18 +1858,10 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 440,
-      "thirdPartyDomains": 44,
-      "detections": [
-        {
-          "ruleId": "page.hidden_iframe_after_load",
-          "severity": "suspicious"
-        },
-        {
-          "ruleId": "page.hidden_iframe_after_load",
-          "severity": "suspicious"
-        }
-      ]
+      "events": 162,
+      "thirdPartyDomains": 23,
+      "detections": []
     }
-  ]
+  ],
+  "rig": "rig-1"
 }

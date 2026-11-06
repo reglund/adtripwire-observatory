@@ -3,15 +3,15 @@
   "browser": "firefox",
   "device": null,
   "sites": "tests/fixtures/yandex-ad-sites.txt",
-  "etpOff": true,
+  "etpOff": false,
   "seconds": 75,
   "totals": {
     "sites": 12,
     "loaded": 12,
     "consent": 2,
     "article": 12,
-    "events": 6398,
-    "thirdPartyMedian": 22,
+    "events": 6575,
+    "thirdPartyMedian": 23,
     "lowAuction": 1,
     "detections": [
       {
@@ -27,11 +27,7 @@
         "severity": "informational"
       },
       {
-        "ruleId": "profiling.identifier_rich_request",
-        "severity": "informational"
-      },
-      {
-        "ruleId": "profiling.identifier_rich_request",
+        "ruleId": "ad_delivery.redirect_chain",
         "severity": "informational"
       },
       {
@@ -50,8 +46,8 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 474,
-      "thirdPartyDomains": 22,
+      "events": 481,
+      "thirdPartyDomains": 21,
       "detections": []
     },
     {
@@ -59,8 +55,8 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 1012,
-      "thirdPartyDomains": 48,
+      "events": 1052,
+      "thirdPartyDomains": 61,
       "detections": [
         {
           "ruleId": "ad_delivery.redirect_chain",
@@ -73,16 +69,21 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 805,
-      "thirdPartyDomains": 22,
-      "detections": []
+      "events": 864,
+      "thirdPartyDomains": 38,
+      "detections": [
+        {
+          "ruleId": "ad_delivery.redirect_chain",
+          "severity": "informational"
+        }
+      ]
     },
     {
       "site": "www.rbc.ru",
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 351,
+      "events": 366,
       "thirdPartyDomains": 20,
       "detections": []
     },
@@ -91,8 +92,8 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 253,
-      "thirdPartyDomains": 32,
+      "events": 298,
+      "thirdPartyDomains": 38,
       "detections": [
         {
           "ruleId": "ad_delivery.redirect_chain",
@@ -105,30 +106,17 @@
       "loaded": true,
       "consent": "text \"OK\"",
       "article": true,
-      "events": 546,
-      "thirdPartyDomains": 80,
-      "detections": [
-        {
-          "ruleId": "ad_delivery.redirect_chain",
-          "severity": "informational"
-        },
-        {
-          "ruleId": "profiling.identifier_rich_request",
-          "severity": "informational"
-        },
-        {
-          "ruleId": "profiling.identifier_rich_request",
-          "severity": "informational"
-        }
-      ]
+      "events": 253,
+      "thirdPartyDomains": 23,
+      "detections": []
     },
     {
       "site": "iz.ru",
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 498,
-      "thirdPartyDomains": 28,
+      "events": 494,
+      "thirdPartyDomains": 27,
       "detections": []
     },
     {
@@ -136,7 +124,7 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 471,
+      "events": 477,
       "thirdPartyDomains": 12,
       "detections": []
     },
@@ -145,16 +133,21 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 488,
-      "thirdPartyDomains": 22,
-      "detections": []
+      "events": 596,
+      "thirdPartyDomains": 41,
+      "detections": [
+        {
+          "ruleId": "ad_delivery.redirect_chain",
+          "severity": "informational"
+        }
+      ]
     },
     {
       "site": "www.kinopoisk.ru",
       "loaded": true,
       "consent": "text \"Allow all\"",
       "article": true,
-      "events": 766,
+      "events": 772,
       "thirdPartyDomains": 12,
       "detections": []
     },
@@ -163,7 +156,7 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 416,
+      "events": 631,
       "thirdPartyDomains": 16,
       "detections": []
     },
@@ -172,7 +165,7 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 318,
+      "events": 291,
       "thirdPartyDomains": 4,
       "detections": [
         {
@@ -185,5 +178,6 @@
         }
       ]
     }
-  ]
+  ],
+  "rig": "rig-1"
 }

@@ -1,19 +1,30 @@
 {
   "date": "2026-11-02",
   "browser": "chromium",
-  "mobile": false,
+  "device": "Pixel 5",
   "seconds": 75,
   "totals": {
     "sites": 50,
     "loaded": 50,
-    "consent": 16,
-    "article": 38,
-    "events": 23435,
-    "thirdPartyDomains": 41,
+    "consent": 26,
+    "article": 45,
+    "events": 37662,
+    "thirdPartyMedian": 46,
+    "lowAuction": 6,
     "detections": [
       {
         "ruleId": "known_infra.surveillance_contact",
-        "severity": "suspicious"
+        "severity": "suspicious",
+        "hostnames": [
+          "tracookiepixel.xyz"
+        ]
+      },
+      {
+        "ruleId": "known_infra.surveillance_contact",
+        "severity": "suspicious",
+        "hostnames": [
+          "events.myweb3id.io"
+        ]
       }
     ]
   },
@@ -21,28 +32,28 @@
     {
       "site": "www.vg.no",
       "loaded": true,
-      "consent": null,
+      "consent": "selector button.sp_choice_type_11",
       "article": true,
-      "events": 432,
-      "thirdPartyDomains": 2,
+      "events": 572,
+      "thirdPartyDomains": 37,
       "detections": []
     },
     {
       "site": "www.dagbladet.no",
       "loaded": true,
-      "consent": null,
+      "consent": "selector button.sp_choice_type_11",
       "article": true,
-      "events": 534,
-      "thirdPartyDomains": 44,
+      "events": 966,
+      "thirdPartyDomains": 84,
       "detections": []
     },
     {
       "site": "www.nettavisen.no",
       "loaded": true,
-      "consent": null,
+      "consent": "selector button.sp_choice_type_11",
       "article": true,
-      "events": 684,
-      "thirdPartyDomains": 1,
+      "events": 809,
+      "thirdPartyDomains": 69,
       "detections": []
     },
     {
@@ -50,8 +61,8 @@
       "loaded": true,
       "consent": "selector button.sp_choice_type_11",
       "article": true,
-      "events": 579,
-      "thirdPartyDomains": 38,
+      "events": 439,
+      "thirdPartyDomains": 30,
       "detections": []
     },
     {
@@ -59,8 +70,8 @@
       "loaded": true,
       "consent": "selector button.sp_choice_type_11",
       "article": true,
-      "events": 501,
-      "thirdPartyDomains": 16,
+      "events": 408,
+      "thirdPartyDomains": 25,
       "detections": []
     },
     {
@@ -68,8 +79,8 @@
       "loaded": true,
       "consent": "selector button.sp_choice_type_11",
       "article": true,
-      "events": 682,
-      "thirdPartyDomains": -100,
+      "events": 717,
+      "thirdPartyDomains": 65,
       "detections": []
     },
     {
@@ -77,8 +88,8 @@
       "loaded": true,
       "consent": "selector button.sp_choice_type_11",
       "article": true,
-      "events": 599,
-      "thirdPartyDomains": 0,
+      "events": 842,
+      "thirdPartyDomains": 98,
       "detections": []
     },
     {
@@ -86,8 +97,8 @@
       "loaded": true,
       "consent": null,
       "article": false,
-      "events": 314,
-      "thirdPartyDomains": 20,
+      "events": 431,
+      "thirdPartyDomains": 42,
       "detections": []
     },
     {
@@ -95,26 +106,26 @@
       "loaded": true,
       "consent": "selector button.sp_choice_type_11",
       "article": true,
-      "events": 333,
-      "thirdPartyDomains": 38,
+      "events": 631,
+      "thirdPartyDomains": 59,
       "detections": []
     },
     {
       "site": "www.dailymail.co.uk",
       "loaded": true,
-      "consent": null,
+      "consent": "text \"Accept\"",
       "article": false,
-      "events": 0,
-      "thirdPartyDomains": -59,
+      "events": 741,
+      "thirdPartyDomains": 94,
       "detections": []
     },
     {
       "site": "www.thesun.co.uk",
       "loaded": true,
-      "consent": null,
-      "article": false,
-      "events": 33,
-      "thirdPartyDomains": 3,
+      "consent": "selector button.sp_choice_type_11",
+      "article": true,
+      "events": 1678,
+      "thirdPartyDomains": 149,
       "detections": []
     },
     {
@@ -122,8 +133,8 @@
       "loaded": true,
       "consent": "selector .qc-cmp2-summary-buttons button[mode=primary]",
       "article": true,
-      "events": 1896,
-      "thirdPartyDomains": 174,
+      "events": 3166,
+      "thirdPartyDomains": 232,
       "detections": []
     },
     {
@@ -131,17 +142,17 @@
       "loaded": true,
       "consent": "selector #onetrust-accept-btn-handler",
       "article": true,
-      "events": 943,
-      "thirdPartyDomains": 56,
+      "events": 1170,
+      "thirdPartyDomains": 136,
       "detections": []
     },
     {
       "site": "www.foxnews.com",
       "loaded": true,
-      "consent": null,
+      "consent": "text \"OK\"",
       "article": true,
-      "events": 516,
-      "thirdPartyDomains": 24,
+      "events": 861,
+      "thirdPartyDomains": 80,
       "detections": []
     },
     {
@@ -149,8 +160,8 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 606,
-      "thirdPartyDomains": 24,
+      "events": 1012,
+      "thirdPartyDomains": 105,
       "detections": []
     },
     {
@@ -158,8 +169,8 @@
       "loaded": true,
       "consent": "selector .qc-cmp2-summary-buttons button[mode=primary]",
       "article": true,
-      "events": 1670,
-      "thirdPartyDomains": 27,
+      "events": 2305,
+      "thirdPartyDomains": 174,
       "detections": []
     },
     {
@@ -167,17 +178,17 @@
       "loaded": true,
       "consent": "selector #onetrust-accept-btn-handler",
       "article": true,
-      "events": 1085,
-      "thirdPartyDomains": -290,
+      "events": 1490,
+      "thirdPartyDomains": 74,
       "detections": []
     },
     {
       "site": "www.sofascore.com",
       "loaded": true,
       "consent": null,
-      "article": true,
-      "events": 443,
-      "thirdPartyDomains": 9,
+      "article": false,
+      "events": 11,
+      "thirdPartyDomains": 1,
       "detections": []
     },
     {
@@ -185,8 +196,8 @@
       "loaded": true,
       "consent": "selector #onetrust-accept-btn-handler",
       "article": true,
-      "events": 336,
-      "thirdPartyDomains": -26,
+      "events": 1204,
+      "thirdPartyDomains": 114,
       "detections": []
     },
     {
@@ -194,35 +205,43 @@
       "loaded": true,
       "consent": "selector button.sp_choice_type_11",
       "article": true,
-      "events": 467,
-      "thirdPartyDomains": 22,
-      "detections": []
+      "events": 1237,
+      "thirdPartyDomains": 87,
+      "detections": [
+        {
+          "ruleId": "known_infra.surveillance_contact",
+          "severity": "suspicious",
+          "hostnames": [
+            "tracookiepixel.xyz"
+          ]
+        }
+      ]
     },
     {
       "site": "www.espn.com",
       "loaded": true,
       "consent": "selector #onetrust-accept-btn-handler",
       "article": true,
-      "events": 443,
+      "events": 437,
       "thirdPartyDomains": 30,
       "detections": []
     },
     {
       "site": "www.azlyrics.com",
       "loaded": true,
-      "consent": null,
-      "article": false,
-      "events": 23,
-      "thirdPartyDomains": -53,
+      "consent": "selector #CybotCookiebotDialogBodyButtonAccept",
+      "article": true,
+      "events": 1414,
+      "thirdPartyDomains": 126,
       "detections": []
     },
     {
       "site": "genius.com",
       "loaded": true,
-      "consent": null,
-      "article": false,
-      "events": 15,
-      "thirdPartyDomains": 0,
+      "consent": "selector #onetrust-accept-btn-handler",
+      "article": true,
+      "events": 1807,
+      "thirdPartyDomains": 156,
       "detections": []
     },
     {
@@ -230,8 +249,8 @@
       "loaded": true,
       "consent": "selector #onetrust-accept-btn-handler",
       "article": true,
-      "events": 113,
-      "thirdPartyDomains": 1,
+      "events": 336,
+      "thirdPartyDomains": 74,
       "detections": []
     },
     {
@@ -239,8 +258,8 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 59,
-      "thirdPartyDomains": 0,
+      "events": 52,
+      "thirdPartyDomains": 4,
       "detections": []
     },
     {
@@ -248,7 +267,7 @@
       "loaded": true,
       "consent": null,
       "article": false,
-      "events": 26,
+      "events": 25,
       "thirdPartyDomains": 5,
       "detections": []
     },
@@ -257,17 +276,17 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 169,
-      "thirdPartyDomains": -4,
+      "events": 166,
+      "thirdPartyDomains": 7,
       "detections": []
     },
     {
       "site": "www.timeanddate.com",
       "loaded": true,
       "consent": null,
-      "article": false,
-      "events": 12,
-      "thirdPartyDomains": -2,
+      "article": true,
+      "events": 95,
+      "thirdPartyDomains": 8,
       "detections": []
     },
     {
@@ -275,7 +294,7 @@
       "loaded": true,
       "consent": "selector .qc-cmp2-summary-buttons button[mode=primary]",
       "article": true,
-      "events": 534,
+      "events": 456,
       "thirdPartyDomains": 11,
       "detections": []
     },
@@ -283,18 +302,18 @@
       "site": "www.crazygames.com",
       "loaded": true,
       "consent": "selector button.sp_choice_type_11",
-      "article": false,
-      "events": 269,
-      "thirdPartyDomains": -11,
+      "article": true,
+      "events": 632,
+      "thirdPartyDomains": 46,
       "detections": []
     },
     {
       "site": "www.boredpanda.com",
       "loaded": true,
-      "consent": null,
+      "consent": "selector button#didomi-notice-agree-button",
       "article": true,
-      "events": 380,
-      "thirdPartyDomains": 38,
+      "events": 1213,
+      "thirdPartyDomains": 146,
       "detections": []
     },
     {
@@ -302,8 +321,8 @@
       "loaded": true,
       "consent": null,
       "article": false,
-      "events": 114,
-      "thirdPartyDomains": 14,
+      "events": 92,
+      "thirdPartyDomains": 3,
       "detections": []
     },
     {
@@ -311,17 +330,8 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 980,
-      "thirdPartyDomains": 38,
-      "detections": []
-    },
-    {
-      "site": "ria.ru",
-      "loaded": true,
-      "consent": null,
-      "article": true,
-      "events": 574,
-      "thirdPartyDomains": 47,
+      "events": 1737,
+      "thirdPartyDomains": 95,
       "detections": [
         {
           "ruleId": "known_infra.surveillance_contact",
@@ -333,12 +343,21 @@
       ]
     },
     {
+      "site": "ria.ru",
+      "loaded": true,
+      "consent": null,
+      "article": true,
+      "events": 526,
+      "thirdPartyDomains": 21,
+      "detections": []
+    },
+    {
       "site": "www.gazeta.ru",
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 894,
-      "thirdPartyDomains": 5,
+      "events": 698,
+      "thirdPartyDomains": 27,
       "detections": []
     },
     {
@@ -346,8 +365,8 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 244,
-      "thirdPartyDomains": 10,
+      "events": 322,
+      "thirdPartyDomains": 54,
       "detections": []
     },
     {
@@ -355,8 +374,8 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 408,
-      "thirdPartyDomains": -150,
+      "events": 433,
+      "thirdPartyDomains": 15,
       "detections": []
     },
     {
@@ -364,8 +383,8 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 376,
-      "thirdPartyDomains": 2,
+      "events": 271,
+      "thirdPartyDomains": 32,
       "detections": []
     },
     {
@@ -373,17 +392,17 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 1557,
-      "thirdPartyDomains": 110,
+      "events": 1532,
+      "thirdPartyDomains": 118,
       "detections": []
     },
     {
       "site": "www.b92.net",
       "loaded": true,
-      "consent": null,
+      "consent": "selector button#didomi-notice-agree-button",
       "article": true,
-      "events": 422,
-      "thirdPartyDomains": 10,
+      "events": 996,
+      "thirdPartyDomains": 83,
       "detections": []
     },
     {
@@ -391,8 +410,8 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 874,
-      "thirdPartyDomains": 19,
+      "events": 346,
+      "thirdPartyDomains": 35,
       "detections": []
     },
     {
@@ -400,8 +419,8 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 363,
-      "thirdPartyDomains": 7,
+      "events": 397,
+      "thirdPartyDomains": 43,
       "detections": []
     },
     {
@@ -409,17 +428,17 @@
       "loaded": true,
       "consent": "selector #onetrust-accept-btn-handler",
       "article": true,
-      "events": 373,
-      "thirdPartyDomains": 20,
+      "events": 327,
+      "thirdPartyDomains": 23,
       "detections": []
     },
     {
       "site": "www.alarabiya.net",
       "loaded": true,
       "consent": null,
-      "article": false,
-      "events": 7,
-      "thirdPartyDomains": -170,
+      "article": true,
+      "events": 174,
+      "thirdPartyDomains": 15,
       "detections": []
     },
     {
@@ -427,8 +446,8 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 394,
-      "thirdPartyDomains": 34,
+      "events": 339,
+      "thirdPartyDomains": 31,
       "detections": []
     },
     {
@@ -436,8 +455,8 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 459,
-      "thirdPartyDomains": 16,
+      "events": 435,
+      "thirdPartyDomains": 29,
       "detections": []
     },
     {
@@ -445,26 +464,26 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 287,
-      "thirdPartyDomains": 11,
+      "events": 284,
+      "thirdPartyDomains": 21,
       "detections": []
     },
     {
       "site": "www.vanguardngr.com",
       "loaded": true,
       "consent": null,
-      "article": false,
-      "events": 13,
-      "thirdPartyDomains": -61,
+      "article": true,
+      "events": 377,
+      "thirdPartyDomains": 25,
       "detections": []
     },
     {
       "site": "www.ndtv.com",
       "loaded": true,
       "consent": null,
-      "article": false,
-      "events": 0,
-      "thirdPartyDomains": 0,
+      "article": true,
+      "events": 505,
+      "thirdPartyDomains": 60,
       "detections": []
     },
     {
@@ -472,9 +491,10 @@
       "loaded": true,
       "consent": null,
       "article": true,
-      "events": 400,
-      "thirdPartyDomains": 41,
+      "events": 548,
+      "thirdPartyDomains": 45,
       "detections": []
     }
-  ]
+  ],
+  "rig": "rig-1"
 }
