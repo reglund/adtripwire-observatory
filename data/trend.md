@@ -1,8 +1,8 @@
 # AdTripwire exposure trend
 
-Generated 2026-11-06 05:18 UTC from 19 run(s) in `~/.cache/adtripwire-exposure/remote/rigs`.
+Generated 2026-11-06 14:50 UTC from 27 run(s) in `~/.cache/adtripwire-exposure/remote/rigs`.
 
-Period: 2026-11-02 – 2026-11-05 (4 day(s)).
+Period: 2026-11-02 – 2026-11-06 (5 day(s)).
 
 ## Signals that matter
 
@@ -44,6 +44,14 @@ Period: 2026-11-02 – 2026-11-05 (4 day(s)).
 | 2026-11-05 | chromium | 50/50 | 0 | 22145 | 30 | 0 | 0 | 0 | 0 | 66 |
 | 2026-11-05 | chromium / iPhone 15 | 50/50 | 2 | 28521 | 32 | 0 | 0 | 0 | 0 | 108 |
 | 2026-11-05 | chromium / Pixel 5 | 50/50 | 1 | 36126 | 44 | 0 | 0 | 0 | 0 | 171 |
+| 2026-11-06 | chromium | 50/50 | 0 | 21600 | 26 | 0 | 0 | 0 | 0 | 136 |
+| 2026-11-06 | chromium / iPhone 15 | 50/50 | 1 | 28151 | 31 | 0 | 0 | 0 | 0 | 89 |
+| 2026-11-06 | chromium / mena-africa | 25/25 | 4 | 6198 | 1 | 0 | 0 | 0 | 0 | 150 |
+| 2026-11-06 | chromium / norway | 24/24 | 23 | 13424 | 41 | 0 | 0 | 0 | 0 | 157 |
+| 2026-11-06 | chromium / Pixel 5 | 50/50 | 1 | 32050 | 40 | 0 | 0 | 0 | 0 | 241 |
+| 2026-11-06 | chromium / Pixel 5 / mena-africa | 25/25 | 10 | 11387 | 35 | 0 | 0 | 0 | 0 | 138 |
+| 2026-11-06 | chromium / Pixel 5 / norway | 24/24 | 23 | 13979 | 40 | 0 | 0 | 0 | 0 | 120 |
+| 2026-11-06 | firefox | 50/50 | 0 | 45013 | 47 | 0 | 0 | 9 | 33 | 619 |
 
 ## Reading this
 
