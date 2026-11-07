@@ -30,6 +30,7 @@ device, ETP setting and site list, for example `chromium`, `chromium-pixel-5` or
 | `rig` | Name of the rig that made the run. Absent in runs from before rigs existed; those are attributed to `rig-1`. |
 | `rigCountry` | Optional. ISO 3166-1 alpha-2 country declared by the rig owner. Not verified. |
 | `rigNetwork` | Optional. Network class declared by the rig owner: `home`, `mobile`, `office` or `datacentre`. Not verified. |
+| `presentation` | Optional, from 2026-11-07. `{ userAgent, webdriver }` as the sites saw this visitor; the harness does not disguise itself. |
 | `browser` | `firefox` or `chromium`. |
 | `device` | Emulated device name, or `null` for a desktop profile. |
 | `sites` | Path of the site list used (relative to the repository). |
@@ -49,6 +50,9 @@ device, ETP setting and site list, for example `chromium`, `chromium-pixel-5` or
 | `results[].article` | Whether an article was opened. |
 | `results[].events` | Requests observed while this site was open. |
 | `results[].thirdPartyDomains` | Third-party registrable domains seen on this site. |
+| `results[].thirdPartyDomainsList` | Optional. The sorted third-party registrable domains behind the count (at most 1000); the baseline for "seen alongside". |
+| `results[].alongside[]` | Optional. Hostnames seen in the same ad frame as a documented host during this site: `host`, `anchor` (documented host or indicator id), `scope` (`frame` or `page`). Leads, not detections. |
+| `results[].alongsideAnchors` | Optional. Documented-host anchors opened during this site. |
 | `results[].error` | Optional. Why a step failed. |
 | `results[].detections[]` | Detections raised on this site (below). |
 
@@ -77,6 +81,7 @@ A detection always has `ruleId` and `severity` (`informational`, `suspicious`, `
 | `runs[]` | One entry per run: `file`, optional `evidence` and `report`, `date`, `rig`, `variant`, `slug`, `browser`, `device`, `etpOff`, `siteList`, `seconds`, `sites`, `loaded`, `consent`, `requests`, `thirdPartyMedian`, `bySev`, `noisy` (hidden-iframe detections, counted apart), `contacts`, `strong`. |
 | `hosts[]` | Documented hosts: `host`, `first`, `last`, `days[]`, `variants[]`, `sites[]`, `rigs[]`. |
 | `contacts[]` | Contacts: `date`, `rig`, `variant`, `slug`, `site`, `ruleId`, `severity`, optional `hostnames[]`. |
+| `alongside` | "Seen alongside documented hosts" (observations, not detections): `minSiteDays`, `runsWithData`, `runsTotal`, `visitsWithData`, `anchorVisits`, `frameHosts`, ranked `rows[]` (frame scope) and `pageOnly[]`. |
 
 A contact is a detection from a `known_infra.*` or `correlation.*` rule, or at elevated or above.
 `strong` counts contacts from `correlation.*` rules or at elevated or above.
