@@ -51,8 +51,10 @@ device, ETP setting and site list, for example `chromium`, `chromium-pixel-5` or
 | `results[].events` | Requests observed while this site was open. |
 | `results[].thirdPartyDomains` | Third-party registrable domains seen on this site. |
 | `results[].thirdPartyDomainsList` | Optional. The sorted third-party registrable domains behind the count (at most 1000); the baseline for "seen alongside". |
-| `results[].alongside[]` | Optional. Hostnames seen in the same ad frame as a documented host during this site: `host`, `anchor` (documented host or indicator id), `scope` (`frame` or `page`). Leads, not detections. |
+| `results[].alongside[]` | Optional. Hostnames seen in the same ad frame as a documented host during this site: `host`, `anchor` (documented host or indicator id), `scope` (`frame` or `page`). Leads, not detections. The index collapses leading per-visit ID labels to `*`. |
 | `results[].alongsideAnchors` | Optional. Documented-host anchors opened during this site. |
+| `results[].documentedOutcomes[]` | Optional (at most 50, from 2026-11-08). How requests to documented hosts (surveillance or malicious, current) ended in the browser's own network log: `host`, `indicator`, `requests`, `statuses` (status code or `3xx` to count), `failures` (browser error code to count), optional `maxBytes` (largest declared size) and `redirectTo[]` (registrable domains), and from 2026-11-09 optional `via[]` (at most 5 hostnames of the subframes that sent the requests, or of their nearest ancestor with an http(s) address) and `fromTop` (requests sent by the page's own document). |
+| `results[].repeatContacts[]` | Optional (at most 200). Contact-type detections that already existed when this site started and fired again on it (deduplicated by the engine, so absent from `detections`): `ruleId`, `severity`, `detectionId`, `hostnames`, `matchedIndicatorIds`, `occurrences` (added during this site). Not counted in the severity columns. |
 | `results[].error` | Optional. Why a step failed. |
 | `results[].detections[]` | Detections raised on this site (below). |
 
@@ -80,7 +82,9 @@ A detection always has `ruleId` and `severity` (`informational`, `suspicious`, `
 | `rigs[]` | One entry per rig, sorted by name: `rig`, `country` and `network` (declared by the rig owner, or `null`), `days` (days with runs), `runs`, `variants`, `contacts`, `hosts` (distinct documented hosts). |
 | `runs[]` | One entry per run: `file`, optional `evidence` and `report`, `date`, `rig`, `variant`, `slug`, `browser`, `device`, `etpOff`, `siteList`, `seconds`, `sites`, `loaded`, `consent`, `requests`, `thirdPartyMedian`, `bySev`, `noisy` (hidden-iframe detections, counted apart), `contacts`, `strong`. |
 | `hosts[]` | Documented hosts: `host`, `first`, `last`, `days[]`, `variants[]`, `sites[]`, `rigs[]`. |
-| `contacts[]` | Contacts: `date`, `rig`, `variant`, `slug`, `site`, `ruleId`, `severity`, optional `hostnames[]`. |
+| `outcomes[]` | One entry per run, site and documented host from `results[].documentedOutcomes`: `date`, `rig`, `variant`, `site`, `host`, `indicator`, `requests`, `statuses`, `failures`, optional `maxBytes`, `redirectTo`, `via`, `fromTop`. |
+| `flows[]` | "How each finding flowed", newest first, at most 40: one group per `site`, documented `host`, frame and outcome class, with `indicator`, `role`, `stage` (`tracking`, `selection`, `delivery`, `spyware`), `frame` {`title`, `hosts[]`}, `outcomeClass`, `outcome` (text), `reading` {`text`, `attention`}, `dates[]`, `rigs[]`, `variants[]`, `repeat`. Built from `contacts[]` and `outcomes[]`; `attention` is a reading aid, not a finding about a device. |
+| `contacts[]` | Contacts: `date`, `rig`, `variant`, `slug`, `site`, `ruleId`, `severity`, optional `hostnames[]`, and `repeat: true` when the engine merged this site's contact into an earlier site's detection in the same run (from `results[].repeatContacts`, or reconstructed from `alongside` anchors for older runs). |
 | `alongside` | "Seen alongside documented hosts" (observations, not detections): `minSiteDays`, `runsWithData`, `runsTotal`, `visitsWithData`, `anchorVisits`, `frameHosts`, ranked `rows[]` (frame scope) and `pageOnly[]`. |
 
 A contact is a detection from a `known_infra.*` or `correlation.*` rule, or at elevated or above.

@@ -1,8 +1,8 @@
 # AdTripwire exposure trend
 
-Generated 2026-11-07 15:03 UTC from 36 run(s) in `~/exposure/remote/rigs`.
+Generated 2026-11-08 18:36 UTC from 45 run(s) in `~/exposure/remote/rigs`.
 
-Period: 2026-11-02 – 2026-11-07 (6 day(s)).
+Period: 2026-11-02 – 2026-11-08 (7 day(s)).
 
 ## Signals that matter
 
@@ -14,14 +14,26 @@ Period: 2026-11-02 – 2026-11-07 (6 day(s)).
 | 2026-11-02 | chromium / yandex-ad-sites | www.gazeta.ru | `known_infra.surveillance_contact` | suspicious | events.myweb3id.io |
 | 2026-11-04 | chromium | www.independent.co.uk | `known_infra.surveillance_contact` | suspicious | tracookiepixel.xyz |
 | 2026-11-07 | chromium | ria.ru | `known_infra.surveillance_contact` | suspicious | events.myweb3id.io |
+| 2026-11-07 | chromium | www.gazeta.ru | `known_infra.surveillance_contact` | suspicious (repeat contact in the same run) | events.myweb3id.io |
 | 2026-11-07 | chromium / Pixel 5 | lenta.ru | `known_infra.surveillance_contact` | suspicious | events.myweb3id.io |
+| 2026-11-07 | chromium / Pixel 5 | ria.ru | `known_infra.surveillance_contact` | suspicious (repeat contact in the same run) | events.myweb3id.io |
+| 2026-11-07 | chromium / Pixel 5 | www.gazeta.ru | `known_infra.surveillance_contact` | suspicious (repeat contact in the same run) | events.myweb3id.io |
+| 2026-11-08 | chromium / Pixel 5 | lenta.ru | `known_infra.surveillance_contact` | suspicious | events.myweb3id.io |
+| 2026-11-08 | chromium / Pixel 5 | www.gazeta.ru | `known_infra.surveillance_contact` | suspicious (repeat contact in the same run) | events.myweb3id.io |
 
 ## Documented hosts seen
 
 | Host | First seen | Last seen | Days | Variants | Sites |
 |---|---|---|---:|---|---|
-| events.myweb3id.io | 2026-11-02 | 2026-11-07 | 2 | chromium, chromium / Pixel 5, chromium / yandex-ad-sites | ria.ru, lenta.ru, www.gazeta.ru |
+| events.myweb3id.io | 2026-11-02 | 2026-11-08 | 3 | chromium, chromium / Pixel 5, chromium / yandex-ad-sites | ria.ru, lenta.ru, www.gazeta.ru |
 | tracookiepixel.xyz | 2026-11-02 | 2026-11-04 | 2 | chromium / Pixel 5, chromium | www.goal.com, www.independent.co.uk |
+
+## How requests to documented hosts ended
+
+| Date | Variant | Site | Host | Outcome |
+|---|---|---|---|---|
+| 2026-11-08 | chromium / Pixel 5 | lenta.ru | events.myweb3id.io | 1 request(s): failed: net::ERR_NAME_NOT_RESOLVED |
+| 2026-11-08 | chromium / Pixel 5 | www.gazeta.ru | events.myweb3id.io | 1 request(s): failed: net::ERR_NAME_NOT_RESOLVED |
 
 ## Runs
 
@@ -63,6 +75,15 @@ Period: 2026-11-02 – 2026-11-07 (6 day(s)).
 | 2026-11-07 | chromium / Pixel 5 / norway | 24/24 | 23 | 14018 | 35 | 0 | 0 | 0 | 0 | 143 |
 | 2026-11-07 | firefox | 50/50 | 25 | 40139 | 41 | 0 | 0 | 8 | 33 | 511 |
 | 2026-11-07 | firefox / norway-sector | 15/15 | 12 | 5234 | 19 | 0 | 0 | 3 | 4 | 132 |
+| 2026-11-08 | chromium | 50/50 | 0 | 22238 | 26 | 0 | 0 | 0 | 0 | 96 |
+| 2026-11-08 | chromium / iPhone 15 | 50/50 | 1 | 27973 | 34 | 0 | 0 | 0 | 0 | 77 |
+| 2026-11-08 | chromium / mena-africa | 25/25 | 1 | 5608 | 1 | 0 | 0 | 0 | 0 | 76 |
+| 2026-11-08 | chromium / norway | 24/24 | 0 | 14400 | 31 | 0 | 0 | 0 | 0 | 226 |
+| 2026-11-08 | chromium / Pixel 5 | 50/50 | 0 | 39742 | 36 | 0 | 0 | 1 | 0 | 256 |
+| 2026-11-08 | chromium / Pixel 5 / mena-africa | 25/25 | 1 | 9309 | 29 | 0 | 0 | 0 | 0 | 105 |
+| 2026-11-08 | chromium / Pixel 5 / norway | 24/24 | 0 | 12570 | 32 | 0 | 0 | 0 | 0 | 146 |
+| 2026-11-08 | firefox | 50/50 | 1 | 41921 | 44 | 0 | 0 | 10 | 38 | 614 |
+| 2026-11-08 | firefox / norway-sector | 15/15 | 0 | 5006 | 20 | 0 | 0 | 3 | 3 | 131 |
 
 ## Reading this
 
@@ -70,4 +91,5 @@ Period: 2026-11-02 – 2026-11-07 (6 day(s)).
 - Runs before 2026-11-03 used the pre-retune redirect_chain rule and an unreliable third-party counter; compare severities and counts from later runs only.
 - The profiles do not disguise themselves: desktop Chromium runs present as HeadlessChrome and Firefox runs set navigator.webdriver, so sites and ad exchanges that filter automated visitors may show them fewer or no auctions; the phone emulations present the emulated device's user agent. Each run from 2026-11-07 records what it presented as (`presentation`).
 - The severity columns leave out `page.hidden_iframe_after_load`: it fires on ordinary ad slots on most sites and is counted separately under "Hidden iframes". Any of those detections that is elevated or above still appears under "Signals that matter".
+- Within one run the engine reports a documented host once per correlation window; later sites that contact it again are listed as "repeat contact in the same run" (recorded by the harness from 2026-11-08, reconstructed from seen-alongside anchors for 2026-11-07). Runs before 2026-11-07 cannot show repeats, so they may undercount the sites that carried a host.
 - Absence of signals means the automated profiles were not shown the documented infrastructure in these auctions; it says nothing about other profiles or devices.
