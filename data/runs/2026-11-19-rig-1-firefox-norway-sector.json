@@ -1,0 +1,3542 @@
+{
+  "date": "2026-11-19",
+  "browser": "firefox",
+  "device": null,
+  "sites": "tests/fixtures/norway-sector.txt",
+  "etpOff": false,
+  "seconds": 60,
+  "rig": "rig-1",
+  "rigCountry": "NO",
+  "rigNetwork": "home",
+  "presentation": {
+    "userAgent": "Mozilla/5.0 (X11; Linux x86_64; rv:159.0) Gecko/20100101 Firefox/159.0",
+    "webdriver": true
+  },
+  "totals": {
+    "sites": 15,
+    "loaded": 15,
+    "consent": 0,
+    "article": 15,
+    "events": 5137,
+    "thirdPartyMedian": 20,
+    "lowAuction": 3,
+    "detections": [
+      {
+        "ruleId": "ad_delivery.redirect_chain",
+        "severity": "informational",
+        "detectionId": "25d6e944-3738-49ab-b448-edea42fcc39a",
+        "timestamp": 1795101037750,
+        "confidence": "low",
+        "hostnames": [
+          "d5p.de17a.com",
+          "euw-ice.360yield.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 20,
+        "summary": "Ad redirect chains observed in this tab (first seen: 3 hops across 2 domains); further chains are counted as occurrences.",
+        "evidence": [
+          "3 redirects observed for one request across 2 registrable domains.",
+          "The first observed hop was classified by Firefox as advertising/tracking."
+        ]
+      },
+      {
+        "ruleId": "profiling.identifier_rich_request",
+        "severity": "suspicious",
+        "detectionId": "47abd288-eaa3-4507-963a-653a2b72b2da",
+        "timestamp": 1795101036566,
+        "confidence": "low",
+        "hostnames": [
+          "securepubads.g.doubleclick.net"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 10,
+        "summary": "A third-party advertising request carried a parameter name suggesting cookie material.",
+        "evidence": [
+          "Identifier categories present: cookie_material; cookie-material parameter name present. Values were not recorded."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "a6043d43-f4c3-458d-b594-5cd0adabe564",
+        "timestamp": 1795101019745,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "x.bidswitch.net"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting x.bidswitch.net inserted 3145 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "d4a9b1fa-3dde-4c2e-9871-0d9feea579ad",
+        "timestamp": 1795101019745,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "sync.srv.stackadapt.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting sync.srv.stackadapt.com inserted 3145 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "c3579efb-16ae-439a-a247-f398f7f67f0d",
+        "timestamp": 1795101019745,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "match.prod.bidr.io"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting match.prod.bidr.io inserted 3145 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "211fc1c9-d5b9-4aa9-8a18-92b6a92d9a8d",
+        "timestamp": 1795101019745,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "sync-tm.everesttech.net"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting sync-tm.everesttech.net inserted 3145 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "703905f0-50c0-452f-8f3d-4d1f752590a3",
+        "timestamp": 1795101019744,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "ups.analytics.yahoo.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 3,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting ups.analytics.yahoo.com inserted 190 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "eee52082-f1c2-44a0-8ad3-32f45b1154bd",
+        "timestamp": 1795101019447,
+        "confidence": "low",
+        "hostnames": [
+          "sync.connectad.io",
+          "pixel.rubiconproject.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting pixel.rubiconproject.com inserted 1063 ms after the frame loaded in a frame on sync.connectad.io."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "d7b3f738-4473-4054-abdc-fdf289adcb97",
+        "timestamp": 1795101019233,
+        "confidence": "low",
+        "hostnames": [
+          "sync.connectad.io",
+          "cm.adform.net"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting cm.adform.net inserted 849 ms after the frame loaded in a frame on sync.connectad.io."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "25c27049-ee89-4e60-b7cd-969893b757eb",
+        "timestamp": 1795101019223,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "pubmatic-match.dotomi.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting pubmatic-match.dotomi.com inserted 91 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "5b6a2b86-bded-4d92-a066-e15eb8c10fad",
+        "timestamp": 1795101019223,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "dsp.360yield.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting dsp.360yield.com inserted 91 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "bd690084-dd1d-4237-9b5b-1dc479406f25",
+        "timestamp": 1795101019223,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "dsp-cookie.adfarm1.adition.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting dsp-cookie.adfarm1.adition.com inserted 91 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "d54dba68-e635-4c19-802c-8f77085afe19",
+        "timestamp": 1795101019223,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "ib.adnxs.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting ib.adnxs.com inserted 91 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "5653e89a-f1ad-4642-9f01-34921ef6525d",
+        "timestamp": 1795101019223,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "match.adsby.bidtheatre.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting match.adsby.bidtheatre.com inserted 91 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "50b33a43-c48e-44ce-9e4e-b9304d7ae39f",
+        "timestamp": 1795101019223,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "ssp.wp.pl"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting ssp.wp.pl inserted 92 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "7aea0b2d-e708-4061-9513-b0ff933576fa",
+        "timestamp": 1795101019223,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "tr.blismedia.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting tr.blismedia.com inserted 92 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "902a36cd-8df1-4b4d-91b8-2597f84e076b",
+        "timestamp": 1795101019223,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "d5p.de17a.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting d5p.de17a.com inserted 92 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "40baadb1-0219-4d51-b996-bb6beeb854ad",
+        "timestamp": 1795101019222,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "cms.quantserve.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting cms.quantserve.com inserted 91 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "4f93e0f5-8c01-4f8e-9dce-8cd49acebd6e",
+        "timestamp": 1795101019222,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "b1sync.outbrain.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting b1sync.outbrain.com inserted 91 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "cd3a320f-ae73-42c8-b2b3-c956126e400a",
+        "timestamp": 1795101019020,
+        "confidence": "low",
+        "hostnames": [
+          "sync.connectad.io",
+          "u.openx.net"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting u.openx.net inserted 637 ms after the frame loaded in a frame on sync.connectad.io."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "be3bea90-9bf5-4d2a-9ad7-d4db47264e3e",
+        "timestamp": 1795101018822,
+        "confidence": "low",
+        "hostnames": [
+          "sync.connectad.io",
+          "creativecdn.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting creativecdn.com inserted 438 ms after the frame loaded in a frame on sync.connectad.io."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "56a4057c-a8b0-4ece-92d6-0adb528c3a26",
+        "timestamp": 1795101018620,
+        "confidence": "low",
+        "hostnames": [
+          "sync.connectad.io",
+          "x.bidswitch.net"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting x.bidswitch.net inserted 236 ms after the frame loaded in a frame on sync.connectad.io."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "46db95ba-bfd7-4e98-84c1-36da1e9c4db4",
+        "timestamp": 1795101018408,
+        "confidence": "low",
+        "hostnames": [
+          "js-sec.indexww.com",
+          "ssum-sec.casalemedia.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting ssum-sec.casalemedia.com inserted 33 ms after the frame loaded in a frame on js-sec.indexww.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "f2934809-226a-45a4-b54f-0e68d0888993",
+        "timestamp": 1795101018395,
+        "confidence": "low",
+        "hostnames": [
+          "sync.connectad.io",
+          "ap.lijit.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting ap.lijit.com inserted 11 ms after the frame loaded in a frame on sync.connectad.io."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "00feaaba-cfc8-47f5-8064-6fca29ab2b82",
+        "timestamp": 1795101018393,
+        "confidence": "low",
+        "hostnames": [
+          "sync.connectad.io",
+          "eus.rubiconproject.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting eus.rubiconproject.com inserted 9 ms after the frame loaded in a frame on sync.connectad.io."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "534f5d08-4340-467d-a2c4-5157267a7640",
+        "timestamp": 1795101018390,
+        "confidence": "low",
+        "hostnames": [
+          "sync.connectad.io",
+          "ib.adnxs.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting ib.adnxs.com inserted 6 ms after the frame loaded in a frame on sync.connectad.io."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "d3664989-3a1b-4a4c-9232-bc616b221589",
+        "timestamp": 1795101017110,
+        "confidence": "low",
+        "hostnames": [
+          "ce.lijit.com",
+          "ads.pubmatic.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 2,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting ads.pubmatic.com inserted 3 ms after the frame loaded in a frame on ce.lijit.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "a89a6fb5-7571-44fc-8def-28c66edb42a8",
+        "timestamp": 1795101016790,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "c1.adform.net"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 2,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting c1.adform.net inserted 188 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "7ee8793f-22c4-4aad-839b-fea8af92faee",
+        "timestamp": 1795101016790,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "aax-eu.amazon-adsystem.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting aax-eu.amazon-adsystem.com inserted 190 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "3cde79ee-a871-44f0-8351-ec3fc34a30bf",
+        "timestamp": 1795101016790,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "creativecdn.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting creativecdn.com inserted 190 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "2c631fdb-c74a-4c93-b871-1cee44420f57",
+        "timestamp": 1795101016790,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "otc-pbs.relevant-digital.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting otc-pbs.relevant-digital.com inserted 190 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "7452bdcf-be39-4b10-a89b-1358e18ab31c",
+        "timestamp": 1795101016789,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "um.simpli.fi"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting um.simpli.fi inserted 189 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "ad_delivery.redirect_chain",
+        "severity": "informational",
+        "detectionId": "136f466a-c68f-46d1-aa8f-a819ad187f58",
+        "timestamp": 1795101102967,
+        "confidence": "low",
+        "hostnames": [
+          "dsum-sec.casalemedia.com",
+          "cm.g.doubleclick.net"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 35,
+        "summary": "Ad redirect chains observed in this tab (first seen: 3 hops across 2 domains); further chains are counted as occurrences.",
+        "evidence": [
+          "3 redirects observed for one request across 2 registrable domains.",
+          "The first observed hop was classified by Firefox as advertising/tracking."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "c0b439fa-beac-4d7e-914d-52272a3c77f4",
+        "timestamp": 1795101100745,
+        "confidence": "low",
+        "hostnames": [
+          "js-sec.indexww.com",
+          "ssum-sec.casalemedia.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 2,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting ssum-sec.casalemedia.com inserted 5 ms after the frame loaded in a frame on js-sec.indexww.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "db26fdb5-4c6c-4b9c-ae9f-f0679aaada1b",
+        "timestamp": 1795101099702,
+        "confidence": "low",
+        "hostnames": [
+          "dsp-service.adtarget.biz",
+          "prebid.a-mo.net"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting prebid.a-mo.net inserted 7 ms after the frame loaded in a frame on dsp-service.adtarget.biz."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "d27af42e-2941-4633-8ab5-089584acabfd",
+        "timestamp": 1795101099700,
+        "confidence": "low",
+        "hostnames": [
+          "dsp-service.adtarget.biz",
+          "image8.pubmatic.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting image8.pubmatic.com inserted 6 ms after the frame loaded in a frame on dsp-service.adtarget.biz."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "901f2b18-1cfb-4dd7-b4df-6643404de2c0",
+        "timestamp": 1795101084048,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "ups.analytics.yahoo.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 3,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting ups.analytics.yahoo.com inserted 136 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "7e795713-8bc2-4789-921e-1bf1396082d9",
+        "timestamp": 1795101084048,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "otc-pbs.relevant-digital.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 2,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting otc-pbs.relevant-digital.com inserted 136 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "391e63d1-e86b-4309-a833-11007b4afdc3",
+        "timestamp": 1795101084048,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "x.bidswitch.net"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting x.bidswitch.net inserted 3187 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "63e25f96-2594-4a7f-8bc8-dc4dacca0000",
+        "timestamp": 1795101084048,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "cms.quantserve.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting cms.quantserve.com inserted 3187 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "4f8ec53c-0701-4d45-90fe-6b623c89641d",
+        "timestamp": 1795101084048,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "b1sync.outbrain.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting b1sync.outbrain.com inserted 3187 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "b28ecca7-822a-4327-bf73-de0fab75437e",
+        "timestamp": 1795101084048,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "pubmatic-match.dotomi.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting pubmatic-match.dotomi.com inserted 3187 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "469bc3f7-e32b-444f-8af9-10857deb8728",
+        "timestamp": 1795101084048,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "t.adx.opera.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting t.adx.opera.com inserted 3187 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "72537269-1e53-433c-9358-785c287932de",
+        "timestamp": 1795101084048,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "dsp.360yield.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting dsp.360yield.com inserted 3187 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "e2f9e570-4048-41ba-b5c5-ee4adf34409c",
+        "timestamp": 1795101084048,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "dsp-cookie.adfarm1.adition.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting dsp-cookie.adfarm1.adition.com inserted 3187 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "d2a7b085-8f82-4f11-8d5f-ff7c77e1b59e",
+        "timestamp": 1795101084048,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "ib.adnxs.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting ib.adnxs.com inserted 3187 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "e53f8683-a3e5-4343-b138-7cbc8f5ff5e3",
+        "timestamp": 1795101084048,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "sync.srv.stackadapt.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting sync.srv.stackadapt.com inserted 3187 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "8f6037fb-e612-410d-85b9-204eafaf50d0",
+        "timestamp": 1795101081436,
+        "confidence": "low",
+        "hostnames": [
+          "738cdb5b0109b52e8a530f461cbe755c.safeframe.googlesyndication.com",
+          "googleads.g.doubleclick.net"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 2,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting googleads.g.doubleclick.net inserted 19 ms after the frame loaded in a frame on 738cdb5b0109b52e8a530f461cbe755c.safeframe.googlesyndication.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "d4c87682-2e6d-4b80-bcb9-dbd056da433f",
+        "timestamp": 1795101081436,
+        "confidence": "low",
+        "hostnames": [
+          "738cdb5b0109b52e8a530f461cbe755c.safeframe.googlesyndication.com",
+          "pagead2.googlesyndication.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 2,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting pagead2.googlesyndication.com inserted 19 ms after the frame loaded in a frame on 738cdb5b0109b52e8a530f461cbe755c.safeframe.googlesyndication.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "9c2555cb-bca4-4ef7-b118-4054ccd3fa3e",
+        "timestamp": 1795101080997,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "c1.adform.net"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 2,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting c1.adform.net inserted 135 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "469142b8-d1d0-4269-8d41-b62c8e97f356",
+        "timestamp": 1795101080997,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "um.simpli.fi"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting um.simpli.fi inserted 135 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "0ed13f74-735d-4e06-a707-11cd6cb72e1f",
+        "timestamp": 1795101080997,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "aax-eu.amazon-adsystem.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting aax-eu.amazon-adsystem.com inserted 136 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "5c4401dd-bebf-4a12-919e-813942fa2c70",
+        "timestamp": 1795101080997,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "creativecdn.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting creativecdn.com inserted 136 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "profiling.identifier_rich_request",
+        "severity": "suspicious",
+        "detectionId": "b41bbcf0-6bfc-41c0-9a90-656d14d0215f",
+        "timestamp": 1795101353973,
+        "confidence": "low",
+        "hostnames": [
+          "securepubads.g.doubleclick.net"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 10,
+        "summary": "A third-party advertising request carried a parameter name suggesting cookie material.",
+        "evidence": [
+          "Identifier categories present: cookie_material; cookie-material parameter name present. Values were not recorded."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "2f6733f9-4d8a-4a78-8df8-d90f4e0b1a15",
+        "timestamp": 1795101353644,
+        "confidence": "low",
+        "hostnames": [
+          "ad.doubleclick.net",
+          "ep2.adtrafficquality.google"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 2,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting ep2.adtrafficquality.google inserted 82 ms after the frame loaded in a frame on ad.doubleclick.net."
+        ]
+      },
+      {
+        "ruleId": "ad_delivery.redirect_chain",
+        "severity": "informational",
+        "detectionId": "25fcb90d-6f55-4d3e-aec1-8e2a739b0855",
+        "timestamp": 1795101337750,
+        "confidence": "low",
+        "hostnames": [
+          "d5p.de17a.com",
+          "euw-ice.360yield.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 12,
+        "summary": "Ad redirect chains observed in this tab (first seen: 3 hops across 2 domains); further chains are counted as occurrences.",
+        "evidence": [
+          "3 redirects observed for one request across 2 registrable domains.",
+          "The first observed hop was classified by Firefox as advertising/tracking."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "b7daf850-a876-4c29-a50c-07118ae23154",
+        "timestamp": 1795101337562,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "ups.analytics.yahoo.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 3,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting ups.analytics.yahoo.com inserted 121 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "86279632-e1d4-4db5-84ac-fcac9b1a3a58",
+        "timestamp": 1795101337562,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "otc-pbs.relevant-digital.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 2,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting otc-pbs.relevant-digital.com inserted 121 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "664b93df-eb45-46c4-8a92-7ac2fbd26baa",
+        "timestamp": 1795101337562,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "x.bidswitch.net"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting x.bidswitch.net inserted 3174 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "ef505af5-3e1f-4f34-8b18-bbb38403f89c",
+        "timestamp": 1795101337562,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "cms.quantserve.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting cms.quantserve.com inserted 3174 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "c0aa2f6b-3be7-4ddd-b479-172130ea673f",
+        "timestamp": 1795101337562,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "b1sync.outbrain.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting b1sync.outbrain.com inserted 3174 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "4cdd691d-8301-4eaa-908b-a822dd89eef6",
+        "timestamp": 1795101337562,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "pubmatic-match.dotomi.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting pubmatic-match.dotomi.com inserted 3175 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "cfe21d70-03ee-4ff8-a51b-44a0972cb0fc",
+        "timestamp": 1795101337562,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "dsp.360yield.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting dsp.360yield.com inserted 3175 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "7361cee0-2dc9-4bc6-8ce2-537acb73236e",
+        "timestamp": 1795101337562,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "dsp-cookie.adfarm1.adition.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting dsp-cookie.adfarm1.adition.com inserted 3175 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "e14e07c9-265b-4334-b351-b42c3034b282",
+        "timestamp": 1795101337562,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "ib.adnxs.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting ib.adnxs.com inserted 3175 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "251da04f-f82b-4bc7-9c00-9474d70a385f",
+        "timestamp": 1795101337562,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "sync.srv.stackadapt.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting sync.srv.stackadapt.com inserted 3175 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "1f651e0e-3559-4991-8402-df37407573f3",
+        "timestamp": 1795101337562,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "match.prod.bidr.io"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting match.prod.bidr.io inserted 3175 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "399b0652-d507-42fb-ad42-498f12677f57",
+        "timestamp": 1795101336890,
+        "confidence": "low",
+        "hostnames": [
+          "sync.connectad.io",
+          "pixel.rubiconproject.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting pixel.rubiconproject.com inserted 1011 ms after the frame loaded in a frame on sync.connectad.io."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "795a6abe-a140-4549-9e7b-e9cb5e4caefa",
+        "timestamp": 1795101336690,
+        "confidence": "low",
+        "hostnames": [
+          "sync.connectad.io",
+          "ap.lijit.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting ap.lijit.com inserted 812 ms after the frame loaded in a frame on sync.connectad.io."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "92c0bc07-ce77-4e8d-acda-065644f76502",
+        "timestamp": 1795101336489,
+        "confidence": "low",
+        "hostnames": [
+          "sync.connectad.io",
+          "x.bidswitch.net"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting x.bidswitch.net inserted 612 ms after the frame loaded in a frame on sync.connectad.io."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "9ab40bb0-639b-49e5-b98d-bce71805e811",
+        "timestamp": 1795101336288,
+        "confidence": "low",
+        "hostnames": [
+          "sync.connectad.io",
+          "cm.adform.net"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting cm.adform.net inserted 410 ms after the frame loaded in a frame on sync.connectad.io."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "b86a9f7f-ffc0-4e89-88e0-29e5dde54c1b",
+        "timestamp": 1795101336159,
+        "confidence": "low",
+        "hostnames": [
+          "dsp-service.adtarget.biz",
+          "prebid.a-mo.net"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting prebid.a-mo.net inserted 6 ms after the frame loaded in a frame on dsp-service.adtarget.biz."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "cffb67f1-f8f8-404b-8a86-32ecac8d6246",
+        "timestamp": 1795101336158,
+        "confidence": "low",
+        "hostnames": [
+          "dsp-service.adtarget.biz",
+          "image8.pubmatic.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting image8.pubmatic.com inserted 6 ms after the frame loaded in a frame on dsp-service.adtarget.biz."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "72353e96-1926-42ef-a6e9-c574be9a1873",
+        "timestamp": 1795101336088,
+        "confidence": "low",
+        "hostnames": [
+          "sync.connectad.io",
+          "u.openx.net"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting u.openx.net inserted 210 ms after the frame loaded in a frame on sync.connectad.io."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "286d4cf5-c416-45dc-8322-257e6f0f66ae",
+        "timestamp": 1795101335888,
+        "confidence": "low",
+        "hostnames": [
+          "sync.connectad.io",
+          "creativecdn.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting creativecdn.com inserted 10 ms after the frame loaded in a frame on sync.connectad.io."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "23977eb7-cdd3-49a2-a58d-8ed62b77d3d7",
+        "timestamp": 1795101335885,
+        "confidence": "low",
+        "hostnames": [
+          "sync.connectad.io",
+          "eus.rubiconproject.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting eus.rubiconproject.com inserted 7 ms after the frame loaded in a frame on sync.connectad.io."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "717aada7-286b-4f15-9045-cc90ee79b4c5",
+        "timestamp": 1795101335883,
+        "confidence": "low",
+        "hostnames": [
+          "sync.connectad.io",
+          "ib.adnxs.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting ib.adnxs.com inserted 4 ms after the frame loaded in a frame on sync.connectad.io."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "14d9aee4-a4ba-4973-8410-cbf7743a2f14",
+        "timestamp": 1795101335867,
+        "confidence": "low",
+        "hostnames": [
+          "js-sec.indexww.com",
+          "ssum-sec.casalemedia.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting ssum-sec.casalemedia.com inserted 12 ms after the frame loaded in a frame on js-sec.indexww.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "21a7dbbe-8b76-4e3c-afe3-5a6ab0390ac8",
+        "timestamp": 1795101334508,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "c1.adform.net"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 2,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting c1.adform.net inserted 119 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "6d0c9a80-b2f1-42da-a505-5cd173b9df6a",
+        "timestamp": 1795101334508,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "aax-eu.amazon-adsystem.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting aax-eu.amazon-adsystem.com inserted 121 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "10b550fd-0a00-4009-9a18-bff6fffc9bbb",
+        "timestamp": 1795101334508,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "creativecdn.com"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting creativecdn.com inserted 121 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "page.hidden_iframe_after_load",
+        "severity": "suspicious",
+        "detectionId": "e923fd0a-78f8-4e1a-81b7-eb7a39eccacc",
+        "timestamp": 1795101334507,
+        "confidence": "low",
+        "hostnames": [
+          "ads.pubmatic.com",
+          "um.simpli.fi"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 1,
+        "summary": "A hidden cross-origin iframe was inserted after load.",
+        "evidence": [
+          "The page sensor observed a hidden cross-origin iframe targeting um.simpli.fi inserted 120 ms after the frame loaded in a frame on ads.pubmatic.com."
+        ]
+      },
+      {
+        "ruleId": "profiling.identifier_rich_request",
+        "severity": "suspicious",
+        "detectionId": "5c00cbc6-902e-4c99-9cef-44edfdee1ef5",
+        "timestamp": 1795101542844,
+        "confidence": "low",
+        "hostnames": [
+          "utdanningsforbundet.matomo.cloud"
+        ],
+        "matchedIndicatorIds": [],
+        "occurrenceCount": 2,
+        "summary": "A third-party advertising request carried a parameter name suggesting cookie material.",
+        "evidence": [
+          "Identifier categories present: cookie_material; cookie-material parameter name present. Values were not recorded."
+        ]
+      }
+    ]
+  },
+  "results": [
+    {
+      "site": "www.tu.no",
+      "loaded": true,
+      "consent": null,
+      "article": true,
+      "events": 950,
+      "thirdPartyDomains": 93,
+      "detections": [
+        {
+          "ruleId": "ad_delivery.redirect_chain",
+          "severity": "informational",
+          "detectionId": "25d6e944-3738-49ab-b448-edea42fcc39a",
+          "timestamp": 1795101037750,
+          "confidence": "low",
+          "hostnames": [
+            "d5p.de17a.com",
+            "euw-ice.360yield.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 20,
+          "summary": "Ad redirect chains observed in this tab (first seen: 3 hops across 2 domains); further chains are counted as occurrences.",
+          "evidence": [
+            "3 redirects observed for one request across 2 registrable domains.",
+            "The first observed hop was classified by Firefox as advertising/tracking."
+          ]
+        },
+        {
+          "ruleId": "profiling.identifier_rich_request",
+          "severity": "suspicious",
+          "detectionId": "47abd288-eaa3-4507-963a-653a2b72b2da",
+          "timestamp": 1795101036566,
+          "confidence": "low",
+          "hostnames": [
+            "securepubads.g.doubleclick.net"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 10,
+          "summary": "A third-party advertising request carried a parameter name suggesting cookie material.",
+          "evidence": [
+            "Identifier categories present: cookie_material; cookie-material parameter name present. Values were not recorded."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "a6043d43-f4c3-458d-b594-5cd0adabe564",
+          "timestamp": 1795101019745,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "x.bidswitch.net"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting x.bidswitch.net inserted 3145 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "d4a9b1fa-3dde-4c2e-9871-0d9feea579ad",
+          "timestamp": 1795101019745,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "sync.srv.stackadapt.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting sync.srv.stackadapt.com inserted 3145 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "c3579efb-16ae-439a-a247-f398f7f67f0d",
+          "timestamp": 1795101019745,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "match.prod.bidr.io"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting match.prod.bidr.io inserted 3145 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "211fc1c9-d5b9-4aa9-8a18-92b6a92d9a8d",
+          "timestamp": 1795101019745,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "sync-tm.everesttech.net"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting sync-tm.everesttech.net inserted 3145 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "703905f0-50c0-452f-8f3d-4d1f752590a3",
+          "timestamp": 1795101019744,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "ups.analytics.yahoo.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 3,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting ups.analytics.yahoo.com inserted 190 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "eee52082-f1c2-44a0-8ad3-32f45b1154bd",
+          "timestamp": 1795101019447,
+          "confidence": "low",
+          "hostnames": [
+            "sync.connectad.io",
+            "pixel.rubiconproject.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting pixel.rubiconproject.com inserted 1063 ms after the frame loaded in a frame on sync.connectad.io."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "d7b3f738-4473-4054-abdc-fdf289adcb97",
+          "timestamp": 1795101019233,
+          "confidence": "low",
+          "hostnames": [
+            "sync.connectad.io",
+            "cm.adform.net"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting cm.adform.net inserted 849 ms after the frame loaded in a frame on sync.connectad.io."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "25c27049-ee89-4e60-b7cd-969893b757eb",
+          "timestamp": 1795101019223,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "pubmatic-match.dotomi.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting pubmatic-match.dotomi.com inserted 91 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "5b6a2b86-bded-4d92-a066-e15eb8c10fad",
+          "timestamp": 1795101019223,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "dsp.360yield.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting dsp.360yield.com inserted 91 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "bd690084-dd1d-4237-9b5b-1dc479406f25",
+          "timestamp": 1795101019223,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "dsp-cookie.adfarm1.adition.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting dsp-cookie.adfarm1.adition.com inserted 91 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "d54dba68-e635-4c19-802c-8f77085afe19",
+          "timestamp": 1795101019223,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "ib.adnxs.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting ib.adnxs.com inserted 91 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "5653e89a-f1ad-4642-9f01-34921ef6525d",
+          "timestamp": 1795101019223,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "match.adsby.bidtheatre.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting match.adsby.bidtheatre.com inserted 91 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "50b33a43-c48e-44ce-9e4e-b9304d7ae39f",
+          "timestamp": 1795101019223,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "ssp.wp.pl"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting ssp.wp.pl inserted 92 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "7aea0b2d-e708-4061-9513-b0ff933576fa",
+          "timestamp": 1795101019223,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "tr.blismedia.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting tr.blismedia.com inserted 92 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "902a36cd-8df1-4b4d-91b8-2597f84e076b",
+          "timestamp": 1795101019223,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "d5p.de17a.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting d5p.de17a.com inserted 92 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "40baadb1-0219-4d51-b996-bb6beeb854ad",
+          "timestamp": 1795101019222,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "cms.quantserve.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting cms.quantserve.com inserted 91 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "4f93e0f5-8c01-4f8e-9dce-8cd49acebd6e",
+          "timestamp": 1795101019222,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "b1sync.outbrain.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting b1sync.outbrain.com inserted 91 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "cd3a320f-ae73-42c8-b2b3-c956126e400a",
+          "timestamp": 1795101019020,
+          "confidence": "low",
+          "hostnames": [
+            "sync.connectad.io",
+            "u.openx.net"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting u.openx.net inserted 637 ms after the frame loaded in a frame on sync.connectad.io."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "be3bea90-9bf5-4d2a-9ad7-d4db47264e3e",
+          "timestamp": 1795101018822,
+          "confidence": "low",
+          "hostnames": [
+            "sync.connectad.io",
+            "creativecdn.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting creativecdn.com inserted 438 ms after the frame loaded in a frame on sync.connectad.io."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "56a4057c-a8b0-4ece-92d6-0adb528c3a26",
+          "timestamp": 1795101018620,
+          "confidence": "low",
+          "hostnames": [
+            "sync.connectad.io",
+            "x.bidswitch.net"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting x.bidswitch.net inserted 236 ms after the frame loaded in a frame on sync.connectad.io."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "46db95ba-bfd7-4e98-84c1-36da1e9c4db4",
+          "timestamp": 1795101018408,
+          "confidence": "low",
+          "hostnames": [
+            "js-sec.indexww.com",
+            "ssum-sec.casalemedia.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting ssum-sec.casalemedia.com inserted 33 ms after the frame loaded in a frame on js-sec.indexww.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "f2934809-226a-45a4-b54f-0e68d0888993",
+          "timestamp": 1795101018395,
+          "confidence": "low",
+          "hostnames": [
+            "sync.connectad.io",
+            "ap.lijit.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting ap.lijit.com inserted 11 ms after the frame loaded in a frame on sync.connectad.io."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "00feaaba-cfc8-47f5-8064-6fca29ab2b82",
+          "timestamp": 1795101018393,
+          "confidence": "low",
+          "hostnames": [
+            "sync.connectad.io",
+            "eus.rubiconproject.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting eus.rubiconproject.com inserted 9 ms after the frame loaded in a frame on sync.connectad.io."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "534f5d08-4340-467d-a2c4-5157267a7640",
+          "timestamp": 1795101018390,
+          "confidence": "low",
+          "hostnames": [
+            "sync.connectad.io",
+            "ib.adnxs.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting ib.adnxs.com inserted 6 ms after the frame loaded in a frame on sync.connectad.io."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "d3664989-3a1b-4a4c-9232-bc616b221589",
+          "timestamp": 1795101017110,
+          "confidence": "low",
+          "hostnames": [
+            "ce.lijit.com",
+            "ads.pubmatic.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 2,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting ads.pubmatic.com inserted 3 ms after the frame loaded in a frame on ce.lijit.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "a89a6fb5-7571-44fc-8def-28c66edb42a8",
+          "timestamp": 1795101016790,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "c1.adform.net"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 2,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting c1.adform.net inserted 188 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "7ee8793f-22c4-4aad-839b-fea8af92faee",
+          "timestamp": 1795101016790,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "aax-eu.amazon-adsystem.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting aax-eu.amazon-adsystem.com inserted 190 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "3cde79ee-a871-44f0-8351-ec3fc34a30bf",
+          "timestamp": 1795101016790,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "creativecdn.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting creativecdn.com inserted 190 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "2c631fdb-c74a-4c93-b871-1cee44420f57",
+          "timestamp": 1795101016790,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "otc-pbs.relevant-digital.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting otc-pbs.relevant-digital.com inserted 190 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "7452bdcf-be39-4b10-a89b-1358e18ab31c",
+          "timestamp": 1795101016789,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "um.simpli.fi"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting um.simpli.fi inserted 189 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        }
+      ],
+      "repeatContacts": [],
+      "documentedOutcomes": [],
+      "thirdPartyDomainsList": [
+        "2mdn.net",
+        "33across.com",
+        "360yield.com",
+        "4dex.io",
+        "a-mo.net",
+        "acuityplatform.com",
+        "adform.net",
+        "adition.com",
+        "admanmedia.com",
+        "adnxs.com",
+        "adroll.com",
+        "adsafeprotected.com",
+        "adsrvr.org",
+        "adtarget.biz",
+        "adtrafficquality.google",
+        "amazon-adsystem.com",
+        "bidr.io",
+        "bidswitch.net",
+        "bidtheatre.com",
+        "blismedia.com",
+        "bttrack.com",
+        "casalemedia.com",
+        "chartbeat.com",
+        "chartbeat.net",
+        "company-target.com",
+        "connatix.com",
+        "connectad.io",
+        "creative-serving.com",
+        "creativecdn.com",
+        "criteo.com",
+        "crwdcntrl.net",
+        "de17a.com",
+        "demdex.net",
+        "dnacdn.net",
+        "dotomi.com",
+        "doubleclick.net",
+        "essrtb.com",
+        "eu-1-id5-sync.com",
+        "everesttech.net",
+        "google.com",
+        "google.no",
+        "googleapis.com",
+        "googlesyndication.com",
+        "googletagmanager.com",
+        "googletagservices.com",
+        "gstatic.com",
+        "hightouch-events.com",
+        "id5-sync.com",
+        "indexww.com",
+        "ipredictive.com",
+        "k5a.io",
+        "lijit.com",
+        "linkedin.com",
+        "loopme.me",
+        "mailmojo.no",
+        "mediagotechnology.com",
+        "omnitagjs.com",
+        "onaudience.com",
+        "onetag-sys.com",
+        "openx.net",
+        "opera.com",
+        "outbrain.com",
+        "pmbmonetize.live",
+        "primis.tech",
+        "pubmatic.com",
+        "quantserve.com",
+        "qvdt3feo.com",
+        "relevant-digital.com",
+        "rfihub.com",
+        "rlcdn.com",
+        "rubiconproject.com",
+        "seedtag.com",
+        "seenthis.se",
+        "semasio.net",
+        "sharethrough.com",
+        "simpli.fi",
+        "sitescout.com",
+        "smaato.net",
+        "smartadserver.com",
+        "smartclip.net",
+        "smilewanted.com",
+        "stackadapt.com",
+        "t13.io",
+        "tapad.com",
+        "tekjobb.no",
+        "trustedstack.com",
+        "tumedia.no",
+        "turn.com",
+        "unite.as",
+        "windows.net",
+        "wp.pl",
+        "yahoo.com",
+        "zeotap.com"
+      ],
+      "alongside": [],
+      "alongsideAnchors": 0
+    },
+    {
+      "site": "www.forskning.no",
+      "loaded": true,
+      "consent": null,
+      "article": true,
+      "events": 957,
+      "thirdPartyDomains": 109,
+      "detections": [
+        {
+          "ruleId": "ad_delivery.redirect_chain",
+          "severity": "informational",
+          "detectionId": "136f466a-c68f-46d1-aa8f-a819ad187f58",
+          "timestamp": 1795101102967,
+          "confidence": "low",
+          "hostnames": [
+            "dsum-sec.casalemedia.com",
+            "cm.g.doubleclick.net"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 35,
+          "summary": "Ad redirect chains observed in this tab (first seen: 3 hops across 2 domains); further chains are counted as occurrences.",
+          "evidence": [
+            "3 redirects observed for one request across 2 registrable domains.",
+            "The first observed hop was classified by Firefox as advertising/tracking."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "c0b439fa-beac-4d7e-914d-52272a3c77f4",
+          "timestamp": 1795101100745,
+          "confidence": "low",
+          "hostnames": [
+            "js-sec.indexww.com",
+            "ssum-sec.casalemedia.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 2,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting ssum-sec.casalemedia.com inserted 5 ms after the frame loaded in a frame on js-sec.indexww.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "db26fdb5-4c6c-4b9c-ae9f-f0679aaada1b",
+          "timestamp": 1795101099702,
+          "confidence": "low",
+          "hostnames": [
+            "dsp-service.adtarget.biz",
+            "prebid.a-mo.net"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting prebid.a-mo.net inserted 7 ms after the frame loaded in a frame on dsp-service.adtarget.biz."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "d27af42e-2941-4633-8ab5-089584acabfd",
+          "timestamp": 1795101099700,
+          "confidence": "low",
+          "hostnames": [
+            "dsp-service.adtarget.biz",
+            "image8.pubmatic.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting image8.pubmatic.com inserted 6 ms after the frame loaded in a frame on dsp-service.adtarget.biz."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "901f2b18-1cfb-4dd7-b4df-6643404de2c0",
+          "timestamp": 1795101084048,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "ups.analytics.yahoo.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 3,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting ups.analytics.yahoo.com inserted 136 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "7e795713-8bc2-4789-921e-1bf1396082d9",
+          "timestamp": 1795101084048,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "otc-pbs.relevant-digital.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 2,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting otc-pbs.relevant-digital.com inserted 136 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "391e63d1-e86b-4309-a833-11007b4afdc3",
+          "timestamp": 1795101084048,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "x.bidswitch.net"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting x.bidswitch.net inserted 3187 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "63e25f96-2594-4a7f-8bc8-dc4dacca0000",
+          "timestamp": 1795101084048,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "cms.quantserve.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting cms.quantserve.com inserted 3187 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "4f8ec53c-0701-4d45-90fe-6b623c89641d",
+          "timestamp": 1795101084048,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "b1sync.outbrain.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting b1sync.outbrain.com inserted 3187 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "b28ecca7-822a-4327-bf73-de0fab75437e",
+          "timestamp": 1795101084048,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "pubmatic-match.dotomi.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting pubmatic-match.dotomi.com inserted 3187 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "469bc3f7-e32b-444f-8af9-10857deb8728",
+          "timestamp": 1795101084048,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "t.adx.opera.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting t.adx.opera.com inserted 3187 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "72537269-1e53-433c-9358-785c287932de",
+          "timestamp": 1795101084048,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "dsp.360yield.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting dsp.360yield.com inserted 3187 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "e2f9e570-4048-41ba-b5c5-ee4adf34409c",
+          "timestamp": 1795101084048,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "dsp-cookie.adfarm1.adition.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting dsp-cookie.adfarm1.adition.com inserted 3187 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "d2a7b085-8f82-4f11-8d5f-ff7c77e1b59e",
+          "timestamp": 1795101084048,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "ib.adnxs.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting ib.adnxs.com inserted 3187 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "e53f8683-a3e5-4343-b138-7cbc8f5ff5e3",
+          "timestamp": 1795101084048,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "sync.srv.stackadapt.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting sync.srv.stackadapt.com inserted 3187 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "8f6037fb-e612-410d-85b9-204eafaf50d0",
+          "timestamp": 1795101081436,
+          "confidence": "low",
+          "hostnames": [
+            "738cdb5b0109b52e8a530f461cbe755c.safeframe.googlesyndication.com",
+            "googleads.g.doubleclick.net"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 2,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting googleads.g.doubleclick.net inserted 19 ms after the frame loaded in a frame on 738cdb5b0109b52e8a530f461cbe755c.safeframe.googlesyndication.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "d4c87682-2e6d-4b80-bcb9-dbd056da433f",
+          "timestamp": 1795101081436,
+          "confidence": "low",
+          "hostnames": [
+            "738cdb5b0109b52e8a530f461cbe755c.safeframe.googlesyndication.com",
+            "pagead2.googlesyndication.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 2,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting pagead2.googlesyndication.com inserted 19 ms after the frame loaded in a frame on 738cdb5b0109b52e8a530f461cbe755c.safeframe.googlesyndication.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "9c2555cb-bca4-4ef7-b118-4054ccd3fa3e",
+          "timestamp": 1795101080997,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "c1.adform.net"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 2,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting c1.adform.net inserted 135 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "469142b8-d1d0-4269-8d41-b62c8e97f356",
+          "timestamp": 1795101080997,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "um.simpli.fi"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting um.simpli.fi inserted 135 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "0ed13f74-735d-4e06-a707-11cd6cb72e1f",
+          "timestamp": 1795101080997,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "aax-eu.amazon-adsystem.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting aax-eu.amazon-adsystem.com inserted 136 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "5c4401dd-bebf-4a12-919e-813942fa2c70",
+          "timestamp": 1795101080997,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "creativecdn.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting creativecdn.com inserted 136 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        }
+      ],
+      "repeatContacts": [],
+      "documentedOutcomes": [],
+      "thirdPartyDomainsList": [
+        "1rx.io",
+        "33across.com",
+        "360yield.com",
+        "3lift.com",
+        "4dex.io",
+        "a-mo.net",
+        "ad.gt",
+        "adform.net",
+        "adgrx.com",
+        "adition.com",
+        "adkernel.com",
+        "adnami.io",
+        "adnuntius.com",
+        "adnxs.com",
+        "adroll.com",
+        "adsrvr.org",
+        "adtarget.biz",
+        "adtrafficquality.google",
+        "advolve.io",
+        "amazon-adsystem.com",
+        "atmng.io",
+        "bidr.io",
+        "bidswitch.net",
+        "bidtheatre.com",
+        "bing.com",
+        "blismedia.com",
+        "bluevoox.com",
+        "browsiprod.com",
+        "bttrack.com",
+        "casalemedia.com",
+        "company-target.com",
+        "connatix.com",
+        "contextweb.com",
+        "creative-serving.com",
+        "creativecdn.com",
+        "criteo.com",
+        "crwdcntrl.net",
+        "ctnsnet.com",
+        "de17a.com",
+        "demdex.net",
+        "dialogapi.no",
+        "digitalaudience.io",
+        "dotomi.com",
+        "doubleclick.net",
+        "erne.co",
+        "essrtb.com",
+        "everesttech.net",
+        "eyeota.net",
+        "gammaplatform.com",
+        "google.com",
+        "google.no",
+        "googleapis.com",
+        "googlesyndication.com",
+        "googletagmanager.com",
+        "gstatic.com",
+        "hcaptcha.com",
+        "imghost.no",
+        "indexww.com",
+        "inmobi-choice.io",
+        "inmobi.com",
+        "ipredictive.com",
+        "jsdelivr.net",
+        "k5a.io",
+        "liftdsp.com",
+        "lijit.com",
+        "linkedin.com",
+        "loopme.me",
+        "loudecho.ai",
+        "mediago.io",
+        "mediagotechnology.com",
+        "medietall.no",
+        "mgid.com",
+        "omnitagjs.com",
+        "onaudience.com",
+        "openx.net",
+        "opera.com",
+        "outbrain.com",
+        "presage.io",
+        "primis.tech",
+        "pubmatic.com",
+        "quantserve.com",
+        "qvdt3feo.com",
+        "readpeak.com",
+        "relevant-digital.com",
+        "rfihub.com",
+        "rlcdn.com",
+        "rtbscale.com",
+        "rubiconproject.com",
+        "scorecardresearch.com",
+        "seedtag.com",
+        "seenthis.se",
+        "semasio.net",
+        "sharethrough.com",
+        "simpli.fi",
+        "sitescout.com",
+        "smartadserver.com",
+        "stackadapt.com",
+        "tapad.com",
+        "teads.tv",
+        "travelaudience.com",
+        "tribalfusion.com",
+        "turn.com",
+        "unrulymedia.com",
+        "vistarsagency.com",
+        "wp.pl",
+        "yahoo.com",
+        "yellowblue.io",
+        "ymmobi.com",
+        "zeotap.com"
+      ],
+      "alongside": [],
+      "alongsideAnchors": 0
+    },
+    {
+      "site": "www.morgenbladet.no",
+      "loaded": true,
+      "consent": null,
+      "article": true,
+      "events": 314,
+      "thirdPartyDomains": 20,
+      "detections": [],
+      "repeatContacts": [],
+      "documentedOutcomes": [],
+      "thirdPartyDomainsList": [
+        "2mdn.net",
+        "adtrafficquality.google",
+        "aticdn.net",
+        "chartbeat.com",
+        "chartbeat.net",
+        "cloudflare.com",
+        "cxense.com",
+        "doubleclick.net",
+        "google.com",
+        "google.no",
+        "googleapis.com",
+        "googlesyndication.com",
+        "googletagmanager.com",
+        "gstatic.com",
+        "hightouch-events.com",
+        "jquery.com",
+        "k5a.io",
+        "mentormedier.no",
+        "pa-cd.com",
+        "piano.io"
+      ],
+      "alongside": [],
+      "alongsideAnchors": 0
+    },
+    {
+      "site": "www.khrono.no",
+      "loaded": true,
+      "consent": null,
+      "article": true,
+      "events": 221,
+      "thirdPartyDomains": 20,
+      "detections": [],
+      "repeatContacts": [],
+      "documentedOutcomes": [],
+      "thirdPartyDomainsList": [
+        "adnuntius.com",
+        "atmng.io",
+        "doubleclick.net",
+        "ebxcdn.com",
+        "google-analytics.com",
+        "google.com",
+        "googleapis.com",
+        "googletagmanager.com",
+        "gstatic.com",
+        "hyvor.com",
+        "k5a.io",
+        "khrono.eu",
+        "mailmojo.no",
+        "pushpushgo.com",
+        "scdn.co",
+        "sentry.io",
+        "spotify.com",
+        "spotifycdn.com",
+        "youtube.com",
+        "ytimg.com"
+      ],
+      "alongside": [],
+      "alongsideAnchors": 0
+    },
+    {
+      "site": "www.kommunal-rapport.no",
+      "loaded": true,
+      "consent": null,
+      "article": true,
+      "events": 189,
+      "thirdPartyDomains": 12,
+      "detections": [],
+      "repeatContacts": [],
+      "documentedOutcomes": [],
+      "thirdPartyDomainsList": [
+        "adtrafficquality.google",
+        "cloudflare.com",
+        "doubleclick.net",
+        "googleapis.com",
+        "googlesyndication.com",
+        "gstatic.com",
+        "k5a.io",
+        "scdn.co",
+        "sentry.io",
+        "spotify.com",
+        "spotifycdn.com",
+        "typekit.net"
+      ],
+      "alongside": [],
+      "alongsideAnchors": 0
+    },
+    {
+      "site": "www.digi.no",
+      "loaded": true,
+      "consent": null,
+      "article": true,
+      "events": 914,
+      "thirdPartyDomains": 96,
+      "detections": [
+        {
+          "ruleId": "profiling.identifier_rich_request",
+          "severity": "suspicious",
+          "detectionId": "b41bbcf0-6bfc-41c0-9a90-656d14d0215f",
+          "timestamp": 1795101353973,
+          "confidence": "low",
+          "hostnames": [
+            "securepubads.g.doubleclick.net"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 10,
+          "summary": "A third-party advertising request carried a parameter name suggesting cookie material.",
+          "evidence": [
+            "Identifier categories present: cookie_material; cookie-material parameter name present. Values were not recorded."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "2f6733f9-4d8a-4a78-8df8-d90f4e0b1a15",
+          "timestamp": 1795101353644,
+          "confidence": "low",
+          "hostnames": [
+            "ad.doubleclick.net",
+            "ep2.adtrafficquality.google"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 2,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting ep2.adtrafficquality.google inserted 82 ms after the frame loaded in a frame on ad.doubleclick.net."
+          ]
+        },
+        {
+          "ruleId": "ad_delivery.redirect_chain",
+          "severity": "informational",
+          "detectionId": "25fcb90d-6f55-4d3e-aec1-8e2a739b0855",
+          "timestamp": 1795101337750,
+          "confidence": "low",
+          "hostnames": [
+            "d5p.de17a.com",
+            "euw-ice.360yield.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 12,
+          "summary": "Ad redirect chains observed in this tab (first seen: 3 hops across 2 domains); further chains are counted as occurrences.",
+          "evidence": [
+            "3 redirects observed for one request across 2 registrable domains.",
+            "The first observed hop was classified by Firefox as advertising/tracking."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "b7daf850-a876-4c29-a50c-07118ae23154",
+          "timestamp": 1795101337562,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "ups.analytics.yahoo.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 3,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting ups.analytics.yahoo.com inserted 121 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "86279632-e1d4-4db5-84ac-fcac9b1a3a58",
+          "timestamp": 1795101337562,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "otc-pbs.relevant-digital.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 2,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting otc-pbs.relevant-digital.com inserted 121 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "664b93df-eb45-46c4-8a92-7ac2fbd26baa",
+          "timestamp": 1795101337562,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "x.bidswitch.net"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting x.bidswitch.net inserted 3174 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "ef505af5-3e1f-4f34-8b18-bbb38403f89c",
+          "timestamp": 1795101337562,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "cms.quantserve.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting cms.quantserve.com inserted 3174 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "c0aa2f6b-3be7-4ddd-b479-172130ea673f",
+          "timestamp": 1795101337562,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "b1sync.outbrain.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting b1sync.outbrain.com inserted 3174 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "4cdd691d-8301-4eaa-908b-a822dd89eef6",
+          "timestamp": 1795101337562,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "pubmatic-match.dotomi.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting pubmatic-match.dotomi.com inserted 3175 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "cfe21d70-03ee-4ff8-a51b-44a0972cb0fc",
+          "timestamp": 1795101337562,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "dsp.360yield.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting dsp.360yield.com inserted 3175 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "7361cee0-2dc9-4bc6-8ce2-537acb73236e",
+          "timestamp": 1795101337562,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "dsp-cookie.adfarm1.adition.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting dsp-cookie.adfarm1.adition.com inserted 3175 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "e14e07c9-265b-4334-b351-b42c3034b282",
+          "timestamp": 1795101337562,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "ib.adnxs.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting ib.adnxs.com inserted 3175 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "251da04f-f82b-4bc7-9c00-9474d70a385f",
+          "timestamp": 1795101337562,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "sync.srv.stackadapt.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting sync.srv.stackadapt.com inserted 3175 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "1f651e0e-3559-4991-8402-df37407573f3",
+          "timestamp": 1795101337562,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "match.prod.bidr.io"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting match.prod.bidr.io inserted 3175 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "399b0652-d507-42fb-ad42-498f12677f57",
+          "timestamp": 1795101336890,
+          "confidence": "low",
+          "hostnames": [
+            "sync.connectad.io",
+            "pixel.rubiconproject.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting pixel.rubiconproject.com inserted 1011 ms after the frame loaded in a frame on sync.connectad.io."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "795a6abe-a140-4549-9e7b-e9cb5e4caefa",
+          "timestamp": 1795101336690,
+          "confidence": "low",
+          "hostnames": [
+            "sync.connectad.io",
+            "ap.lijit.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting ap.lijit.com inserted 812 ms after the frame loaded in a frame on sync.connectad.io."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "92c0bc07-ce77-4e8d-acda-065644f76502",
+          "timestamp": 1795101336489,
+          "confidence": "low",
+          "hostnames": [
+            "sync.connectad.io",
+            "x.bidswitch.net"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting x.bidswitch.net inserted 612 ms after the frame loaded in a frame on sync.connectad.io."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "9ab40bb0-639b-49e5-b98d-bce71805e811",
+          "timestamp": 1795101336288,
+          "confidence": "low",
+          "hostnames": [
+            "sync.connectad.io",
+            "cm.adform.net"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting cm.adform.net inserted 410 ms after the frame loaded in a frame on sync.connectad.io."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "b86a9f7f-ffc0-4e89-88e0-29e5dde54c1b",
+          "timestamp": 1795101336159,
+          "confidence": "low",
+          "hostnames": [
+            "dsp-service.adtarget.biz",
+            "prebid.a-mo.net"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting prebid.a-mo.net inserted 6 ms after the frame loaded in a frame on dsp-service.adtarget.biz."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "cffb67f1-f8f8-404b-8a86-32ecac8d6246",
+          "timestamp": 1795101336158,
+          "confidence": "low",
+          "hostnames": [
+            "dsp-service.adtarget.biz",
+            "image8.pubmatic.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting image8.pubmatic.com inserted 6 ms after the frame loaded in a frame on dsp-service.adtarget.biz."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "72353e96-1926-42ef-a6e9-c574be9a1873",
+          "timestamp": 1795101336088,
+          "confidence": "low",
+          "hostnames": [
+            "sync.connectad.io",
+            "u.openx.net"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting u.openx.net inserted 210 ms after the frame loaded in a frame on sync.connectad.io."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "286d4cf5-c416-45dc-8322-257e6f0f66ae",
+          "timestamp": 1795101335888,
+          "confidence": "low",
+          "hostnames": [
+            "sync.connectad.io",
+            "creativecdn.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting creativecdn.com inserted 10 ms after the frame loaded in a frame on sync.connectad.io."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "23977eb7-cdd3-49a2-a58d-8ed62b77d3d7",
+          "timestamp": 1795101335885,
+          "confidence": "low",
+          "hostnames": [
+            "sync.connectad.io",
+            "eus.rubiconproject.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting eus.rubiconproject.com inserted 7 ms after the frame loaded in a frame on sync.connectad.io."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "717aada7-286b-4f15-9045-cc90ee79b4c5",
+          "timestamp": 1795101335883,
+          "confidence": "low",
+          "hostnames": [
+            "sync.connectad.io",
+            "ib.adnxs.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting ib.adnxs.com inserted 4 ms after the frame loaded in a frame on sync.connectad.io."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "14d9aee4-a4ba-4973-8410-cbf7743a2f14",
+          "timestamp": 1795101335867,
+          "confidence": "low",
+          "hostnames": [
+            "js-sec.indexww.com",
+            "ssum-sec.casalemedia.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting ssum-sec.casalemedia.com inserted 12 ms after the frame loaded in a frame on js-sec.indexww.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "21a7dbbe-8b76-4e3c-afe3-5a6ab0390ac8",
+          "timestamp": 1795101334508,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "c1.adform.net"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 2,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting c1.adform.net inserted 119 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "6d0c9a80-b2f1-42da-a505-5cd173b9df6a",
+          "timestamp": 1795101334508,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "aax-eu.amazon-adsystem.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting aax-eu.amazon-adsystem.com inserted 121 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "10b550fd-0a00-4009-9a18-bff6fffc9bbb",
+          "timestamp": 1795101334508,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "creativecdn.com"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting creativecdn.com inserted 121 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        },
+        {
+          "ruleId": "page.hidden_iframe_after_load",
+          "severity": "suspicious",
+          "detectionId": "e923fd0a-78f8-4e1a-81b7-eb7a39eccacc",
+          "timestamp": 1795101334507,
+          "confidence": "low",
+          "hostnames": [
+            "ads.pubmatic.com",
+            "um.simpli.fi"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 1,
+          "summary": "A hidden cross-origin iframe was inserted after load.",
+          "evidence": [
+            "The page sensor observed a hidden cross-origin iframe targeting um.simpli.fi inserted 120 ms after the frame loaded in a frame on ads.pubmatic.com."
+          ]
+        }
+      ],
+      "repeatContacts": [],
+      "documentedOutcomes": [],
+      "thirdPartyDomainsList": [
+        "2mdn.net",
+        "360yield.com",
+        "4dex.io",
+        "a-mo.net",
+        "adform.net",
+        "adition.com",
+        "admanmedia.com",
+        "adnxs.com",
+        "adroll.com",
+        "adsafeprotected.com",
+        "adsrvr.org",
+        "adtarget.biz",
+        "adtrafficquality.google",
+        "amazon-adsystem.com",
+        "bidr.io",
+        "bidswitch.net",
+        "bidtheatre.com",
+        "blismedia.com",
+        "btrll.com",
+        "bttrack.com",
+        "casalemedia.com",
+        "chartbeat.com",
+        "chartbeat.net",
+        "clickagy.com",
+        "company-target.com",
+        "connatix.com",
+        "connectad.io",
+        "contextweb.com",
+        "creative-serving.com",
+        "creativecdn.com",
+        "criteo.com",
+        "crwdcntrl.net",
+        "de17a.com",
+        "demdex.net",
+        "disqus.com",
+        "dnacdn.net",
+        "dotomi.com",
+        "doubleclick.net",
+        "essrtb.com",
+        "eu-1-id5-sync.com",
+        "everesttech.net",
+        "google.com",
+        "google.no",
+        "googleapis.com",
+        "googlesyndication.com",
+        "googletagmanager.com",
+        "googletagservices.com",
+        "gstatic.com",
+        "hightouch-events.com",
+        "id5-sync.com",
+        "indexww.com",
+        "ipredictive.com",
+        "k5a.io",
+        "lijit.com",
+        "linkedin.com",
+        "loopme.me",
+        "mailmojo.no",
+        "mediagotechnology.com",
+        "nextmillmedia.com",
+        "onaudience.com",
+        "openx.net",
+        "opera.com",
+        "optinadserving.com",
+        "optoutadvertising.com",
+        "outbrain.com",
+        "primis.tech",
+        "pubmatic.com",
+        "quantserve.com",
+        "qvdt3feo.com",
+        "relevant-digital.com",
+        "rfihub.com",
+        "rlcdn.com",
+        "rubiconproject.com",
+        "rundsp.com",
+        "sanity.io",
+        "seedtag.com",
+        "seenthis.se",
+        "semasio.net",
+        "sharethrough.com",
+        "shb-sync.com",
+        "simpli.fi",
+        "sitescout.com",
+        "smartadserver.com",
+        "smartclip.net",
+        "smilewanted.com",
+        "springserve.com",
+        "stackadapt.com",
+        "tapad.com",
+        "tekjobb.no",
+        "tu.no",
+        "tumedia.no",
+        "turn.com",
+        "unite.as",
+        "windows.net",
+        "yahoo.com",
+        "zeotap.com"
+      ],
+      "alongside": [],
+      "alongsideAnchors": 0
+    },
+    {
+      "site": "www.dagensperspektiv.no",
+      "loaded": true,
+      "consent": null,
+      "article": true,
+      "events": 199,
+      "thirdPartyDomains": 21,
+      "detections": [],
+      "repeatContacts": [],
+      "documentedOutcomes": [],
+      "thirdPartyDomainsList": [
+        "adform.net",
+        "azerion.com",
+        "buyandread.com",
+        "dialogapi.no",
+        "doubleclick.net",
+        "facebook.com",
+        "facebook.net",
+        "google.com",
+        "google.no",
+        "googleapis.com",
+        "googletagmanager.com",
+        "googleusercontent.com",
+        "gstatic.com",
+        "hcaptcha.com",
+        "imghost.no",
+        "k5a.io",
+        "licdn.com",
+        "linkedin.com",
+        "mgid.com",
+        "partnerinnhold.no",
+        "reiseliv1.no"
+      ],
+      "alongside": [],
+      "alongsideAnchors": 0
+    },
+    {
+      "site": "www.dagensmedisin.no",
+      "loaded": true,
+      "consent": null,
+      "article": true,
+      "events": 271,
+      "thirdPartyDomains": 21,
+      "detections": [],
+      "repeatContacts": [],
+      "documentedOutcomes": [],
+      "thirdPartyDomainsList": [
+        "2mdn.net",
+        "adnami.io",
+        "adnuntius.com",
+        "adtrafficquality.google",
+        "cookiebot.com",
+        "dergan.net",
+        "doubleclick.net",
+        "facebook.com",
+        "facebook.net",
+        "google-analytics.com",
+        "google.com",
+        "google.no",
+        "googleapis.com",
+        "googlesyndication.com",
+        "googletagmanager.com",
+        "gstatic.com",
+        "k5a.io",
+        "licdn.com",
+        "mailmojo.no",
+        "mixpanel.com",
+        "mxpnl.com"
+      ],
+      "alongside": [],
+      "alongsideAnchors": 0
+    },
+    {
+      "site": "www.utdanningsnytt.no",
+      "loaded": true,
+      "consent": null,
+      "article": true,
+      "events": 171,
+      "thirdPartyDomains": 18,
+      "detections": [
+        {
+          "ruleId": "profiling.identifier_rich_request",
+          "severity": "suspicious",
+          "detectionId": "5c00cbc6-902e-4c99-9cef-44edfdee1ef5",
+          "timestamp": 1795101542844,
+          "confidence": "low",
+          "hostnames": [
+            "utdanningsforbundet.matomo.cloud"
+          ],
+          "matchedIndicatorIds": [],
+          "occurrenceCount": 2,
+          "summary": "A third-party advertising request carried a parameter name suggesting cookie material.",
+          "evidence": [
+            "Identifier categories present: cookie_material; cookie-material parameter name present. Values were not recorded."
+          ]
+        }
+      ],
+      "repeatContacts": [],
+      "documentedOutcomes": [],
+      "thirdPartyDomainsList": [
+        "acast.cloud",
+        "acast.com",
+        "adnuntius.com",
+        "amazonaws.com",
+        "cookieinformation.com",
+        "facebook.com",
+        "facebook.net",
+        "google-analytics.com",
+        "googleapis.com",
+        "googletagmanager.com",
+        "gstatic.com",
+        "k5a.io",
+        "mailmojo.no",
+        "matomo.cloud",
+        "run.app",
+        "scorecardresearch.com",
+        "sleeknote.com",
+        "vimeo.com"
+      ],
+      "alongside": [],
+      "alongsideAnchors": 0
+    },
+    {
+      "site": "www.altinget.no",
+      "loaded": true,
+      "consent": null,
+      "article": true,
+      "events": 406,
+      "thirdPartyDomains": 23,
+      "detections": [],
+      "repeatContacts": [],
+      "documentedOutcomes": [],
+      "thirdPartyDomainsList": [
+        "adnuntius.com",
+        "bing.com",
+        "clarity.ms",
+        "cloudflareinsights.com",
+        "contentsquare.net",
+        "cookiebot.com",
+        "doubleclick.net",
+        "facebook.com",
+        "facebook.net",
+        "google.com",
+        "google.no",
+        "googletagmanager.com",
+        "hs-analytics.net",
+        "hs-banner.com",
+        "hs-scripts.com",
+        "hsforms.com",
+        "hubspot.com",
+        "jsdelivr.net",
+        "k5a.io",
+        "licdn.com",
+        "linkedin.com",
+        "vimeocdn.com",
+        "visualwebsiteoptimizer.com"
+      ],
+      "alongside": [],
+      "alongsideAnchors": 0
+    },
+    {
+      "site": "www.universitetsavisa.no",
+      "loaded": true,
+      "consent": null,
+      "article": true,
+      "events": 160,
+      "thirdPartyDomains": 11,
+      "detections": [],
+      "repeatContacts": [],
+      "documentedOutcomes": [],
+      "thirdPartyDomainsList": [
+        "adnuntius.com",
+        "atmng.io",
+        "disqus.com",
+        "disquscdn.com",
+        "doubleclick.net",
+        "google.com",
+        "google.no",
+        "googleapis.com",
+        "googletagmanager.com",
+        "gstatic.com",
+        "k5a.io"
+      ],
+      "alongside": [],
+      "alongsideAnchors": 0
+    },
+    {
+      "site": "www.kode24.no",
+      "loaded": true,
+      "consent": null,
+      "article": true,
+      "events": 131,
+      "thirdPartyDomains": 11,
+      "detections": [],
+      "repeatContacts": [],
+      "documentedOutcomes": [],
+      "thirdPartyDomainsList": [
+        "cloudflare.com",
+        "googleapis.com",
+        "gstatic.com",
+        "hyvor.com",
+        "jsdelivr.net",
+        "k5a.io",
+        "medialaben.no",
+        "medietall.no",
+        "onrender.com",
+        "plausible.io",
+        "privacy-center.org"
+      ],
+      "alongside": [],
+      "alongsideAnchors": 0
+    },
+    {
+      "site": "www.samordnaopptak.no",
+      "loaded": true,
+      "consent": null,
+      "article": true,
+      "events": 101,
+      "thirdPartyDomains": 5,
+      "detections": [],
+      "repeatContacts": [],
+      "documentedOutcomes": [],
+      "thirdPartyDomainsList": [
+        "googletagmanager.com",
+        "run.app",
+        "siteimproveanalytics.com",
+        "siteimproveanalytics.io",
+        "uio.no"
+      ],
+      "alongside": [],
+      "alongsideAnchors": 0
+    },
+    {
+      "site": "www.regjeringen.no",
+      "loaded": true,
+      "consent": null,
+      "article": true,
+      "events": 65,
+      "thirdPartyDomains": 1,
+      "detections": [],
+      "repeatContacts": [],
+      "documentedOutcomes": [],
+      "thirdPartyDomainsList": [
+        "azure.com"
+      ],
+      "alongside": [],
+      "alongsideAnchors": 0
+    },
+    {
+      "site": "www.uio.no",
+      "loaded": true,
+      "consent": null,
+      "article": true,
+      "events": 88,
+      "thirdPartyDomains": 2,
+      "detections": [],
+      "repeatContacts": [],
+      "documentedOutcomes": [],
+      "thirdPartyDomainsList": [
+        "googletagmanager.com",
+        "run.app"
+      ],
+      "alongside": [],
+      "alongsideAnchors": 0
+    }
+  ]
+}
