@@ -1,21 +1,21 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-22T15:00:14.762Z",
+  "generatedAt": "2026-11-23T14:55:34.381Z",
   "period": {
     "from": "2026-11-02",
-    "to": "2026-11-22",
-    "days": 21,
-    "calendarDays": 21
+    "to": "2026-11-23",
+    "days": 22,
+    "calendarDays": 22
   },
   "rigs": [
     {
       "rig": "rig-1",
       "country": "NO",
       "network": "home",
-      "days": 21,
-      "runs": 171,
+      "days": 22,
+      "runs": 180,
       "variants": 13,
-      "contacts": 47,
+      "contacts": 51,
       "hosts": 2
     }
   ],
@@ -4783,13 +4783,265 @@
       "noisy": 71,
       "contacts": 0,
       "strong": 0
+    },
+    {
+      "file": "data/runs/2026-11-23-rig-1-chromium.json",
+      "evidence": "data/runs/2026-11-23-rig-1-chromium.evidence.json",
+      "report": "data/reports/2026-11-23-rig-1-chromium.md",
+      "date": "2026-11-23",
+      "rig": "rig-1",
+      "variant": "chromium",
+      "slug": "chromium",
+      "browser": "chromium",
+      "device": null,
+      "etpOff": false,
+      "siteList": "tests/fixtures/exposure-sites.txt",
+      "seconds": 60,
+      "sites": 50,
+      "loaded": 50,
+      "consent": 1,
+      "requests": 21146,
+      "thirdPartyMedian": 27,
+      "bySev": {
+        "high_priority": 0,
+        "elevated": 0,
+        "suspicious": 1,
+        "informational": 1
+      },
+      "noisy": 62,
+      "contacts": 1,
+      "strong": 0
+    },
+    {
+      "file": "data/runs/2026-11-23-rig-1-chromium-iphone-15.json",
+      "evidence": "data/runs/2026-11-23-rig-1-chromium-iphone-15.evidence.json",
+      "report": "data/reports/2026-11-23-rig-1-chromium-iphone-15.md",
+      "date": "2026-11-23",
+      "rig": "rig-1",
+      "variant": "chromium / iPhone 15",
+      "slug": "chromium-iphone-15",
+      "browser": "chromium",
+      "device": "iPhone 15",
+      "etpOff": false,
+      "siteList": "tests/fixtures/exposure-sites.txt",
+      "seconds": 60,
+      "sites": 50,
+      "loaded": 50,
+      "consent": 0,
+      "requests": 29235,
+      "thirdPartyMedian": 33,
+      "bySev": {
+        "high_priority": 0,
+        "elevated": 0,
+        "suspicious": 0,
+        "informational": 0
+      },
+      "noisy": 91,
+      "contacts": 0,
+      "strong": 0
+    },
+    {
+      "file": "data/runs/2026-11-23-rig-1-chromium-mena-africa.json",
+      "evidence": "data/runs/2026-11-23-rig-1-chromium-mena-africa.evidence.json",
+      "report": "data/reports/2026-11-23-rig-1-chromium-mena-africa.md",
+      "date": "2026-11-23",
+      "rig": "rig-1",
+      "variant": "chromium / mena-africa",
+      "slug": "chromium-mena-africa",
+      "browser": "chromium",
+      "device": null,
+      "etpOff": false,
+      "siteList": "tests/fixtures/mena-africa.txt",
+      "seconds": 60,
+      "sites": 25,
+      "loaded": 25,
+      "consent": 0,
+      "requests": 4477,
+      "thirdPartyMedian": 1,
+      "bySev": {
+        "high_priority": 0,
+        "elevated": 0,
+        "suspicious": 0,
+        "informational": 0
+      },
+      "noisy": 52,
+      "contacts": 0,
+      "strong": 0
+    },
+    {
+      "file": "data/runs/2026-11-23-rig-1-chromium-norway.json",
+      "evidence": "data/runs/2026-11-23-rig-1-chromium-norway.evidence.json",
+      "report": "data/reports/2026-11-23-rig-1-chromium-norway.md",
+      "date": "2026-11-23",
+      "rig": "rig-1",
+      "variant": "chromium / norway",
+      "slug": "chromium-norway",
+      "browser": "chromium",
+      "device": null,
+      "etpOff": false,
+      "siteList": "tests/fixtures/norway.txt",
+      "seconds": 60,
+      "sites": 24,
+      "loaded": 24,
+      "consent": 0,
+      "requests": 13021,
+      "thirdPartyMedian": 31,
+      "bySev": {
+        "high_priority": 0,
+        "elevated": 0,
+        "suspicious": 0,
+        "informational": 0
+      },
+      "noisy": 42,
+      "contacts": 0,
+      "strong": 0
+    },
+    {
+      "file": "data/runs/2026-11-23-rig-1-chromium-pixel-5.json",
+      "evidence": "data/runs/2026-11-23-rig-1-chromium-pixel-5.evidence.json",
+      "report": "data/reports/2026-11-23-rig-1-chromium-pixel-5.md",
+      "date": "2026-11-23",
+      "rig": "rig-1",
+      "variant": "chromium / Pixel 5",
+      "slug": "chromium-pixel-5",
+      "browser": "chromium",
+      "device": "Pixel 5",
+      "etpOff": false,
+      "siteList": "tests/fixtures/exposure-sites.txt",
+      "seconds": 60,
+      "sites": 50,
+      "loaded": 50,
+      "consent": 0,
+      "requests": 33415,
+      "thirdPartyMedian": 38,
+      "bySev": {
+        "high_priority": 0,
+        "elevated": 0,
+        "suspicious": 1,
+        "informational": 1
+      },
+      "noisy": 159,
+      "contacts": 3,
+      "strong": 0
+    },
+    {
+      "file": "data/runs/2026-11-23-rig-1-chromium-pixel-5-mena-africa.json",
+      "evidence": "data/runs/2026-11-23-rig-1-chromium-pixel-5-mena-africa.evidence.json",
+      "report": "data/reports/2026-11-23-rig-1-chromium-pixel-5-mena-africa.md",
+      "date": "2026-11-23",
+      "rig": "rig-1",
+      "variant": "chromium / Pixel 5 / mena-africa",
+      "slug": "chromium-pixel-5-mena-africa",
+      "browser": "chromium",
+      "device": "Pixel 5",
+      "etpOff": false,
+      "siteList": "tests/fixtures/mena-africa.txt",
+      "seconds": 60,
+      "sites": 25,
+      "loaded": 25,
+      "consent": 0,
+      "requests": 8394,
+      "thirdPartyMedian": 22,
+      "bySev": {
+        "high_priority": 0,
+        "elevated": 0,
+        "suspicious": 0,
+        "informational": 0
+      },
+      "noisy": 58,
+      "contacts": 0,
+      "strong": 0
+    },
+    {
+      "file": "data/runs/2026-11-23-rig-1-chromium-pixel-5-norway.json",
+      "evidence": "data/runs/2026-11-23-rig-1-chromium-pixel-5-norway.evidence.json",
+      "report": "data/reports/2026-11-23-rig-1-chromium-pixel-5-norway.md",
+      "date": "2026-11-23",
+      "rig": "rig-1",
+      "variant": "chromium / Pixel 5 / norway",
+      "slug": "chromium-pixel-5-norway",
+      "browser": "chromium",
+      "device": "Pixel 5",
+      "etpOff": false,
+      "siteList": "tests/fixtures/norway.txt",
+      "seconds": 60,
+      "sites": 24,
+      "loaded": 24,
+      "consent": 0,
+      "requests": 11991,
+      "thirdPartyMedian": 32,
+      "bySev": {
+        "high_priority": 0,
+        "elevated": 0,
+        "suspicious": 0,
+        "informational": 0
+      },
+      "noisy": 40,
+      "contacts": 0,
+      "strong": 0
+    },
+    {
+      "file": "data/runs/2026-11-23-rig-1-firefox.json",
+      "evidence": "data/runs/2026-11-23-rig-1-firefox.evidence.json",
+      "report": "data/reports/2026-11-23-rig-1-firefox.md",
+      "date": "2026-11-23",
+      "rig": "rig-1",
+      "variant": "firefox",
+      "slug": "firefox",
+      "browser": "firefox",
+      "device": null,
+      "etpOff": false,
+      "siteList": "tests/fixtures/exposure-sites.txt",
+      "seconds": 60,
+      "sites": 50,
+      "loaded": 50,
+      "consent": 1,
+      "requests": 40490,
+      "thirdPartyMedian": 42,
+      "bySev": {
+        "high_priority": 0,
+        "elevated": 0,
+        "suspicious": 10,
+        "informational": 36
+      },
+      "noisy": 553,
+      "contacts": 0,
+      "strong": 0
+    },
+    {
+      "file": "data/runs/2026-11-23-rig-1-firefox-norway-sector.json",
+      "evidence": "data/runs/2026-11-23-rig-1-firefox-norway-sector.evidence.json",
+      "report": "data/reports/2026-11-23-rig-1-firefox-norway-sector.md",
+      "date": "2026-11-23",
+      "rig": "rig-1",
+      "variant": "firefox / norway-sector",
+      "slug": "firefox-norway-sector",
+      "browser": "firefox",
+      "device": null,
+      "etpOff": false,
+      "siteList": "tests/fixtures/norway-sector.txt",
+      "seconds": 60,
+      "sites": 15,
+      "loaded": 15,
+      "consent": 0,
+      "requests": 4971,
+      "thirdPartyMedian": 18,
+      "bySev": {
+        "high_priority": 0,
+        "elevated": 0,
+        "suspicious": 3,
+        "informational": 3
+      },
+      "noisy": 72,
+      "contacts": 0,
+      "strong": 0
     }
   ],
   "hosts": [
     {
       "host": "events.myweb3id.io",
       "first": "2026-11-02",
-      "last": "2026-11-22",
+      "last": "2026-11-23",
       "days": [
         "2026-11-02",
         "2026-11-07",
@@ -4807,7 +5059,8 @@
         "2026-11-19",
         "2026-11-20",
         "2026-11-21",
-        "2026-11-22"
+        "2026-11-22",
+        "2026-11-23"
       ],
       "variants": [
         "chromium",
@@ -5427,6 +5680,56 @@
         "events.myweb3id.io"
       ],
       "repeat": true
+    },
+    {
+      "date": "2026-11-23",
+      "rig": "rig-1",
+      "variant": "chromium",
+      "slug": "chromium",
+      "site": "www.gazeta.ru",
+      "ruleId": "known_infra.surveillance_contact",
+      "severity": "suspicious",
+      "hostnames": [
+        "events.myweb3id.io"
+      ]
+    },
+    {
+      "date": "2026-11-23",
+      "rig": "rig-1",
+      "variant": "chromium / Pixel 5",
+      "slug": "chromium-pixel-5",
+      "site": "lenta.ru",
+      "ruleId": "known_infra.surveillance_contact",
+      "severity": "suspicious",
+      "hostnames": [
+        "events.myweb3id.io"
+      ]
+    },
+    {
+      "date": "2026-11-23",
+      "rig": "rig-1",
+      "variant": "chromium / Pixel 5",
+      "slug": "chromium-pixel-5",
+      "site": "ria.ru",
+      "ruleId": "known_infra.surveillance_contact",
+      "severity": "suspicious",
+      "hostnames": [
+        "events.myweb3id.io"
+      ],
+      "repeat": true
+    },
+    {
+      "date": "2026-11-23",
+      "rig": "rig-1",
+      "variant": "chromium / Pixel 5",
+      "slug": "chromium-pixel-5",
+      "site": "www.gazeta.ru",
+      "ruleId": "known_infra.surveillance_contact",
+      "severity": "suspicious",
+      "hostnames": [
+        "events.myweb3id.io"
+      ],
+      "repeat": true
     }
   ],
   "outcomes": [
@@ -6021,6 +6324,70 @@
       "via": [
         "yastatic.net"
       ]
+    },
+    {
+      "date": "2026-11-23",
+      "rig": "rig-1",
+      "variant": "chromium",
+      "site": "www.gazeta.ru",
+      "host": "events.myweb3id.io",
+      "indicator": "adf-0081",
+      "requests": 1,
+      "statuses": {},
+      "failures": {
+        "net::ERR_NAME_NOT_RESOLVED": 1
+      },
+      "via": [
+        "yastatic.net"
+      ]
+    },
+    {
+      "date": "2026-11-23",
+      "rig": "rig-1",
+      "variant": "chromium / Pixel 5",
+      "site": "lenta.ru",
+      "host": "events.myweb3id.io",
+      "indicator": "adf-0081",
+      "requests": 1,
+      "statuses": {},
+      "failures": {
+        "net::ERR_NAME_NOT_RESOLVED": 1
+      },
+      "via": [
+        "yastatic.net"
+      ]
+    },
+    {
+      "date": "2026-11-23",
+      "rig": "rig-1",
+      "variant": "chromium / Pixel 5",
+      "site": "ria.ru",
+      "host": "events.myweb3id.io",
+      "indicator": "adf-0081",
+      "requests": 1,
+      "statuses": {},
+      "failures": {
+        "net::ERR_NAME_NOT_RESOLVED": 1
+      },
+      "via": [
+        "yastatic.net"
+      ]
+    },
+    {
+      "date": "2026-11-23",
+      "rig": "rig-1",
+      "variant": "chromium / Pixel 5",
+      "site": "www.gazeta.ru",
+      "host": "events.myweb3id.io",
+      "indicator": "adf-0081",
+      "requests": 1,
+      "statuses": {},
+      "failures": {
+        "net::ERR_NAME_NOT_RESOLVED": 1
+      },
+      "via": [
+        "yastatic.net"
+      ]
     }
   ],
   "flows": [
@@ -6058,12 +6425,50 @@
         "2026-11-19",
         "2026-11-20",
         "2026-11-21",
-        "2026-11-22"
+        "2026-11-22",
+        "2026-11-23"
       ],
       "rigs": [
         "rig-1"
       ],
       "variants": [
+        "chromium / Pixel 5"
+      ]
+    },
+    {
+      "site": "ria.ru",
+      "host": "events.myweb3id.io",
+      "indicator": "adf-0081",
+      "role": "delivery",
+      "stage": "delivery",
+      "frame": {
+        "title": "Ad frame",
+        "hosts": [
+          "yastatic.net"
+        ]
+      },
+      "outcomeClass": "failed",
+      "outcome": "Did not complete: the name no longer resolves (net::ERR_NAME_NOT_RESOLVED)",
+      "reading": {
+        "text": "Contact with documented delivery or staging infrastructure. The request did not complete, so nothing came back.",
+        "attention": false
+      },
+      "repeat": true,
+      "dates": [
+        "2026-11-09",
+        "2026-11-11",
+        "2026-11-12",
+        "2026-11-14",
+        "2026-11-15",
+        "2026-11-17",
+        "2026-11-18",
+        "2026-11-23"
+      ],
+      "rigs": [
+        "rig-1"
+      ],
+      "variants": [
+        "chromium",
         "chromium / Pixel 5"
       ]
     },
@@ -6100,43 +6505,8 @@
         "2026-11-18",
         "2026-11-19",
         "2026-11-20",
-        "2026-11-22"
-      ],
-      "rigs": [
-        "rig-1"
-      ],
-      "variants": [
-        "chromium",
-        "chromium / Pixel 5"
-      ]
-    },
-    {
-      "site": "ria.ru",
-      "host": "events.myweb3id.io",
-      "indicator": "adf-0081",
-      "role": "delivery",
-      "stage": "delivery",
-      "frame": {
-        "title": "Ad frame",
-        "hosts": [
-          "yastatic.net"
-        ]
-      },
-      "outcomeClass": "failed",
-      "outcome": "Did not complete: the name no longer resolves (net::ERR_NAME_NOT_RESOLVED)",
-      "reading": {
-        "text": "Contact with documented delivery or staging infrastructure. The request did not complete, so nothing came back.",
-        "attention": false
-      },
-      "repeat": true,
-      "dates": [
-        "2026-11-09",
-        "2026-11-11",
-        "2026-11-12",
-        "2026-11-14",
-        "2026-11-15",
-        "2026-11-17",
-        "2026-11-18"
+        "2026-11-22",
+        "2026-11-23"
       ],
       "rigs": [
         "rig-1"
@@ -6290,16 +6660,16 @@
   ],
   "alongside": {
     "minSiteDays": 2,
-    "runsWithData": 144,
-    "runsTotal": 171,
-    "visitsWithData": 5008,
-    "anchorVisits": 42,
+    "runsWithData": 153,
+    "runsTotal": 180,
+    "visitsWithData": 5321,
+    "anchorVisits": 46,
     "frameHosts": 55,
     "rows": [
       {
         "host": "ads-media.wildberries.ru",
-        "siteDays": 39,
-        "seenSiteDays": 39,
+        "siteDays": 42,
+        "seenSiteDays": 42,
         "share": 1,
         "anchors": [
           "adf-0081"
@@ -6310,8 +6680,8 @@
       },
       {
         "host": "cmr.bidderstack.com",
-        "siteDays": 39,
-        "seenSiteDays": 39,
+        "siteDays": 42,
+        "seenSiteDays": 42,
         "share": 1,
         "anchors": [
           "adf-0081"
@@ -6322,8 +6692,8 @@
       },
       {
         "host": "cs.ifedata.ru",
-        "siteDays": 39,
-        "seenSiteDays": 39,
+        "siteDays": 42,
+        "seenSiteDays": 42,
         "share": 1,
         "anchors": [
           "adf-0081"
@@ -6334,8 +6704,8 @@
       },
       {
         "host": "dsp.mpartner.digital",
-        "siteDays": 39,
-        "seenSiteDays": 39,
+        "siteDays": 42,
+        "seenSiteDays": 42,
         "share": 1,
         "anchors": [
           "adf-0081"
@@ -6346,8 +6716,8 @@
       },
       {
         "host": "eye.targetads.io",
-        "siteDays": 39,
-        "seenSiteDays": 39,
+        "siteDays": 42,
+        "seenSiteDays": 42,
         "share": 1,
         "anchors": [
           "adf-0081"
@@ -6358,8 +6728,8 @@
       },
       {
         "host": "mitdmp.whiteboxdigital.ru",
-        "siteDays": 39,
-        "seenSiteDays": 39,
+        "siteDays": 42,
+        "seenSiteDays": 42,
         "share": 1,
         "anchors": [
           "adf-0081"
@@ -6370,8 +6740,8 @@
       },
       {
         "host": "nr.bidderstack.com",
-        "siteDays": 39,
-        "seenSiteDays": 39,
+        "siteDays": 42,
+        "seenSiteDays": 42,
         "share": 1,
         "anchors": [
           "adf-0081"
@@ -6382,8 +6752,8 @@
       },
       {
         "host": "pixel.dsp.onetarget.ru",
-        "siteDays": 39,
-        "seenSiteDays": 39,
+        "siteDays": 42,
+        "seenSiteDays": 42,
         "share": 1,
         "anchors": [
           "adf-0081"
@@ -6394,8 +6764,8 @@
       },
       {
         "host": "px.arcspire.io",
-        "siteDays": 39,
-        "seenSiteDays": 39,
+        "siteDays": 42,
+        "seenSiteDays": 42,
         "share": 1,
         "anchors": [
           "adf-0081"
@@ -6406,8 +6776,8 @@
       },
       {
         "host": "rtb-eu-warsaw.intent.ai",
-        "siteDays": 39,
-        "seenSiteDays": 39,
+        "siteDays": 42,
+        "seenSiteDays": 42,
         "share": 1,
         "anchors": [
           "adf-0081"
@@ -6418,8 +6788,8 @@
       },
       {
         "host": "rtb.dynotech.io",
-        "siteDays": 39,
-        "seenSiteDays": 39,
+        "siteDays": 42,
+        "seenSiteDays": 42,
         "share": 1,
         "anchors": [
           "adf-0081"
@@ -6430,8 +6800,8 @@
       },
       {
         "host": "s.uuidksinc.net",
-        "siteDays": 39,
-        "seenSiteDays": 39,
+        "siteDays": 42,
+        "seenSiteDays": 42,
         "share": 1,
         "anchors": [
           "adf-0081"
@@ -6442,8 +6812,8 @@
       },
       {
         "host": "shopnetic.com",
-        "siteDays": 39,
-        "seenSiteDays": 39,
+        "siteDays": 42,
+        "seenSiteDays": 42,
         "share": 1,
         "anchors": [
           "adf-0081"
@@ -6454,8 +6824,8 @@
       },
       {
         "host": "sync.gonet-ads.com",
-        "siteDays": 39,
-        "seenSiteDays": 39,
+        "siteDays": 42,
+        "seenSiteDays": 42,
         "share": 1,
         "anchors": [
           "adf-0081"
@@ -6466,8 +6836,8 @@
       },
       {
         "host": "sync1.adlook.online",
-        "siteDays": 39,
-        "seenSiteDays": 39,
+        "siteDays": 42,
+        "seenSiteDays": 42,
         "share": 1,
         "anchors": [
           "adf-0081"
@@ -6478,8 +6848,8 @@
       },
       {
         "host": "tracker.smartcallback.ru",
-        "siteDays": 39,
-        "seenSiteDays": 39,
+        "siteDays": 42,
+        "seenSiteDays": 42,
         "share": 1,
         "anchors": [
           "adf-0081"
@@ -6490,8 +6860,8 @@
       },
       {
         "host": "tt.ttarget.ru",
-        "siteDays": 39,
-        "seenSiteDays": 39,
+        "siteDays": 42,
+        "seenSiteDays": 42,
         "share": 1,
         "anchors": [
           "adf-0081"
@@ -6502,9 +6872,9 @@
       },
       {
         "host": "*.cm.a.mts.ru",
-        "siteDays": 39,
-        "seenSiteDays": 40,
-        "share": 0.975,
+        "siteDays": 42,
+        "seenSiteDays": 43,
+        "share": 0.9767441860465116,
         "anchors": [
           "adf-0081"
         ],
@@ -6514,9 +6884,9 @@
       },
       {
         "host": "*.dsp.mts.ru",
-        "siteDays": 39,
-        "seenSiteDays": 40,
-        "share": 0.975,
+        "siteDays": 42,
+        "seenSiteDays": 43,
+        "share": 0.9767441860465116,
         "anchors": [
           "adf-0081"
         ],
@@ -6526,9 +6896,9 @@
       },
       {
         "host": "cm.a.mts.ru",
-        "siteDays": 39,
-        "seenSiteDays": 40,
-        "share": 0.975,
+        "siteDays": 42,
+        "seenSiteDays": 43,
+        "share": 0.9767441860465116,
         "anchors": [
           "adf-0081"
         ],
@@ -6538,9 +6908,9 @@
       },
       {
         "host": "match.targetrtb.com",
-        "siteDays": 39,
-        "seenSiteDays": 40,
-        "share": 0.975,
+        "siteDays": 42,
+        "seenSiteDays": 43,
+        "share": 0.9767441860465116,
         "anchors": [
           "adf-0081"
         ],
@@ -6550,9 +6920,9 @@
       },
       {
         "host": "sm.rtb.mts.ru",
-        "siteDays": 39,
-        "seenSiteDays": 40,
-        "share": 0.975,
+        "siteDays": 42,
+        "seenSiteDays": 43,
+        "share": 0.9767441860465116,
         "anchors": [
           "adf-0081"
         ],
@@ -6562,9 +6932,9 @@
       },
       {
         "host": "sp.linkssp.ru",
-        "siteDays": 39,
-        "seenSiteDays": 40,
-        "share": 0.975,
+        "siteDays": 42,
+        "seenSiteDays": 43,
+        "share": 0.9767441860465116,
         "anchors": [
           "adf-0081"
         ],
@@ -6574,9 +6944,9 @@
       },
       {
         "host": "ssp-statistics.dsp.nt.technology",
-        "siteDays": 39,
-        "seenSiteDays": 40,
-        "share": 0.975,
+        "siteDays": 42,
+        "seenSiteDays": 43,
+        "share": 0.9767441860465116,
         "anchors": [
           "adf-0081"
         ],
@@ -6586,9 +6956,9 @@
       },
       {
         "host": "sync.upravel.com",
-        "siteDays": 39,
-        "seenSiteDays": 40,
-        "share": 0.975,
+        "siteDays": 42,
+        "seenSiteDays": 43,
+        "share": 0.9767441860465116,
         "anchors": [
           "adf-0081"
         ],
@@ -6598,9 +6968,9 @@
       },
       {
         "host": "yandex-dmp-sync.rutarget.ru",
-        "siteDays": 39,
-        "seenSiteDays": 40,
-        "share": 0.975,
+        "siteDays": 42,
+        "seenSiteDays": 43,
+        "share": 0.9767441860465116,
         "anchors": [
           "adf-0081"
         ],
@@ -6610,9 +6980,9 @@
       },
       {
         "host": "yandex-sync.rutarget.ru",
-        "siteDays": 39,
-        "seenSiteDays": 40,
-        "share": 0.975,
+        "siteDays": 42,
+        "seenSiteDays": 43,
+        "share": 0.9767441860465116,
         "anchors": [
           "adf-0081"
         ],
@@ -6622,9 +6992,9 @@
       },
       {
         "host": "kimberlite.io",
-        "siteDays": 39,
-        "seenSiteDays": 42,
-        "share": 0.9285714285714286,
+        "siteDays": 42,
+        "seenSiteDays": 45,
+        "share": 0.9333333333333333,
         "anchors": [
           "adf-0081"
         ],
@@ -6634,9 +7004,9 @@
       },
       {
         "host": "ck.silvermob.com",
-        "siteDays": 39,
-        "seenSiteDays": 50,
-        "share": 0.78,
+        "siteDays": 42,
+        "seenSiteDays": 54,
+        "share": 0.7777777777777778,
         "anchors": [
           "adf-0081"
         ],
@@ -6646,9 +7016,9 @@
       },
       {
         "host": "dm.hybrid.ai",
-        "siteDays": 39,
-        "seenSiteDays": 56,
-        "share": 0.6964285714285714,
+        "siteDays": 42,
+        "seenSiteDays": 60,
+        "share": 0.7,
         "anchors": [
           "adf-0081"
         ],
@@ -6658,9 +7028,9 @@
       },
       {
         "host": "dmg.digitaltarget.ru",
-        "siteDays": 39,
-        "seenSiteDays": 56,
-        "share": 0.6964285714285714,
+        "siteDays": 42,
+        "seenSiteDays": 60,
+        "share": 0.7,
         "anchors": [
           "adf-0081"
         ],
@@ -6670,9 +7040,9 @@
       },
       {
         "host": "sync.bumlam.com",
-        "siteDays": 39,
-        "seenSiteDays": 56,
-        "share": 0.6964285714285714,
+        "siteDays": 42,
+        "seenSiteDays": 60,
+        "share": 0.7,
         "anchors": [
           "adf-0081"
         ],
@@ -6682,9 +7052,9 @@
       },
       {
         "host": "bs.serving-sys.ru",
-        "siteDays": 39,
-        "seenSiteDays": 57,
-        "share": 0.6842105263157895,
+        "siteDays": 42,
+        "seenSiteDays": 61,
+        "share": 0.6885245901639344,
         "anchors": [
           "adf-0081"
         ],
@@ -6694,9 +7064,9 @@
       },
       {
         "host": "px4.admon.pro",
-        "siteDays": 39,
-        "seenSiteDays": 57,
-        "share": 0.6842105263157895,
+        "siteDays": 42,
+        "seenSiteDays": 61,
+        "share": 0.6885245901639344,
         "anchors": [
           "adf-0081"
         ],
@@ -6706,9 +7076,9 @@
       },
       {
         "host": "px.adhigh.net",
-        "siteDays": 39,
-        "seenSiteDays": 58,
-        "share": 0.6724137931034483,
+        "siteDays": 42,
+        "seenSiteDays": 62,
+        "share": 0.6774193548387096,
         "anchors": [
           "adf-0081"
         ],
@@ -6718,9 +7088,9 @@
       },
       {
         "host": "x01.aidata.io",
-        "siteDays": 39,
-        "seenSiteDays": 59,
-        "share": 0.6610169491525424,
+        "siteDays": 42,
+        "seenSiteDays": 63,
+        "share": 0.6666666666666666,
         "anchors": [
           "adf-0081"
         ],
@@ -6730,9 +7100,9 @@
       },
       {
         "host": "redirect-frontend.weborama-tech.ru",
-        "siteDays": 39,
-        "seenSiteDays": 61,
-        "share": 0.639344262295082,
+        "siteDays": 42,
+        "seenSiteDays": 65,
+        "share": 0.6461538461538462,
         "anchors": [
           "adf-0081"
         ],
@@ -6742,9 +7112,9 @@
       },
       {
         "host": "cm.tns-counter.ru",
-        "siteDays": 39,
-        "seenSiteDays": 64,
-        "share": 0.609375,
+        "siteDays": 42,
+        "seenSiteDays": 68,
+        "share": 0.6176470588235294,
         "anchors": [
           "adf-0081"
         ],
@@ -6754,9 +7124,9 @@
       },
       {
         "host": "sync.adsp.io",
-        "siteDays": 39,
-        "seenSiteDays": 66,
-        "share": 0.5909090909090909,
+        "siteDays": 42,
+        "seenSiteDays": 71,
+        "share": 0.5915492957746479,
         "anchors": [
           "adf-0081"
         ],
@@ -6766,9 +7136,9 @@
       },
       {
         "host": "a.ussp.io",
-        "siteDays": 39,
-        "seenSiteDays": 73,
-        "share": 0.5342465753424658,
+        "siteDays": 42,
+        "seenSiteDays": 78,
+        "share": 0.5384615384615384,
         "anchors": [
           "adf-0081"
         ],
@@ -6778,9 +7148,9 @@
       },
       {
         "host": "acint.net",
-        "siteDays": 39,
-        "seenSiteDays": 73,
-        "share": 0.5342465753424658,
+        "siteDays": 42,
+        "seenSiteDays": 78,
+        "share": 0.5384615384615384,
         "anchors": [
           "adf-0081"
         ],
@@ -6790,9 +7160,9 @@
       },
       {
         "host": "match.new-programmatic.com",
-        "siteDays": 39,
-        "seenSiteDays": 73,
-        "share": 0.5342465753424658,
+        "siteDays": 42,
+        "seenSiteDays": 78,
+        "share": 0.5384615384615384,
         "anchors": [
           "adf-0081"
         ],
@@ -6802,9 +7172,9 @@
       },
       {
         "host": "ssp.al-adtech.com",
-        "siteDays": 39,
-        "seenSiteDays": 74,
-        "share": 0.527027027027027,
+        "siteDays": 42,
+        "seenSiteDays": 79,
+        "share": 0.5316455696202531,
         "anchors": [
           "adf-0081"
         ],
@@ -6814,9 +7184,9 @@
       },
       {
         "host": "sync.dmp.otm-r.com",
-        "siteDays": 39,
-        "seenSiteDays": 78,
-        "share": 0.5,
+        "siteDays": 42,
+        "seenSiteDays": 83,
+        "share": 0.5060240963855421,
         "anchors": [
           "adf-0081"
         ],
@@ -6826,9 +7196,9 @@
       },
       {
         "host": "yastatic.net",
-        "siteDays": 39,
-        "seenSiteDays": 80,
-        "share": 0.4875,
+        "siteDays": 42,
+        "seenSiteDays": 85,
+        "share": 0.49411764705882355,
         "anchors": [
           "adf-0081"
         ],
@@ -6838,9 +7208,9 @@
       },
       {
         "host": "ssp-rtb.sape.ru",
-        "siteDays": 39,
-        "seenSiteDays": 81,
-        "share": 0.48148148148148145,
+        "siteDays": 42,
+        "seenSiteDays": 86,
+        "share": 0.4883720930232558,
         "anchors": [
           "adf-0081"
         ],
@@ -6850,9 +7220,9 @@
       },
       {
         "host": "exchange.buzzoola.com",
-        "siteDays": 39,
-        "seenSiteDays": 98,
-        "share": 0.3979591836734694,
+        "siteDays": 42,
+        "seenSiteDays": 104,
+        "share": 0.40384615384615385,
         "anchors": [
           "adf-0081"
         ],
@@ -6862,9 +7232,9 @@
       },
       {
         "host": "ssp.adriver.ru",
-        "siteDays": 39,
-        "seenSiteDays": 98,
-        "share": 0.3979591836734694,
+        "siteDays": 42,
+        "seenSiteDays": 104,
+        "share": 0.40384615384615385,
         "anchors": [
           "adf-0081"
         ],
@@ -6874,9 +7244,9 @@
       },
       {
         "host": "an.yandex.ru",
-        "siteDays": 39,
-        "seenSiteDays": 109,
-        "share": 0.3577981651376147,
+        "siteDays": 42,
+        "seenSiteDays": 116,
+        "share": 0.3620689655172414,
         "anchors": [
           "adf-0081"
         ],
@@ -6886,9 +7256,9 @@
       },
       {
         "host": "yandex.ru",
-        "siteDays": 39,
-        "seenSiteDays": 109,
-        "share": 0.3577981651376147,
+        "siteDays": 42,
+        "seenSiteDays": 116,
+        "share": 0.3620689655172414,
         "anchors": [
           "adf-0081"
         ],
@@ -6898,9 +7268,9 @@
       },
       {
         "host": "ads.betweendigital.com",
-        "siteDays": 39,
-        "seenSiteDays": 213,
-        "share": 0.18309859154929578,
+        "siteDays": 42,
+        "seenSiteDays": 224,
+        "share": 0.1875,
         "anchors": [
           "adf-0081"
         ],
@@ -6910,9 +7280,9 @@
       },
       {
         "host": "t.adx.opera.com",
-        "siteDays": 39,
-        "seenSiteDays": 443,
-        "share": 0.08803611738148984,
+        "siteDays": 42,
+        "seenSiteDays": 468,
+        "share": 0.08974358974358974,
         "anchors": [
           "adf-0081"
         ],
@@ -6923,8 +7293,8 @@
       {
         "host": "www.temu.com",
         "siteDays": 8,
-        "seenSiteDays": 124,
-        "share": 0.06451612903225806,
+        "seenSiteDays": 126,
+        "share": 0.06349206349206349,
         "anchors": [
           "adf-0081"
         ],
@@ -6934,9 +7304,9 @@
       },
       {
         "host": "euw-ice.360yield.com",
-        "siteDays": 39,
-        "seenSiteDays": 755,
-        "share": 0.051655629139072845,
+        "siteDays": 42,
+        "seenSiteDays": 804,
+        "share": 0.05223880597014925,
         "anchors": [
           "adf-0081"
         ],
@@ -6947,8 +7317,8 @@
       {
         "host": "t.oa.opera.com",
         "siteDays": 8,
-        "seenSiteDays": 443,
-        "share": 0.01805869074492099,
+        "seenSiteDays": 468,
+        "share": 0.017094017094017096,
         "anchors": [
           "adf-0081"
         ],
