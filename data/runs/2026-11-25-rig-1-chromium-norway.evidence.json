@@ -1,0 +1,3428 @@
+{
+  "browser": {
+    "browser": "chromium",
+    "capabilities": [
+      "request_metadata",
+      "redirect_chain",
+      "response_headers",
+      "response_size",
+      "frame_ancestry",
+      "page_signals"
+    ],
+    "notes": [
+      "Response bodies cannot be inspected on Chromium MV3: webRequest is observational only (no webRequestBlocking, no filterResponseData), so JavaScript response content is never analysed and rules that need response body inspection are not evaluable.",
+      "Frame ancestry is reconstructed asynchronously from webNavigation (onCommitted, getAllFrames); it may lag behind requests, and events whose frame was not yet known carry the frame_ancestry_unavailable limitation.",
+      "Third-party status is inferred by comparing the registrable domain of the request initiator (and destination) against the top-frame hostname; it is omitted when either side is unknown. There is no browser-provided third-party flag.",
+      "Tracking classification flags (Firefox urlClassification) are unavailable on Chromium; absence of a flag is not a benign signal.",
+      "Response size is read from the Content-Length header when present; chunked or compressed responses may not report a size.",
+      "Page sensor enabled by the user: an isolated content script in sub-frames reports structural signals (hidden iframe insertion, late third-party inserts, SDK messages). No page text or cookies."
+    ]
+  },
+  "detections": [
+    {
+      "alternativeExplanations": [
+        "A viewability, verification or cookie-sync frame inserted by an ordinary ad.",
+        "A consent or login helper frame."
+      ],
+      "category": "ad_delivery_behaviour",
+      "confidence": "low",
+      "confidenceRationale": "A hidden cross-origin frame was observed, but no ad-selection request preceded it in the same frame lineage, and such frames are common in ordinary advertising.",
+      "dedupKey": "f6272cc8",
+      "detectionId": "817bd0f3-1395-457f-89ad-78e45edd4d44",
+      "eventIds": [
+        "5ecebf0b-01b5-4c9a-90aa-bc3509c89fc9"
+      ],
+      "evidence": [
+        {
+          "eventIds": [
+            "5ecebf0b-01b5-4c9a-90aa-bc3509c89fc9"
+          ],
+          "kind": "observed",
+          "observed": "The page sensor observed a hidden cross-origin iframe targeting ssum-sec.casalemedia.com inserted 49 ms after the frame loaded in a frame on js-sec.indexww.com."
+        }
+      ],
+      "firstEventTimestamp": 1795611356466,
+      "limitations": [
+        "Page signals come from an opt-in content script in sub-frames and report structural facts only (element kind, size class, target hostname); page text, cookie values and full URLs are never collected.",
+        "A hostile page can suppress or imitate these DOM signals; absence of a signal is not evidence that nothing happened, and a signal alone does not show what the inserted element did."
+      ],
+      "matchedIndicatorIds": [],
+      "missingVisibility": [
+        "Third-party context flags are not available from this browser sensor.",
+        "Firefox tracking-protection classification is not available from this browser sensor.",
+        "Response bodies cannot be inspected by this browser sensor.",
+        "What code actually executed inside the page, and its effect on the device, is not observed; only network metadata and, where enabled, bounded analysis of selected response text are available."
+      ],
+      "occurrenceCount": 2,
+      "recommendedActions": [
+        "Review the listed events and the cited research before drawing conclusions.",
+        "If you have reason to believe you are personally targeted, seek help from a digital-security helpline (for example Access Now's Digital Security Helpline) rather than acting on this alert alone."
+      ],
+      "references": [
+        {
+          "title": "The Citizen Lab — How Discover-Tech turned targeted ads into a pipeline for spyware (2026-10-15)",
+          "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
+        },
+        {
+          "title": "Confiant — ADINT: Weaponized Ad Tech for Zero-Click Spyware and Mass Identity Vacuuming (2026-10-15)",
+          "url": "https://blog.confiant.com/p/adint-weaponized-ad-tech-for-zero-click-spyware-and-mass-identity-vacuuming"
+        }
+      ],
+      "ruleId": "page.hidden_iframe_after_load",
+      "ruleName": "Hidden cross-origin iframe inserted after load",
+      "ruleVersion": "1.0.0",
+      "severity": "suspicious",
+      "significance": "In the documented chain, selected devices received code that inserted a 1x1 frame to load the next stage. A hidden frame alone is common; together with a preceding ad-selection request it matches that step.",
+      "subjectHostnames": [
+        "js-sec.indexww.com",
+        "ssum-sec.casalemedia.com"
+      ],
+      "summary": "A hidden cross-origin iframe was inserted after load.",
+      "tabId": 1894443156,
+      "timestamp": 1795611356475
+    },
+    {
+      "alternativeExplanations": [
+        "A viewability, verification or cookie-sync frame inserted by an ordinary ad.",
+        "A consent or login helper frame."
+      ],
+      "category": "ad_delivery_behaviour",
+      "confidence": "low",
+      "confidenceRationale": "A hidden cross-origin frame was observed, but no ad-selection request preceded it in the same frame lineage, and such frames are common in ordinary advertising.",
+      "dedupKey": "831a82a6",
+      "detectionId": "4f182598-0412-4ede-bdcc-598e83bbc675",
+      "eventIds": [
+        "724413e4-c41b-493f-ab10-9578cc1594be"
+      ],
+      "evidence": [
+        {
+          "eventIds": [
+            "724413e4-c41b-493f-ab10-9578cc1594be"
+          ],
+          "kind": "observed",
+          "observed": "The page sensor observed a hidden cross-origin iframe targeting ssum-sec.casalemedia.com inserted 88 ms after the frame loaded in a frame on js-sec.indexww.com."
+        }
+      ],
+      "firstEventTimestamp": 1795611466876,
+      "limitations": [
+        "Page signals come from an opt-in content script in sub-frames and report structural facts only (element kind, size class, target hostname); page text, cookie values and full URLs are never collected.",
+        "A hostile page can suppress or imitate these DOM signals; absence of a signal is not evidence that nothing happened, and a signal alone does not show what the inserted element did."
+      ],
+      "matchedIndicatorIds": [],
+      "missingVisibility": [
+        "Third-party context flags are not available from this browser sensor.",
+        "Firefox tracking-protection classification is not available from this browser sensor.",
+        "Response bodies cannot be inspected by this browser sensor.",
+        "What code actually executed inside the page, and its effect on the device, is not observed; only network metadata and, where enabled, bounded analysis of selected response text are available."
+      ],
+      "occurrenceCount": 2,
+      "recommendedActions": [
+        "Review the listed events and the cited research before drawing conclusions.",
+        "If you have reason to believe you are personally targeted, seek help from a digital-security helpline (for example Access Now's Digital Security Helpline) rather than acting on this alert alone."
+      ],
+      "references": [
+        {
+          "title": "The Citizen Lab — How Discover-Tech turned targeted ads into a pipeline for spyware (2026-10-15)",
+          "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
+        },
+        {
+          "title": "Confiant — ADINT: Weaponized Ad Tech for Zero-Click Spyware and Mass Identity Vacuuming (2026-10-15)",
+          "url": "https://blog.confiant.com/p/adint-weaponized-ad-tech-for-zero-click-spyware-and-mass-identity-vacuuming"
+        }
+      ],
+      "ruleId": "page.hidden_iframe_after_load",
+      "ruleName": "Hidden cross-origin iframe inserted after load",
+      "ruleVersion": "1.0.0",
+      "severity": "suspicious",
+      "significance": "In the documented chain, selected devices received code that inserted a 1x1 frame to load the next stage. A hidden frame alone is common; together with a preceding ad-selection request it matches that step.",
+      "subjectHostnames": [
+        "js-sec.indexww.com",
+        "ssum-sec.casalemedia.com"
+      ],
+      "summary": "A hidden cross-origin iframe was inserted after load.",
+      "tabId": 1894443158,
+      "timestamp": 1795611466880
+    },
+    {
+      "alternativeExplanations": [
+        "A viewability, verification or cookie-sync frame inserted by an ordinary ad.",
+        "A consent or login helper frame."
+      ],
+      "category": "ad_delivery_behaviour",
+      "confidence": "low",
+      "confidenceRationale": "A hidden cross-origin frame was observed, but no ad-selection request preceded it in the same frame lineage, and such frames are common in ordinary advertising.",
+      "dedupKey": "7a91b55b",
+      "detectionId": "461bde73-864d-4b4f-9839-549080e8172d",
+      "eventIds": [
+        "07e988c9-7456-44d6-a4b4-e86f2f6b1ce9"
+      ],
+      "evidence": [
+        {
+          "eventIds": [
+            "07e988c9-7456-44d6-a4b4-e86f2f6b1ce9"
+          ],
+          "kind": "observed",
+          "observed": "The page sensor observed a hidden cross-origin iframe targeting ssum-sec.casalemedia.com inserted 42 ms after the frame loaded in a frame on js-sec.indexww.com."
+        }
+      ],
+      "firstEventTimestamp": 1795611652499,
+      "limitations": [
+        "Page signals come from an opt-in content script in sub-frames and report structural facts only (element kind, size class, target hostname); page text, cookie values and full URLs are never collected.",
+        "A hostile page can suppress or imitate these DOM signals; absence of a signal is not evidence that nothing happened, and a signal alone does not show what the inserted element did."
+      ],
+      "matchedIndicatorIds": [],
+      "missingVisibility": [
+        "Third-party context flags are not available from this browser sensor.",
+        "Firefox tracking-protection classification is not available from this browser sensor.",
+        "Response bodies cannot be inspected by this browser sensor.",
+        "What code actually executed inside the page, and its effect on the device, is not observed; only network metadata and, where enabled, bounded analysis of selected response text are available."
+      ],
+      "occurrenceCount": 1,
+      "recommendedActions": [
+        "Review the listed events and the cited research before drawing conclusions.",
+        "If you have reason to believe you are personally targeted, seek help from a digital-security helpline (for example Access Now's Digital Security Helpline) rather than acting on this alert alone."
+      ],
+      "references": [
+        {
+          "title": "The Citizen Lab — How Discover-Tech turned targeted ads into a pipeline for spyware (2026-10-15)",
+          "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
+        },
+        {
+          "title": "Confiant — ADINT: Weaponized Ad Tech for Zero-Click Spyware and Mass Identity Vacuuming (2026-10-15)",
+          "url": "https://blog.confiant.com/p/adint-weaponized-ad-tech-for-zero-click-spyware-and-mass-identity-vacuuming"
+        }
+      ],
+      "ruleId": "page.hidden_iframe_after_load",
+      "ruleName": "Hidden cross-origin iframe inserted after load",
+      "ruleVersion": "1.0.0",
+      "severity": "suspicious",
+      "significance": "In the documented chain, selected devices received code that inserted a 1x1 frame to load the next stage. A hidden frame alone is common; together with a preceding ad-selection request it matches that step.",
+      "subjectHostnames": [
+        "js-sec.indexww.com",
+        "ssum-sec.casalemedia.com"
+      ],
+      "summary": "A hidden cross-origin iframe was inserted after load.",
+      "tabId": 1894443162,
+      "timestamp": 1795611652499
+    },
+    {
+      "alternativeExplanations": [
+        "A viewability, verification or cookie-sync frame inserted by an ordinary ad.",
+        "A consent or login helper frame."
+      ],
+      "category": "ad_delivery_behaviour",
+      "confidence": "low",
+      "confidenceRationale": "A hidden cross-origin frame was observed, but no ad-selection request preceded it in the same frame lineage, and such frames are common in ordinary advertising.",
+      "dedupKey": "39f3d70e",
+      "detectionId": "dd16d1ff-8bfc-4106-95f1-bab8f79830b1",
+      "eventIds": [
+        "85a6fada-18ab-4c3c-b53a-2008b388b868"
+      ],
+      "evidence": [
+        {
+          "eventIds": [
+            "85a6fada-18ab-4c3c-b53a-2008b388b868"
+          ],
+          "kind": "observed",
+          "observed": "The page sensor observed a hidden cross-origin iframe targeting cm.g.doubleclick.net inserted 727 ms after the frame loaded in a frame on www.dn.no."
+        }
+      ],
+      "firstEventTimestamp": 1795611841297,
+      "limitations": [
+        "Page signals come from an opt-in content script in sub-frames and report structural facts only (element kind, size class, target hostname); page text, cookie values and full URLs are never collected.",
+        "A hostile page can suppress or imitate these DOM signals; absence of a signal is not evidence that nothing happened, and a signal alone does not show what the inserted element did."
+      ],
+      "matchedIndicatorIds": [],
+      "missingVisibility": [
+        "Third-party context flags are not available from this browser sensor.",
+        "Firefox tracking-protection classification is not available from this browser sensor.",
+        "Response bodies cannot be inspected by this browser sensor.",
+        "What code actually executed inside the page, and its effect on the device, is not observed; only network metadata and, where enabled, bounded analysis of selected response text are available."
+      ],
+      "occurrenceCount": 1,
+      "recommendedActions": [
+        "Review the listed events and the cited research before drawing conclusions.",
+        "If you have reason to believe you are personally targeted, seek help from a digital-security helpline (for example Access Now's Digital Security Helpline) rather than acting on this alert alone."
+      ],
+      "references": [
+        {
+          "title": "The Citizen Lab — How Discover-Tech turned targeted ads into a pipeline for spyware (2026-10-15)",
+          "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
+        },
+        {
+          "title": "Confiant — ADINT: Weaponized Ad Tech for Zero-Click Spyware and Mass Identity Vacuuming (2026-10-15)",
+          "url": "https://blog.confiant.com/p/adint-weaponized-ad-tech-for-zero-click-spyware-and-mass-identity-vacuuming"
+        }
+      ],
+      "ruleId": "page.hidden_iframe_after_load",
+      "ruleName": "Hidden cross-origin iframe inserted after load",
+      "ruleVersion": "1.0.0",
+      "severity": "suspicious",
+      "significance": "In the documented chain, selected devices received code that inserted a 1x1 frame to load the next stage. A hidden frame alone is common; together with a preceding ad-selection request it matches that step.",
+      "subjectHostnames": [
+        "www.dn.no",
+        "cm.g.doubleclick.net"
+      ],
+      "summary": "A hidden cross-origin iframe was inserted after load.",
+      "tabId": 1894443168,
+      "timestamp": 1795611841297
+    },
+    {
+      "alternativeExplanations": [
+        "A viewability, verification or cookie-sync frame inserted by an ordinary ad.",
+        "A consent or login helper frame."
+      ],
+      "category": "ad_delivery_behaviour",
+      "confidence": "low",
+      "confidenceRationale": "A hidden cross-origin frame was observed, but no ad-selection request preceded it in the same frame lineage, and such frames are common in ordinary advertising.",
+      "dedupKey": "0ba40ef8",
+      "detectionId": "d71922c0-ee37-4609-91e9-9c5580241c7b",
+      "eventIds": [
+        "98a17141-70e1-4f9e-9136-92b0079521ef"
+      ],
+      "evidence": [
+        {
+          "eventIds": [
+            "98a17141-70e1-4f9e-9136-92b0079521ef"
+          ],
+          "kind": "observed",
+          "observed": "The page sensor observed a hidden cross-origin iframe targeting sync-eu.connectad.io inserted 5 ms after the frame loaded in a frame on cdn.connectad.io."
+        }
+      ],
+      "firstEventTimestamp": 1795611843583,
+      "limitations": [
+        "Page signals come from an opt-in content script in sub-frames and report structural facts only (element kind, size class, target hostname); page text, cookie values and full URLs are never collected.",
+        "A hostile page can suppress or imitate these DOM signals; absence of a signal is not evidence that nothing happened, and a signal alone does not show what the inserted element did."
+      ],
+      "matchedIndicatorIds": [],
+      "missingVisibility": [
+        "Third-party context flags are not available from this browser sensor.",
+        "Firefox tracking-protection classification is not available from this browser sensor.",
+        "Response bodies cannot be inspected by this browser sensor.",
+        "What code actually executed inside the page, and its effect on the device, is not observed; only network metadata and, where enabled, bounded analysis of selected response text are available."
+      ],
+      "occurrenceCount": 2,
+      "recommendedActions": [
+        "Review the listed events and the cited research before drawing conclusions.",
+        "If you have reason to believe you are personally targeted, seek help from a digital-security helpline (for example Access Now's Digital Security Helpline) rather than acting on this alert alone."
+      ],
+      "references": [
+        {
+          "title": "The Citizen Lab — How Discover-Tech turned targeted ads into a pipeline for spyware (2026-10-15)",
+          "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
+        },
+        {
+          "title": "Confiant — ADINT: Weaponized Ad Tech for Zero-Click Spyware and Mass Identity Vacuuming (2026-10-15)",
+          "url": "https://blog.confiant.com/p/adint-weaponized-ad-tech-for-zero-click-spyware-and-mass-identity-vacuuming"
+        }
+      ],
+      "ruleId": "page.hidden_iframe_after_load",
+      "ruleName": "Hidden cross-origin iframe inserted after load",
+      "ruleVersion": "1.0.0",
+      "severity": "suspicious",
+      "significance": "In the documented chain, selected devices received code that inserted a 1x1 frame to load the next stage. A hidden frame alone is common; together with a preceding ad-selection request it matches that step.",
+      "subjectHostnames": [
+        "cdn.connectad.io",
+        "sync-eu.connectad.io"
+      ],
+      "summary": "A hidden cross-origin iframe was inserted after load.",
+      "tabId": 1894443168,
+      "timestamp": 1795611863447
+    },
+    {
+      "alternativeExplanations": [
+        "A viewability, verification or cookie-sync frame inserted by an ordinary ad.",
+        "A consent or login helper frame."
+      ],
+      "category": "ad_delivery_behaviour",
+      "confidence": "low",
+      "confidenceRationale": "A hidden cross-origin frame was observed, but no ad-selection request preceded it in the same frame lineage, and such frames are common in ordinary advertising.",
+      "dedupKey": "342af665",
+      "detectionId": "3e5ed962-6ee4-432b-8878-9e8318d66f1c",
+      "eventIds": [
+        "820d1cf9-a9b7-4a35-bdbf-b534c4f8a7fa"
+      ],
+      "evidence": [
+        {
+          "eventIds": [
+            "820d1cf9-a9b7-4a35-bdbf-b534c4f8a7fa"
+          ],
+          "kind": "observed",
+          "observed": "The page sensor observed a hidden cross-origin iframe targeting ssum-sec.casalemedia.com inserted 75 ms after the frame loaded in a frame on js-sec.indexww.com."
+        }
+      ],
+      "firstEventTimestamp": 1795611843626,
+      "limitations": [
+        "Page signals come from an opt-in content script in sub-frames and report structural facts only (element kind, size class, target hostname); page text, cookie values and full URLs are never collected.",
+        "A hostile page can suppress or imitate these DOM signals; absence of a signal is not evidence that nothing happened, and a signal alone does not show what the inserted element did."
+      ],
+      "matchedIndicatorIds": [],
+      "missingVisibility": [
+        "Third-party context flags are not available from this browser sensor.",
+        "Firefox tracking-protection classification is not available from this browser sensor.",
+        "Response bodies cannot be inspected by this browser sensor.",
+        "What code actually executed inside the page, and its effect on the device, is not observed; only network metadata and, where enabled, bounded analysis of selected response text are available."
+      ],
+      "occurrenceCount": 2,
+      "recommendedActions": [
+        "Review the listed events and the cited research before drawing conclusions.",
+        "If you have reason to believe you are personally targeted, seek help from a digital-security helpline (for example Access Now's Digital Security Helpline) rather than acting on this alert alone."
+      ],
+      "references": [
+        {
+          "title": "The Citizen Lab — How Discover-Tech turned targeted ads into a pipeline for spyware (2026-10-15)",
+          "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
+        },
+        {
+          "title": "Confiant — ADINT: Weaponized Ad Tech for Zero-Click Spyware and Mass Identity Vacuuming (2026-10-15)",
+          "url": "https://blog.confiant.com/p/adint-weaponized-ad-tech-for-zero-click-spyware-and-mass-identity-vacuuming"
+        }
+      ],
+      "ruleId": "page.hidden_iframe_after_load",
+      "ruleName": "Hidden cross-origin iframe inserted after load",
+      "ruleVersion": "1.0.0",
+      "severity": "suspicious",
+      "significance": "In the documented chain, selected devices received code that inserted a 1x1 frame to load the next stage. A hidden frame alone is common; together with a preceding ad-selection request it matches that step.",
+      "subjectHostnames": [
+        "js-sec.indexww.com",
+        "ssum-sec.casalemedia.com"
+      ],
+      "summary": "A hidden cross-origin iframe was inserted after load.",
+      "tabId": 1894443168,
+      "timestamp": 1795611863506
+    },
+    {
+      "alternativeExplanations": [
+        "A viewability, verification or cookie-sync frame inserted by an ordinary ad.",
+        "A consent or login helper frame."
+      ],
+      "category": "ad_delivery_behaviour",
+      "confidence": "low",
+      "confidenceRationale": "A hidden cross-origin frame was observed, but no ad-selection request preceded it in the same frame lineage, and such frames are common in ordinary advertising.",
+      "dedupKey": "7e77c64f",
+      "detectionId": "8a77591c-5c70-4274-9142-88e8e4df47d8",
+      "eventIds": [
+        "80539b2e-834d-4bc0-8d59-789031f8f9a8"
+      ],
+      "evidence": [
+        {
+          "eventIds": [
+            "80539b2e-834d-4bc0-8d59-789031f8f9a8"
+          ],
+          "kind": "observed",
+          "observed": "The page sensor observed a hidden cross-origin iframe targeting eus.rubiconproject.com inserted 3 ms after the frame loaded in a frame on sync-eu.connectad.io."
+        }
+      ],
+      "firstEventTimestamp": 1795611843674,
+      "limitations": [
+        "Page signals come from an opt-in content script in sub-frames and report structural facts only (element kind, size class, target hostname); page text, cookie values and full URLs are never collected.",
+        "A hostile page can suppress or imitate these DOM signals; absence of a signal is not evidence that nothing happened, and a signal alone does not show what the inserted element did."
+      ],
+      "matchedIndicatorIds": [],
+      "missingVisibility": [
+        "Third-party context flags are not available from this browser sensor.",
+        "Firefox tracking-protection classification is not available from this browser sensor.",
+        "Response bodies cannot be inspected by this browser sensor.",
+        "What code actually executed inside the page, and its effect on the device, is not observed; only network metadata and, where enabled, bounded analysis of selected response text are available."
+      ],
+      "occurrenceCount": 2,
+      "recommendedActions": [
+        "Review the listed events and the cited research before drawing conclusions.",
+        "If you have reason to believe you are personally targeted, seek help from a digital-security helpline (for example Access Now's Digital Security Helpline) rather than acting on this alert alone."
+      ],
+      "references": [
+        {
+          "title": "The Citizen Lab — How Discover-Tech turned targeted ads into a pipeline for spyware (2026-10-15)",
+          "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
+        },
+        {
+          "title": "Confiant — ADINT: Weaponized Ad Tech for Zero-Click Spyware and Mass Identity Vacuuming (2026-10-15)",
+          "url": "https://blog.confiant.com/p/adint-weaponized-ad-tech-for-zero-click-spyware-and-mass-identity-vacuuming"
+        }
+      ],
+      "ruleId": "page.hidden_iframe_after_load",
+      "ruleName": "Hidden cross-origin iframe inserted after load",
+      "ruleVersion": "1.0.0",
+      "severity": "suspicious",
+      "significance": "In the documented chain, selected devices received code that inserted a 1x1 frame to load the next stage. A hidden frame alone is common; together with a preceding ad-selection request it matches that step.",
+      "subjectHostnames": [
+        "sync-eu.connectad.io",
+        "eus.rubiconproject.com"
+      ],
+      "summary": "A hidden cross-origin iframe was inserted after load.",
+      "tabId": 1894443168,
+      "timestamp": 1795611863528
+    },
+    {
+      "alternativeExplanations": [
+        "A viewability, verification or cookie-sync frame inserted by an ordinary ad.",
+        "A consent or login helper frame."
+      ],
+      "category": "ad_delivery_behaviour",
+      "confidence": "low",
+      "confidenceRationale": "A hidden cross-origin frame was observed, but no ad-selection request preceded it in the same frame lineage, and such frames are common in ordinary advertising.",
+      "dedupKey": "2a48eda4",
+      "detectionId": "9c9ae799-65ac-41e6-bc32-f3834927c3ec",
+      "eventIds": [
+        "2e0cc48d-71f9-473c-8a94-92840a624efe"
+      ],
+      "evidence": [
+        {
+          "eventIds": [
+            "2e0cc48d-71f9-473c-8a94-92840a624efe"
+          ],
+          "kind": "observed",
+          "observed": "The page sensor observed a hidden cross-origin iframe targeting ib.adnxs.com inserted 6 ms after the frame loaded in a frame on sync-eu.connectad.io."
+        }
+      ],
+      "firstEventTimestamp": 1795611843677,
+      "limitations": [
+        "Page signals come from an opt-in content script in sub-frames and report structural facts only (element kind, size class, target hostname); page text, cookie values and full URLs are never collected.",
+        "A hostile page can suppress or imitate these DOM signals; absence of a signal is not evidence that nothing happened, and a signal alone does not show what the inserted element did."
+      ],
+      "matchedIndicatorIds": [],
+      "missingVisibility": [
+        "Third-party context flags are not available from this browser sensor.",
+        "Firefox tracking-protection classification is not available from this browser sensor.",
+        "Response bodies cannot be inspected by this browser sensor.",
+        "What code actually executed inside the page, and its effect on the device, is not observed; only network metadata and, where enabled, bounded analysis of selected response text are available."
+      ],
+      "occurrenceCount": 2,
+      "recommendedActions": [
+        "Review the listed events and the cited research before drawing conclusions.",
+        "If you have reason to believe you are personally targeted, seek help from a digital-security helpline (for example Access Now's Digital Security Helpline) rather than acting on this alert alone."
+      ],
+      "references": [
+        {
+          "title": "The Citizen Lab — How Discover-Tech turned targeted ads into a pipeline for spyware (2026-10-15)",
+          "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
+        },
+        {
+          "title": "Confiant — ADINT: Weaponized Ad Tech for Zero-Click Spyware and Mass Identity Vacuuming (2026-10-15)",
+          "url": "https://blog.confiant.com/p/adint-weaponized-ad-tech-for-zero-click-spyware-and-mass-identity-vacuuming"
+        }
+      ],
+      "ruleId": "page.hidden_iframe_after_load",
+      "ruleName": "Hidden cross-origin iframe inserted after load",
+      "ruleVersion": "1.0.0",
+      "severity": "suspicious",
+      "significance": "In the documented chain, selected devices received code that inserted a 1x1 frame to load the next stage. A hidden frame alone is common; together with a preceding ad-selection request it matches that step.",
+      "subjectHostnames": [
+        "sync-eu.connectad.io",
+        "ib.adnxs.com"
+      ],
+      "summary": "A hidden cross-origin iframe was inserted after load.",
+      "tabId": 1894443168,
+      "timestamp": 1795611863526
+    },
+    {
+      "alternativeExplanations": [
+        "A viewability, verification or cookie-sync frame inserted by an ordinary ad.",
+        "A consent or login helper frame."
+      ],
+      "category": "ad_delivery_behaviour",
+      "confidence": "low",
+      "confidenceRationale": "A hidden cross-origin frame was observed, but no ad-selection request preceded it in the same frame lineage, and such frames are common in ordinary advertising.",
+      "dedupKey": "c760bc8e",
+      "detectionId": "02efc2ef-c075-45af-b9fd-8e12bb36be37",
+      "eventIds": [
+        "9e7a8635-e90f-4560-ba1a-9af092d65303"
+      ],
+      "evidence": [
+        {
+          "eventIds": [
+            "9e7a8635-e90f-4560-ba1a-9af092d65303"
+          ],
+          "kind": "observed",
+          "observed": "The page sensor observed a hidden cross-origin iframe targeting cm.adform.net inserted 9 ms after the frame loaded in a frame on sync-eu.connectad.io."
+        }
+      ],
+      "firstEventTimestamp": 1795611843680,
+      "limitations": [
+        "Page signals come from an opt-in content script in sub-frames and report structural facts only (element kind, size class, target hostname); page text, cookie values and full URLs are never collected.",
+        "A hostile page can suppress or imitate these DOM signals; absence of a signal is not evidence that nothing happened, and a signal alone does not show what the inserted element did."
+      ],
+      "matchedIndicatorIds": [],
+      "missingVisibility": [
+        "Third-party context flags are not available from this browser sensor.",
+        "Firefox tracking-protection classification is not available from this browser sensor.",
+        "Response bodies cannot be inspected by this browser sensor.",
+        "What code actually executed inside the page, and its effect on the device, is not observed; only network metadata and, where enabled, bounded analysis of selected response text are available."
+      ],
+      "occurrenceCount": 2,
+      "recommendedActions": [
+        "Review the listed events and the cited research before drawing conclusions.",
+        "If you have reason to believe you are personally targeted, seek help from a digital-security helpline (for example Access Now's Digital Security Helpline) rather than acting on this alert alone."
+      ],
+      "references": [
+        {
+          "title": "The Citizen Lab — How Discover-Tech turned targeted ads into a pipeline for spyware (2026-10-15)",
+          "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
+        },
+        {
+          "title": "Confiant — ADINT: Weaponized Ad Tech for Zero-Click Spyware and Mass Identity Vacuuming (2026-10-15)",
+          "url": "https://blog.confiant.com/p/adint-weaponized-ad-tech-for-zero-click-spyware-and-mass-identity-vacuuming"
+        }
+      ],
+      "ruleId": "page.hidden_iframe_after_load",
+      "ruleName": "Hidden cross-origin iframe inserted after load",
+      "ruleVersion": "1.0.0",
+      "severity": "suspicious",
+      "significance": "In the documented chain, selected devices received code that inserted a 1x1 frame to load the next stage. A hidden frame alone is common; together with a preceding ad-selection request it matches that step.",
+      "subjectHostnames": [
+        "sync-eu.connectad.io",
+        "cm.adform.net"
+      ],
+      "summary": "A hidden cross-origin iframe was inserted after load.",
+      "tabId": 1894443168,
+      "timestamp": 1795611863529
+    },
+    {
+      "alternativeExplanations": [
+        "A viewability, verification or cookie-sync frame inserted by an ordinary ad.",
+        "A consent or login helper frame."
+      ],
+      "category": "ad_delivery_behaviour",
+      "confidence": "low",
+      "confidenceRationale": "A hidden cross-origin frame was observed, but no ad-selection request preceded it in the same frame lineage, and such frames are common in ordinary advertising.",
+      "dedupKey": "6b71faca",
+      "detectionId": "815a95e6-0370-4437-bcb0-0de68cba5314",
+      "eventIds": [
+        "d4b1d105-7031-4e40-aa72-a4168a3f8ad5"
+      ],
+      "evidence": [
+        {
+          "eventIds": [
+            "d4b1d105-7031-4e40-aa72-a4168a3f8ad5"
+          ],
+          "kind": "observed",
+          "observed": "The page sensor observed a hidden cross-origin iframe targeting pixel.rubiconproject.com inserted 102 ms after the frame loaded in a frame on sync-eu.connectad.io."
+        }
+      ],
+      "firstEventTimestamp": 1795611843773,
+      "limitations": [
+        "Page signals come from an opt-in content script in sub-frames and report structural facts only (element kind, size class, target hostname); page text, cookie values and full URLs are never collected.",
+        "A hostile page can suppress or imitate these DOM signals; absence of a signal is not evidence that nothing happened, and a signal alone does not show what the inserted element did."
+      ],
+      "matchedIndicatorIds": [],
+      "missingVisibility": [
+        "Third-party context flags are not available from this browser sensor.",
+        "Firefox tracking-protection classification is not available from this browser sensor.",
+        "Response bodies cannot be inspected by this browser sensor.",
+        "What code actually executed inside the page, and its effect on the device, is not observed; only network metadata and, where enabled, bounded analysis of selected response text are available."
+      ],
+      "occurrenceCount": 2,
+      "recommendedActions": [
+        "Review the listed events and the cited research before drawing conclusions.",
+        "If you have reason to believe you are personally targeted, seek help from a digital-security helpline (for example Access Now's Digital Security Helpline) rather than acting on this alert alone."
+      ],
+      "references": [
+        {
+          "title": "The Citizen Lab — How Discover-Tech turned targeted ads into a pipeline for spyware (2026-10-15)",
+          "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
+        },
+        {
+          "title": "Confiant — ADINT: Weaponized Ad Tech for Zero-Click Spyware and Mass Identity Vacuuming (2026-10-15)",
+          "url": "https://blog.confiant.com/p/adint-weaponized-ad-tech-for-zero-click-spyware-and-mass-identity-vacuuming"
+        }
+      ],
+      "ruleId": "page.hidden_iframe_after_load",
+      "ruleName": "Hidden cross-origin iframe inserted after load",
+      "ruleVersion": "1.0.0",
+      "severity": "suspicious",
+      "significance": "In the documented chain, selected devices received code that inserted a 1x1 frame to load the next stage. A hidden frame alone is common; together with a preceding ad-selection request it matches that step.",
+      "subjectHostnames": [
+        "sync-eu.connectad.io",
+        "pixel.rubiconproject.com"
+      ],
+      "summary": "A hidden cross-origin iframe was inserted after load.",
+      "tabId": 1894443168,
+      "timestamp": 1795611863609
+    },
+    {
+      "alternativeExplanations": [
+        "A viewability, verification or cookie-sync frame inserted by an ordinary ad.",
+        "A consent or login helper frame."
+      ],
+      "category": "ad_delivery_behaviour",
+      "confidence": "low",
+      "confidenceRationale": "A hidden cross-origin frame was observed, but no ad-selection request preceded it in the same frame lineage, and such frames are common in ordinary advertising.",
+      "dedupKey": "3f75be28",
+      "detectionId": "128875ed-8ffc-43d1-8191-be160c2fca68",
+      "eventIds": [
+        "f40699fd-be25-45af-90ee-c4568b642f19"
+      ],
+      "evidence": [
+        {
+          "eventIds": [
+            "f40699fd-be25-45af-90ee-c4568b642f19"
+          ],
+          "kind": "observed",
+          "observed": "The page sensor observed a hidden cross-origin iframe targeting ssum-sec.casalemedia.com inserted 49 ms after the frame loaded in a frame on js-sec.indexww.com."
+        }
+      ],
+      "firstEventTimestamp": 1795611906861,
+      "limitations": [
+        "Page signals come from an opt-in content script in sub-frames and report structural facts only (element kind, size class, target hostname); page text, cookie values and full URLs are never collected.",
+        "A hostile page can suppress or imitate these DOM signals; absence of a signal is not evidence that nothing happened, and a signal alone does not show what the inserted element did."
+      ],
+      "matchedIndicatorIds": [],
+      "missingVisibility": [
+        "Third-party context flags are not available from this browser sensor.",
+        "Firefox tracking-protection classification is not available from this browser sensor.",
+        "Response bodies cannot be inspected by this browser sensor.",
+        "What code actually executed inside the page, and its effect on the device, is not observed; only network metadata and, where enabled, bounded analysis of selected response text are available."
+      ],
+      "occurrenceCount": 1,
+      "recommendedActions": [
+        "Review the listed events and the cited research before drawing conclusions.",
+        "If you have reason to believe you are personally targeted, seek help from a digital-security helpline (for example Access Now's Digital Security Helpline) rather than acting on this alert alone."
+      ],
+      "references": [
+        {
+          "title": "The Citizen Lab — How Discover-Tech turned targeted ads into a pipeline for spyware (2026-10-15)",
+          "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
+        },
+        {
+          "title": "Confiant — ADINT: Weaponized Ad Tech for Zero-Click Spyware and Mass Identity Vacuuming (2026-10-15)",
+          "url": "https://blog.confiant.com/p/adint-weaponized-ad-tech-for-zero-click-spyware-and-mass-identity-vacuuming"
+        }
+      ],
+      "ruleId": "page.hidden_iframe_after_load",
+      "ruleName": "Hidden cross-origin iframe inserted after load",
+      "ruleVersion": "1.0.0",
+      "severity": "suspicious",
+      "significance": "In the documented chain, selected devices received code that inserted a 1x1 frame to load the next stage. A hidden frame alone is common; together with a preceding ad-selection request it matches that step.",
+      "subjectHostnames": [
+        "js-sec.indexww.com",
+        "ssum-sec.casalemedia.com"
+      ],
+      "summary": "A hidden cross-origin iframe was inserted after load.",
+      "tabId": 1894443170,
+      "timestamp": 1795611906861
+    },
+    {
+      "alternativeExplanations": [
+        "A viewability, verification or cookie-sync frame inserted by an ordinary ad.",
+        "A consent or login helper frame."
+      ],
+      "category": "ad_delivery_behaviour",
+      "confidence": "low",
+      "confidenceRationale": "A hidden cross-origin frame was observed, but no ad-selection request preceded it in the same frame lineage, and such frames are common in ordinary advertising.",
+      "dedupKey": "eef351f7",
+      "detectionId": "36dbc040-0ac5-45a3-a1d4-d31a1e4a135e",
+      "eventIds": [
+        "7db19e6f-3add-47e5-8c0c-5a48573f0fe9"
+      ],
+      "evidence": [
+        {
+          "eventIds": [
+            "7db19e6f-3add-47e5-8c0c-5a48573f0fe9"
+          ],
+          "kind": "observed",
+          "observed": "The page sensor observed a hidden cross-origin iframe targeting ssbsync.smartadserver.com inserted 4 ms after the frame loaded in a frame on ms-cookie-sync.presage.io."
+        }
+      ],
+      "firstEventTimestamp": 1795611906896,
+      "limitations": [
+        "Page signals come from an opt-in content script in sub-frames and report structural facts only (element kind, size class, target hostname); page text, cookie values and full URLs are never collected.",
+        "A hostile page can suppress or imitate these DOM signals; absence of a signal is not evidence that nothing happened, and a signal alone does not show what the inserted element did."
+      ],
+      "matchedIndicatorIds": [],
+      "missingVisibility": [
+        "Third-party context flags are not available from this browser sensor.",
+        "Firefox tracking-protection classification is not available from this browser sensor.",
+        "Response bodies cannot be inspected by this browser sensor.",
+        "What code actually executed inside the page, and its effect on the device, is not observed; only network metadata and, where enabled, bounded analysis of selected response text are available."
+      ],
+      "occurrenceCount": 2,
+      "recommendedActions": [
+        "Review the listed events and the cited research before drawing conclusions.",
+        "If you have reason to believe you are personally targeted, seek help from a digital-security helpline (for example Access Now's Digital Security Helpline) rather than acting on this alert alone."
+      ],
+      "references": [
+        {
+          "title": "The Citizen Lab — How Discover-Tech turned targeted ads into a pipeline for spyware (2026-10-15)",
+          "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
+        },
+        {
+          "title": "Confiant — ADINT: Weaponized Ad Tech for Zero-Click Spyware and Mass Identity Vacuuming (2026-10-15)",
+          "url": "https://blog.confiant.com/p/adint-weaponized-ad-tech-for-zero-click-spyware-and-mass-identity-vacuuming"
+        }
+      ],
+      "ruleId": "page.hidden_iframe_after_load",
+      "ruleName": "Hidden cross-origin iframe inserted after load",
+      "ruleVersion": "1.0.0",
+      "severity": "suspicious",
+      "significance": "In the documented chain, selected devices received code that inserted a 1x1 frame to load the next stage. A hidden frame alone is common; together with a preceding ad-selection request it matches that step.",
+      "subjectHostnames": [
+        "ms-cookie-sync.presage.io",
+        "ssbsync.smartadserver.com"
+      ],
+      "summary": "A hidden cross-origin iframe was inserted after load.",
+      "tabId": 1894443170,
+      "timestamp": 1795611906897
+    },
+    {
+      "alternativeExplanations": [
+        "A viewability, verification or cookie-sync frame inserted by an ordinary ad.",
+        "A consent or login helper frame."
+      ],
+      "category": "ad_delivery_behaviour",
+      "confidence": "low",
+      "confidenceRationale": "A hidden cross-origin frame was observed, but no ad-selection request preceded it in the same frame lineage, and such frames are common in ordinary advertising.",
+      "dedupKey": "254f34a1",
+      "detectionId": "8afc1ee6-8df3-4298-9654-b1a5d9c31d47",
+      "eventIds": [
+        "4706562f-91c0-47cd-8c19-4259185ac17b"
+      ],
+      "evidence": [
+        {
+          "eventIds": [
+            "4706562f-91c0-47cd-8c19-4259185ac17b"
+          ],
+          "kind": "observed",
+          "observed": "The page sensor observed a hidden cross-origin iframe targeting secure-assets.rubiconproject.com inserted 4 ms after the frame loaded in a frame on ms-cookie-sync.presage.io."
+        }
+      ],
+      "firstEventTimestamp": 1795611906897,
+      "limitations": [
+        "Page signals come from an opt-in content script in sub-frames and report structural facts only (element kind, size class, target hostname); page text, cookie values and full URLs are never collected.",
+        "A hostile page can suppress or imitate these DOM signals; absence of a signal is not evidence that nothing happened, and a signal alone does not show what the inserted element did."
+      ],
+      "matchedIndicatorIds": [],
+      "missingVisibility": [
+        "Third-party context flags are not available from this browser sensor.",
+        "Firefox tracking-protection classification is not available from this browser sensor.",
+        "Response bodies cannot be inspected by this browser sensor.",
+        "What code actually executed inside the page, and its effect on the device, is not observed; only network metadata and, where enabled, bounded analysis of selected response text are available."
+      ],
+      "occurrenceCount": 2,
+      "recommendedActions": [
+        "Review the listed events and the cited research before drawing conclusions.",
+        "If you have reason to believe you are personally targeted, seek help from a digital-security helpline (for example Access Now's Digital Security Helpline) rather than acting on this alert alone."
+      ],
+      "references": [
+        {
+          "title": "The Citizen Lab — How Discover-Tech turned targeted ads into a pipeline for spyware (2026-10-15)",
+          "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
+        },
+        {
+          "title": "Confiant — ADINT: Weaponized Ad Tech for Zero-Click Spyware and Mass Identity Vacuuming (2026-10-15)",
+          "url": "https://blog.confiant.com/p/adint-weaponized-ad-tech-for-zero-click-spyware-and-mass-identity-vacuuming"
+        }
+      ],
+      "ruleId": "page.hidden_iframe_after_load",
+      "ruleName": "Hidden cross-origin iframe inserted after load",
+      "ruleVersion": "1.0.0",
+      "severity": "suspicious",
+      "significance": "In the documented chain, selected devices received code that inserted a 1x1 frame to load the next stage. A hidden frame alone is common; together with a preceding ad-selection request it matches that step.",
+      "subjectHostnames": [
+        "ms-cookie-sync.presage.io",
+        "secure-assets.rubiconproject.com"
+      ],
+      "summary": "A hidden cross-origin iframe was inserted after load.",
+      "tabId": 1894443170,
+      "timestamp": 1795611906897
+    },
+    {
+      "alternativeExplanations": [
+        "A viewability, verification or cookie-sync frame inserted by an ordinary ad.",
+        "A consent or login helper frame."
+      ],
+      "category": "ad_delivery_behaviour",
+      "confidence": "low",
+      "confidenceRationale": "A hidden cross-origin frame was observed, but no ad-selection request preceded it in the same frame lineage, and such frames are common in ordinary advertising.",
+      "dedupKey": "3f75be28",
+      "detectionId": "818f3d14-1ab3-4c98-a006-5142d347087b",
+      "eventIds": [
+        "da720db9-0ec6-4e70-82a3-54f7629540d0"
+      ],
+      "evidence": [
+        {
+          "eventIds": [
+            "da720db9-0ec6-4e70-82a3-54f7629540d0"
+          ],
+          "kind": "observed",
+          "observed": "The page sensor observed a hidden cross-origin iframe targeting ssum-sec.casalemedia.com inserted 84 ms after the frame loaded in a frame on js-sec.indexww.com."
+        }
+      ],
+      "firstEventTimestamp": 1795612507609,
+      "limitations": [
+        "Page signals come from an opt-in content script in sub-frames and report structural facts only (element kind, size class, target hostname); page text, cookie values and full URLs are never collected.",
+        "A hostile page can suppress or imitate these DOM signals; absence of a signal is not evidence that nothing happened, and a signal alone does not show what the inserted element did."
+      ],
+      "matchedIndicatorIds": [],
+      "missingVisibility": [
+        "Third-party context flags are not available from this browser sensor.",
+        "Firefox tracking-protection classification is not available from this browser sensor.",
+        "Response bodies cannot be inspected by this browser sensor.",
+        "What code actually executed inside the page, and its effect on the device, is not observed; only network metadata and, where enabled, bounded analysis of selected response text are available."
+      ],
+      "occurrenceCount": 2,
+      "recommendedActions": [
+        "Review the listed events and the cited research before drawing conclusions.",
+        "If you have reason to believe you are personally targeted, seek help from a digital-security helpline (for example Access Now's Digital Security Helpline) rather than acting on this alert alone."
+      ],
+      "references": [
+        {
+          "title": "The Citizen Lab — How Discover-Tech turned targeted ads into a pipeline for spyware (2026-10-15)",
+          "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
+        },
+        {
+          "title": "Confiant — ADINT: Weaponized Ad Tech for Zero-Click Spyware and Mass Identity Vacuuming (2026-10-15)",
+          "url": "https://blog.confiant.com/p/adint-weaponized-ad-tech-for-zero-click-spyware-and-mass-identity-vacuuming"
+        }
+      ],
+      "ruleId": "page.hidden_iframe_after_load",
+      "ruleName": "Hidden cross-origin iframe inserted after load",
+      "ruleVersion": "1.0.0",
+      "severity": "suspicious",
+      "significance": "In the documented chain, selected devices received code that inserted a 1x1 frame to load the next stage. A hidden frame alone is common; together with a preceding ad-selection request it matches that step.",
+      "subjectHostnames": [
+        "js-sec.indexww.com",
+        "ssum-sec.casalemedia.com"
+      ],
+      "summary": "A hidden cross-origin iframe was inserted after load.",
+      "tabId": 1894443170,
+      "timestamp": 1795612790208
+    },
+    {
+      "alternativeExplanations": [
+        "A viewability, verification or cookie-sync frame inserted by an ordinary ad.",
+        "A consent or login helper frame."
+      ],
+      "category": "ad_delivery_behaviour",
+      "confidence": "low",
+      "confidenceRationale": "A hidden cross-origin frame was observed, but no ad-selection request preceded it in the same frame lineage, and such frames are common in ordinary advertising.",
+      "dedupKey": "254f34a1",
+      "detectionId": "03bc04bd-745b-45b0-af16-91fbbcb18145",
+      "eventIds": [
+        "6b134889-81da-46c7-972b-6813ecf072b6"
+      ],
+      "evidence": [
+        {
+          "eventIds": [
+            "6b134889-81da-46c7-972b-6813ecf072b6"
+          ],
+          "kind": "observed",
+          "observed": "The page sensor observed a hidden cross-origin iframe targeting secure-assets.rubiconproject.com inserted 7 ms after the frame loaded in a frame on ms-cookie-sync.presage.io."
+        }
+      ],
+      "firstEventTimestamp": 1795612507656,
+      "limitations": [
+        "Page signals come from an opt-in content script in sub-frames and report structural facts only (element kind, size class, target hostname); page text, cookie values and full URLs are never collected.",
+        "A hostile page can suppress or imitate these DOM signals; absence of a signal is not evidence that nothing happened, and a signal alone does not show what the inserted element did."
+      ],
+      "matchedIndicatorIds": [],
+      "missingVisibility": [
+        "Third-party context flags are not available from this browser sensor.",
+        "Firefox tracking-protection classification is not available from this browser sensor.",
+        "Response bodies cannot be inspected by this browser sensor.",
+        "What code actually executed inside the page, and its effect on the device, is not observed; only network metadata and, where enabled, bounded analysis of selected response text are available."
+      ],
+      "occurrenceCount": 2,
+      "recommendedActions": [
+        "Review the listed events and the cited research before drawing conclusions.",
+        "If you have reason to believe you are personally targeted, seek help from a digital-security helpline (for example Access Now's Digital Security Helpline) rather than acting on this alert alone."
+      ],
+      "references": [
+        {
+          "title": "The Citizen Lab — How Discover-Tech turned targeted ads into a pipeline for spyware (2026-10-15)",
+          "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
+        },
+        {
+          "title": "Confiant — ADINT: Weaponized Ad Tech for Zero-Click Spyware and Mass Identity Vacuuming (2026-10-15)",
+          "url": "https://blog.confiant.com/p/adint-weaponized-ad-tech-for-zero-click-spyware-and-mass-identity-vacuuming"
+        }
+      ],
+      "ruleId": "page.hidden_iframe_after_load",
+      "ruleName": "Hidden cross-origin iframe inserted after load",
+      "ruleVersion": "1.0.0",
+      "severity": "suspicious",
+      "significance": "In the documented chain, selected devices received code that inserted a 1x1 frame to load the next stage. A hidden frame alone is common; together with a preceding ad-selection request it matches that step.",
+      "subjectHostnames": [
+        "ms-cookie-sync.presage.io",
+        "secure-assets.rubiconproject.com"
+      ],
+      "summary": "A hidden cross-origin iframe was inserted after load.",
+      "tabId": 1894443170,
+      "timestamp": 1795612507658
+    },
+    {
+      "alternativeExplanations": [
+        "A viewability, verification or cookie-sync frame inserted by an ordinary ad.",
+        "A consent or login helper frame."
+      ],
+      "category": "ad_delivery_behaviour",
+      "confidence": "low",
+      "confidenceRationale": "A hidden cross-origin frame was observed, but no ad-selection request preceded it in the same frame lineage, and such frames are common in ordinary advertising.",
+      "dedupKey": "eef351f7",
+      "detectionId": "d32747ef-008f-49b9-a4d3-13442711c606",
+      "eventIds": [
+        "586905d7-a142-4757-8e26-24d035098692"
+      ],
+      "evidence": [
+        {
+          "eventIds": [
+            "586905d7-a142-4757-8e26-24d035098692"
+          ],
+          "kind": "observed",
+          "observed": "The page sensor observed a hidden cross-origin iframe targeting ssbsync.smartadserver.com inserted 12 ms after the frame loaded in a frame on ms-cookie-sync.presage.io."
+        }
+      ],
+      "firstEventTimestamp": 1795612507661,
+      "limitations": [
+        "Page signals come from an opt-in content script in sub-frames and report structural facts only (element kind, size class, target hostname); page text, cookie values and full URLs are never collected.",
+        "A hostile page can suppress or imitate these DOM signals; absence of a signal is not evidence that nothing happened, and a signal alone does not show what the inserted element did."
+      ],
+      "matchedIndicatorIds": [],
+      "missingVisibility": [
+        "Third-party context flags are not available from this browser sensor.",
+        "Firefox tracking-protection classification is not available from this browser sensor.",
+        "Response bodies cannot be inspected by this browser sensor.",
+        "What code actually executed inside the page, and its effect on the device, is not observed; only network metadata and, where enabled, bounded analysis of selected response text are available."
+      ],
+      "occurrenceCount": 1,
+      "recommendedActions": [
+        "Review the listed events and the cited research before drawing conclusions.",
+        "If you have reason to believe you are personally targeted, seek help from a digital-security helpline (for example Access Now's Digital Security Helpline) rather than acting on this alert alone."
+      ],
+      "references": [
+        {
+          "title": "The Citizen Lab — How Discover-Tech turned targeted ads into a pipeline for spyware (2026-10-15)",
+          "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
+        },
+        {
+          "title": "Confiant — ADINT: Weaponized Ad Tech for Zero-Click Spyware and Mass Identity Vacuuming (2026-10-15)",
+          "url": "https://blog.confiant.com/p/adint-weaponized-ad-tech-for-zero-click-spyware-and-mass-identity-vacuuming"
+        }
+      ],
+      "ruleId": "page.hidden_iframe_after_load",
+      "ruleName": "Hidden cross-origin iframe inserted after load",
+      "ruleVersion": "1.0.0",
+      "severity": "suspicious",
+      "significance": "In the documented chain, selected devices received code that inserted a 1x1 frame to load the next stage. A hidden frame alone is common; together with a preceding ad-selection request it matches that step.",
+      "subjectHostnames": [
+        "ms-cookie-sync.presage.io",
+        "ssbsync.smartadserver.com"
+      ],
+      "summary": "A hidden cross-origin iframe was inserted after load.",
+      "tabId": 1894443170,
+      "timestamp": 1795612507661
+    },
+    {
+      "alternativeExplanations": [
+        "A viewability, verification or cookie-sync frame inserted by an ordinary ad.",
+        "A consent or login helper frame."
+      ],
+      "category": "ad_delivery_behaviour",
+      "confidence": "low",
+      "confidenceRationale": "A hidden cross-origin frame was observed, but no ad-selection request preceded it in the same frame lineage, and such frames are common in ordinary advertising.",
+      "dedupKey": "5cbc4275",
+      "detectionId": "ea0bd11d-9fab-4f90-bf3b-b05b216d4448",
+      "eventIds": [
+        "b10b991d-f6f2-483e-b176-5b5df6d374e0"
+      ],
+      "evidence": [
+        {
+          "eventIds": [
+            "b10b991d-f6f2-483e-b176-5b5df6d374e0"
+          ],
+          "kind": "observed",
+          "observed": "The page sensor observed a hidden cross-origin iframe targeting cdn.btloader.com inserted 1988 ms after the frame loaded in a frame on tv.finansavisen.no."
+        }
+      ],
+      "firstEventTimestamp": 1795612786798,
+      "limitations": [
+        "Page signals come from an opt-in content script in sub-frames and report structural facts only (element kind, size class, target hostname); page text, cookie values and full URLs are never collected.",
+        "A hostile page can suppress or imitate these DOM signals; absence of a signal is not evidence that nothing happened, and a signal alone does not show what the inserted element did."
+      ],
+      "matchedIndicatorIds": [],
+      "missingVisibility": [
+        "Third-party context flags are not available from this browser sensor.",
+        "Firefox tracking-protection classification is not available from this browser sensor.",
+        "Response bodies cannot be inspected by this browser sensor.",
+        "What code actually executed inside the page, and its effect on the device, is not observed; only network metadata and, where enabled, bounded analysis of selected response text are available."
+      ],
+      "occurrenceCount": 1,
+      "recommendedActions": [
+        "Review the listed events and the cited research before drawing conclusions.",
+        "If you have reason to believe you are personally targeted, seek help from a digital-security helpline (for example Access Now's Digital Security Helpline) rather than acting on this alert alone."
+      ],
+      "references": [
+        {
+          "title": "The Citizen Lab — How Discover-Tech turned targeted ads into a pipeline for spyware (2026-10-15)",
+          "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
+        },
+        {
+          "title": "Confiant — ADINT: Weaponized Ad Tech for Zero-Click Spyware and Mass Identity Vacuuming (2026-10-15)",
+          "url": "https://blog.confiant.com/p/adint-weaponized-ad-tech-for-zero-click-spyware-and-mass-identity-vacuuming"
+        }
+      ],
+      "ruleId": "page.hidden_iframe_after_load",
+      "ruleName": "Hidden cross-origin iframe inserted after load",
+      "ruleVersion": "1.0.0",
+      "severity": "suspicious",
+      "significance": "In the documented chain, selected devices received code that inserted a 1x1 frame to load the next stage. A hidden frame alone is common; together with a preceding ad-selection request it matches that step.",
+      "subjectHostnames": [
+        "tv.finansavisen.no",
+        "cdn.btloader.com"
+      ],
+      "summary": "A hidden cross-origin iframe was inserted after load.",
+      "tabId": 1894443170,
+      "timestamp": 1795612786798
+    },
+    {
+      "alternativeExplanations": [
+        "A viewability, verification or cookie-sync frame inserted by an ordinary ad.",
+        "A consent or login helper frame."
+      ],
+      "category": "ad_delivery_behaviour",
+      "confidence": "low",
+      "confidenceRationale": "A hidden cross-origin frame was observed, but no ad-selection request preceded it in the same frame lineage, and such frames are common in ordinary advertising.",
+      "dedupKey": "ff401446",
+      "detectionId": "52766793-269d-408e-9856-b6c03d5f5bcf",
+      "eventIds": [
+        "8a92ab78-263f-4914-8801-144a64e7df1f"
+      ],
+      "evidence": [
+        {
+          "eventIds": [
+            "8a92ab78-263f-4914-8801-144a64e7df1f"
+          ],
+          "kind": "observed",
+          "observed": "The page sensor observed a hidden cross-origin iframe targeting btloader.com inserted 1990 ms after the frame loaded in a frame on tv.finansavisen.no."
+        }
+      ],
+      "firstEventTimestamp": 1795612786800,
+      "limitations": [
+        "Page signals come from an opt-in content script in sub-frames and report structural facts only (element kind, size class, target hostname); page text, cookie values and full URLs are never collected.",
+        "A hostile page can suppress or imitate these DOM signals; absence of a signal is not evidence that nothing happened, and a signal alone does not show what the inserted element did."
+      ],
+      "matchedIndicatorIds": [],
+      "missingVisibility": [
+        "Third-party context flags are not available from this browser sensor.",
+        "Firefox tracking-protection classification is not available from this browser sensor.",
+        "Response bodies cannot be inspected by this browser sensor.",
+        "What code actually executed inside the page, and its effect on the device, is not observed; only network metadata and, where enabled, bounded analysis of selected response text are available."
+      ],
+      "occurrenceCount": 2,
+      "recommendedActions": [
+        "Review the listed events and the cited research before drawing conclusions.",
+        "If you have reason to believe you are personally targeted, seek help from a digital-security helpline (for example Access Now's Digital Security Helpline) rather than acting on this alert alone."
+      ],
+      "references": [
+        {
+          "title": "The Citizen Lab — How Discover-Tech turned targeted ads into a pipeline for spyware (2026-10-15)",
+          "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
+        },
+        {
+          "title": "Confiant — ADINT: Weaponized Ad Tech for Zero-Click Spyware and Mass Identity Vacuuming (2026-10-15)",
+          "url": "https://blog.confiant.com/p/adint-weaponized-ad-tech-for-zero-click-spyware-and-mass-identity-vacuuming"
+        }
+      ],
+      "ruleId": "page.hidden_iframe_after_load",
+      "ruleName": "Hidden cross-origin iframe inserted after load",
+      "ruleVersion": "1.0.0",
+      "severity": "suspicious",
+      "significance": "In the documented chain, selected devices received code that inserted a 1x1 frame to load the next stage. A hidden frame alone is common; together with a preceding ad-selection request it matches that step.",
+      "subjectHostnames": [
+        "tv.finansavisen.no",
+        "btloader.com"
+      ],
+      "summary": "A hidden cross-origin iframe was inserted after load.",
+      "tabId": 1894443170,
+      "timestamp": 1795612816804
+    },
+    {
+      "alternativeExplanations": [
+        "A viewability, verification or cookie-sync frame inserted by an ordinary ad.",
+        "A consent or login helper frame."
+      ],
+      "category": "ad_delivery_behaviour",
+      "confidence": "low",
+      "confidenceRationale": "A hidden cross-origin frame was observed, but no ad-selection request preceded it in the same frame lineage, and such frames are common in ordinary advertising.",
+      "dedupKey": "acc67217",
+      "detectionId": "9c5ac9a1-ec71-4eda-bceb-5118ed7e8da9",
+      "eventIds": [
+        "1980fc4b-f69e-462b-8e02-1ffd0cc23c58"
+      ],
+      "evidence": [
+        {
+          "eventIds": [
+            "1980fc4b-f69e-462b-8e02-1ffd0cc23c58"
+          ],
+          "kind": "observed",
+          "observed": "The page sensor observed a hidden cross-origin iframe targeting cm.g.doubleclick.net inserted 2071 ms after the frame loaded in a frame on tv.finansavisen.no."
+        }
+      ],
+      "firstEventTimestamp": 1795612786880,
+      "limitations": [
+        "Page signals come from an opt-in content script in sub-frames and report structural facts only (element kind, size class, target hostname); page text, cookie values and full URLs are never collected.",
+        "A hostile page can suppress or imitate these DOM signals; absence of a signal is not evidence that nothing happened, and a signal alone does not show what the inserted element did."
+      ],
+      "matchedIndicatorIds": [],
+      "missingVisibility": [
+        "Third-party context flags are not available from this browser sensor.",
+        "Firefox tracking-protection classification is not available from this browser sensor.",
+        "Response bodies cannot be inspected by this browser sensor.",
+        "What code actually executed inside the page, and its effect on the device, is not observed; only network metadata and, where enabled, bounded analysis of selected response text are available."
+      ],
+      "occurrenceCount": 1,
+      "recommendedActions": [
+        "Review the listed events and the cited research before drawing conclusions.",
+        "If you have reason to believe you are personally targeted, seek help from a digital-security helpline (for example Access Now's Digital Security Helpline) rather than acting on this alert alone."
+      ],
+      "references": [
+        {
+          "title": "The Citizen Lab — How Discover-Tech turned targeted ads into a pipeline for spyware (2026-10-15)",
+          "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
+        },
+        {
+          "title": "Confiant — ADINT: Weaponized Ad Tech for Zero-Click Spyware and Mass Identity Vacuuming (2026-10-15)",
+          "url": "https://blog.confiant.com/p/adint-weaponized-ad-tech-for-zero-click-spyware-and-mass-identity-vacuuming"
+        }
+      ],
+      "ruleId": "page.hidden_iframe_after_load",
+      "ruleName": "Hidden cross-origin iframe inserted after load",
+      "ruleVersion": "1.0.0",
+      "severity": "suspicious",
+      "significance": "In the documented chain, selected devices received code that inserted a 1x1 frame to load the next stage. A hidden frame alone is common; together with a preceding ad-selection request it matches that step.",
+      "subjectHostnames": [
+        "tv.finansavisen.no",
+        "cm.g.doubleclick.net"
+      ],
+      "summary": "A hidden cross-origin iframe was inserted after load.",
+      "tabId": 1894443170,
+      "timestamp": 1795612786880
+    },
+    {
+      "alternativeExplanations": [
+        "A viewability, verification or cookie-sync frame inserted by an ordinary ad.",
+        "A consent or login helper frame."
+      ],
+      "category": "ad_delivery_behaviour",
+      "confidence": "low",
+      "confidenceRationale": "A hidden cross-origin frame was observed, but no ad-selection request preceded it in the same frame lineage, and such frames are common in ordinary advertising.",
+      "dedupKey": "484ffa68",
+      "detectionId": "ebbcd50d-6103-483c-98ff-799142a52239",
+      "eventIds": [
+        "6a97d18d-50a6-4142-bf75-9c31c55e5e97"
+      ],
+      "evidence": [
+        {
+          "eventIds": [
+            "6a97d18d-50a6-4142-bf75-9c31c55e5e97"
+          ],
+          "kind": "observed",
+          "observed": "The page sensor observed a hidden cross-origin iframe targeting js-sec.indexww.com inserted 5302 ms after the frame loaded in a frame on tv.finansavisen.no."
+        }
+      ],
+      "firstEventTimestamp": 1795612790112,
+      "limitations": [
+        "Page signals come from an opt-in content script in sub-frames and report structural facts only (element kind, size class, target hostname); page text, cookie values and full URLs are never collected.",
+        "A hostile page can suppress or imitate these DOM signals; absence of a signal is not evidence that nothing happened, and a signal alone does not show what the inserted element did."
+      ],
+      "matchedIndicatorIds": [],
+      "missingVisibility": [
+        "Third-party context flags are not available from this browser sensor.",
+        "Firefox tracking-protection classification is not available from this browser sensor.",
+        "Response bodies cannot be inspected by this browser sensor.",
+        "What code actually executed inside the page, and its effect on the device, is not observed; only network metadata and, where enabled, bounded analysis of selected response text are available."
+      ],
+      "occurrenceCount": 1,
+      "recommendedActions": [
+        "Review the listed events and the cited research before drawing conclusions.",
+        "If you have reason to believe you are personally targeted, seek help from a digital-security helpline (for example Access Now's Digital Security Helpline) rather than acting on this alert alone."
+      ],
+      "references": [
+        {
+          "title": "The Citizen Lab — How Discover-Tech turned targeted ads into a pipeline for spyware (2026-10-15)",
+          "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
+        },
+        {
+          "title": "Confiant — ADINT: Weaponized Ad Tech for Zero-Click Spyware and Mass Identity Vacuuming (2026-10-15)",
+          "url": "https://blog.confiant.com/p/adint-weaponized-ad-tech-for-zero-click-spyware-and-mass-identity-vacuuming"
+        }
+      ],
+      "ruleId": "page.hidden_iframe_after_load",
+      "ruleName": "Hidden cross-origin iframe inserted after load",
+      "ruleVersion": "1.0.0",
+      "severity": "suspicious",
+      "significance": "In the documented chain, selected devices received code that inserted a 1x1 frame to load the next stage. A hidden frame alone is common; together with a preceding ad-selection request it matches that step.",
+      "subjectHostnames": [
+        "tv.finansavisen.no",
+        "js-sec.indexww.com"
+      ],
+      "summary": "A hidden cross-origin iframe was inserted after load.",
+      "tabId": 1894443170,
+      "timestamp": 1795612790112
+    },
+    {
+      "alternativeExplanations": [
+        "A viewability, verification or cookie-sync frame inserted by an ordinary ad.",
+        "A consent or login helper frame."
+      ],
+      "category": "ad_delivery_behaviour",
+      "confidence": "low",
+      "confidenceRationale": "A hidden cross-origin frame was observed, but no ad-selection request preceded it in the same frame lineage, and such frames are common in ordinary advertising.",
+      "dedupKey": "13d94839",
+      "detectionId": "f77ce143-958c-4c17-8eee-3684cb9af589",
+      "eventIds": [
+        "d29a9cde-7717-4407-8f4e-bbb1044e555f"
+      ],
+      "evidence": [
+        {
+          "eventIds": [
+            "d29a9cde-7717-4407-8f4e-bbb1044e555f"
+          ],
+          "kind": "observed",
+          "observed": "The page sensor observed a hidden cross-origin iframe targeting eus.rubiconproject.com inserted 5302 ms after the frame loaded in a frame on tv.finansavisen.no."
+        }
+      ],
+      "firstEventTimestamp": 1795612790112,
+      "limitations": [
+        "Page signals come from an opt-in content script in sub-frames and report structural facts only (element kind, size class, target hostname); page text, cookie values and full URLs are never collected.",
+        "A hostile page can suppress or imitate these DOM signals; absence of a signal is not evidence that nothing happened, and a signal alone does not show what the inserted element did."
+      ],
+      "matchedIndicatorIds": [],
+      "missingVisibility": [
+        "Third-party context flags are not available from this browser sensor.",
+        "Firefox tracking-protection classification is not available from this browser sensor.",
+        "Response bodies cannot be inspected by this browser sensor.",
+        "What code actually executed inside the page, and its effect on the device, is not observed; only network metadata and, where enabled, bounded analysis of selected response text are available."
+      ],
+      "occurrenceCount": 1,
+      "recommendedActions": [
+        "Review the listed events and the cited research before drawing conclusions.",
+        "If you have reason to believe you are personally targeted, seek help from a digital-security helpline (for example Access Now's Digital Security Helpline) rather than acting on this alert alone."
+      ],
+      "references": [
+        {
+          "title": "The Citizen Lab — How Discover-Tech turned targeted ads into a pipeline for spyware (2026-10-15)",
+          "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
+        },
+        {
+          "title": "Confiant — ADINT: Weaponized Ad Tech for Zero-Click Spyware and Mass Identity Vacuuming (2026-10-15)",
+          "url": "https://blog.confiant.com/p/adint-weaponized-ad-tech-for-zero-click-spyware-and-mass-identity-vacuuming"
+        }
+      ],
+      "ruleId": "page.hidden_iframe_after_load",
+      "ruleName": "Hidden cross-origin iframe inserted after load",
+      "ruleVersion": "1.0.0",
+      "severity": "suspicious",
+      "significance": "In the documented chain, selected devices received code that inserted a 1x1 frame to load the next stage. A hidden frame alone is common; together with a preceding ad-selection request it matches that step.",
+      "subjectHostnames": [
+        "tv.finansavisen.no",
+        "eus.rubiconproject.com"
+      ],
+      "summary": "A hidden cross-origin iframe was inserted after load.",
+      "tabId": 1894443170,
+      "timestamp": 1795612790112
+    },
+    {
+      "alternativeExplanations": [
+        "A viewability, verification or cookie-sync frame inserted by an ordinary ad.",
+        "A consent or login helper frame."
+      ],
+      "category": "ad_delivery_behaviour",
+      "confidence": "low",
+      "confidenceRationale": "A hidden cross-origin frame was observed, but no ad-selection request preceded it in the same frame lineage, and such frames are common in ordinary advertising.",
+      "dedupKey": "9dc87214",
+      "detectionId": "6614d105-5ba7-47fd-ad07-df5131e73253",
+      "eventIds": [
+        "718408c7-28c2-4813-b2dc-168097e5568a"
+      ],
+      "evidence": [
+        {
+          "eventIds": [
+            "718408c7-28c2-4813-b2dc-168097e5568a"
+          ],
+          "kind": "observed",
+          "observed": "The page sensor observed a hidden cross-origin iframe targeting ads.pubmatic.com inserted 5302 ms after the frame loaded in a frame on tv.finansavisen.no."
+        }
+      ],
+      "firstEventTimestamp": 1795612790112,
+      "limitations": [
+        "Page signals come from an opt-in content script in sub-frames and report structural facts only (element kind, size class, target hostname); page text, cookie values and full URLs are never collected.",
+        "A hostile page can suppress or imitate these DOM signals; absence of a signal is not evidence that nothing happened, and a signal alone does not show what the inserted element did."
+      ],
+      "matchedIndicatorIds": [],
+      "missingVisibility": [
+        "Third-party context flags are not available from this browser sensor.",
+        "Firefox tracking-protection classification is not available from this browser sensor.",
+        "Response bodies cannot be inspected by this browser sensor.",
+        "What code actually executed inside the page, and its effect on the device, is not observed; only network metadata and, where enabled, bounded analysis of selected response text are available."
+      ],
+      "occurrenceCount": 1,
+      "recommendedActions": [
+        "Review the listed events and the cited research before drawing conclusions.",
+        "If you have reason to believe you are personally targeted, seek help from a digital-security helpline (for example Access Now's Digital Security Helpline) rather than acting on this alert alone."
+      ],
+      "references": [
+        {
+          "title": "The Citizen Lab — How Discover-Tech turned targeted ads into a pipeline for spyware (2026-10-15)",
+          "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
+        },
+        {
+          "title": "Confiant — ADINT: Weaponized Ad Tech for Zero-Click Spyware and Mass Identity Vacuuming (2026-10-15)",
+          "url": "https://blog.confiant.com/p/adint-weaponized-ad-tech-for-zero-click-spyware-and-mass-identity-vacuuming"
+        }
+      ],
+      "ruleId": "page.hidden_iframe_after_load",
+      "ruleName": "Hidden cross-origin iframe inserted after load",
+      "ruleVersion": "1.0.0",
+      "severity": "suspicious",
+      "significance": "In the documented chain, selected devices received code that inserted a 1x1 frame to load the next stage. A hidden frame alone is common; together with a preceding ad-selection request it matches that step.",
+      "subjectHostnames": [
+        "tv.finansavisen.no",
+        "ads.pubmatic.com"
+      ],
+      "summary": "A hidden cross-origin iframe was inserted after load.",
+      "tabId": 1894443170,
+      "timestamp": 1795612790112
+    },
+    {
+      "alternativeExplanations": [
+        "A viewability, verification or cookie-sync frame inserted by an ordinary ad.",
+        "A consent or login helper frame."
+      ],
+      "category": "ad_delivery_behaviour",
+      "confidence": "low",
+      "confidenceRationale": "A hidden cross-origin frame was observed, but no ad-selection request preceded it in the same frame lineage, and such frames are common in ordinary advertising.",
+      "dedupKey": "85e33220",
+      "detectionId": "9bc11096-28df-495f-b202-e63f59de311a",
+      "eventIds": [
+        "d5ceb9f7-6dae-43ef-9267-a6d141f31d66"
+      ],
+      "evidence": [
+        {
+          "eventIds": [
+            "d5ceb9f7-6dae-43ef-9267-a6d141f31d66"
+          ],
+          "kind": "observed",
+          "observed": "The page sensor observed a hidden cross-origin iframe targeting sync.richaudience.com inserted 5303 ms after the frame loaded in a frame on tv.finansavisen.no."
+        }
+      ],
+      "firstEventTimestamp": 1795612790112,
+      "limitations": [
+        "Page signals come from an opt-in content script in sub-frames and report structural facts only (element kind, size class, target hostname); page text, cookie values and full URLs are never collected.",
+        "A hostile page can suppress or imitate these DOM signals; absence of a signal is not evidence that nothing happened, and a signal alone does not show what the inserted element did."
+      ],
+      "matchedIndicatorIds": [],
+      "missingVisibility": [
+        "Third-party context flags are not available from this browser sensor.",
+        "Firefox tracking-protection classification is not available from this browser sensor.",
+        "Response bodies cannot be inspected by this browser sensor.",
+        "What code actually executed inside the page, and its effect on the device, is not observed; only network metadata and, where enabled, bounded analysis of selected response text are available."
+      ],
+      "occurrenceCount": 1,
+      "recommendedActions": [
+        "Review the listed events and the cited research before drawing conclusions.",
+        "If you have reason to believe you are personally targeted, seek help from a digital-security helpline (for example Access Now's Digital Security Helpline) rather than acting on this alert alone."
+      ],
+      "references": [
+        {
+          "title": "The Citizen Lab — How Discover-Tech turned targeted ads into a pipeline for spyware (2026-10-15)",
+          "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
+        },
+        {
+          "title": "Confiant — ADINT: Weaponized Ad Tech for Zero-Click Spyware and Mass Identity Vacuuming (2026-10-15)",
+          "url": "https://blog.confiant.com/p/adint-weaponized-ad-tech-for-zero-click-spyware-and-mass-identity-vacuuming"
+        }
+      ],
+      "ruleId": "page.hidden_iframe_after_load",
+      "ruleName": "Hidden cross-origin iframe inserted after load",
+      "ruleVersion": "1.0.0",
+      "severity": "suspicious",
+      "significance": "In the documented chain, selected devices received code that inserted a 1x1 frame to load the next stage. A hidden frame alone is common; together with a preceding ad-selection request it matches that step.",
+      "subjectHostnames": [
+        "tv.finansavisen.no",
+        "sync.richaudience.com"
+      ],
+      "summary": "A hidden cross-origin iframe was inserted after load.",
+      "tabId": 1894443170,
+      "timestamp": 1795612790112
+    },
+    {
+      "alternativeExplanations": [
+        "A viewability, verification or cookie-sync frame inserted by an ordinary ad.",
+        "A consent or login helper frame."
+      ],
+      "category": "ad_delivery_behaviour",
+      "confidence": "low",
+      "confidenceRationale": "A hidden cross-origin frame was observed, but no ad-selection request preceded it in the same frame lineage, and such frames are common in ordinary advertising.",
+      "dedupKey": "18e5d57f",
+      "detectionId": "f5e61a99-7427-4e4b-acbd-6a77d3861c8c",
+      "eventIds": [
+        "f812dd00-6a82-413a-b5b6-ea5f6ca85d9e"
+      ],
+      "evidence": [
+        {
+          "eventIds": [
+            "f812dd00-6a82-413a-b5b6-ea5f6ca85d9e"
+          ],
+          "kind": "observed",
+          "observed": "The page sensor observed a hidden cross-origin iframe targeting ssum-sec.casalemedia.com inserted 58 ms after the frame loaded in a frame on js-sec.indexww.com."
+        }
+      ],
+      "firstEventTimestamp": 1795613085130,
+      "limitations": [
+        "Page signals come from an opt-in content script in sub-frames and report structural facts only (element kind, size class, target hostname); page text, cookie values and full URLs are never collected.",
+        "A hostile page can suppress or imitate these DOM signals; absence of a signal is not evidence that nothing happened, and a signal alone does not show what the inserted element did."
+      ],
+      "matchedIndicatorIds": [],
+      "missingVisibility": [
+        "Third-party context flags are not available from this browser sensor.",
+        "Firefox tracking-protection classification is not available from this browser sensor.",
+        "Response bodies cannot be inspected by this browser sensor.",
+        "What code actually executed inside the page, and its effect on the device, is not observed; only network metadata and, where enabled, bounded analysis of selected response text are available."
+      ],
+      "occurrenceCount": 1,
+      "recommendedActions": [
+        "Review the listed events and the cited research before drawing conclusions.",
+        "If you have reason to believe you are personally targeted, seek help from a digital-security helpline (for example Access Now's Digital Security Helpline) rather than acting on this alert alone."
+      ],
+      "references": [
+        {
+          "title": "The Citizen Lab — How Discover-Tech turned targeted ads into a pipeline for spyware (2026-10-15)",
+          "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
+        },
+        {
+          "title": "Confiant — ADINT: Weaponized Ad Tech for Zero-Click Spyware and Mass Identity Vacuuming (2026-10-15)",
+          "url": "https://blog.confiant.com/p/adint-weaponized-ad-tech-for-zero-click-spyware-and-mass-identity-vacuuming"
+        }
+      ],
+      "ruleId": "page.hidden_iframe_after_load",
+      "ruleName": "Hidden cross-origin iframe inserted after load",
+      "ruleVersion": "1.0.0",
+      "severity": "suspicious",
+      "significance": "In the documented chain, selected devices received code that inserted a 1x1 frame to load the next stage. A hidden frame alone is common; together with a preceding ad-selection request it matches that step.",
+      "subjectHostnames": [
+        "js-sec.indexww.com",
+        "ssum-sec.casalemedia.com"
+      ],
+      "summary": "A hidden cross-origin iframe was inserted after load.",
+      "tabId": 1894443180,
+      "timestamp": 1795613085130
+    },
+    {
+      "alternativeExplanations": [
+        "A viewability, verification or cookie-sync frame inserted by an ordinary ad.",
+        "A consent or login helper frame."
+      ],
+      "category": "ad_delivery_behaviour",
+      "confidence": "low",
+      "confidenceRationale": "A hidden cross-origin frame was observed, but no ad-selection request preceded it in the same frame lineage, and such frames are common in ordinary advertising.",
+      "dedupKey": "15f53d43",
+      "detectionId": "15e24532-affe-460a-8923-72dd34f45dae",
+      "eventIds": [
+        "68315010-7334-4a76-802e-93993d0bae31"
+      ],
+      "evidence": [
+        {
+          "eventIds": [
+            "68315010-7334-4a76-802e-93993d0bae31"
+          ],
+          "kind": "observed",
+          "observed": "The page sensor observed a hidden cross-origin iframe targeting ssum-sec.casalemedia.com inserted 19 ms after the frame loaded in a frame on js-sec.indexww.com."
+        }
+      ],
+      "firstEventTimestamp": 1795613271843,
+      "limitations": [
+        "Page signals come from an opt-in content script in sub-frames and report structural facts only (element kind, size class, target hostname); page text, cookie values and full URLs are never collected.",
+        "A hostile page can suppress or imitate these DOM signals; absence of a signal is not evidence that nothing happened, and a signal alone does not show what the inserted element did."
+      ],
+      "matchedIndicatorIds": [],
+      "missingVisibility": [
+        "Third-party context flags are not available from this browser sensor.",
+        "Firefox tracking-protection classification is not available from this browser sensor.",
+        "Response bodies cannot be inspected by this browser sensor.",
+        "What code actually executed inside the page, and its effect on the device, is not observed; only network metadata and, where enabled, bounded analysis of selected response text are available."
+      ],
+      "occurrenceCount": 1,
+      "recommendedActions": [
+        "Review the listed events and the cited research before drawing conclusions.",
+        "If you have reason to believe you are personally targeted, seek help from a digital-security helpline (for example Access Now's Digital Security Helpline) rather than acting on this alert alone."
+      ],
+      "references": [
+        {
+          "title": "The Citizen Lab — How Discover-Tech turned targeted ads into a pipeline for spyware (2026-10-15)",
+          "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
+        },
+        {
+          "title": "Confiant — ADINT: Weaponized Ad Tech for Zero-Click Spyware and Mass Identity Vacuuming (2026-10-15)",
+          "url": "https://blog.confiant.com/p/adint-weaponized-ad-tech-for-zero-click-spyware-and-mass-identity-vacuuming"
+        }
+      ],
+      "ruleId": "page.hidden_iframe_after_load",
+      "ruleName": "Hidden cross-origin iframe inserted after load",
+      "ruleVersion": "1.0.0",
+      "severity": "suspicious",
+      "significance": "In the documented chain, selected devices received code that inserted a 1x1 frame to load the next stage. A hidden frame alone is common; together with a preceding ad-selection request it matches that step.",
+      "subjectHostnames": [
+        "js-sec.indexww.com",
+        "ssum-sec.casalemedia.com"
+      ],
+      "summary": "A hidden cross-origin iframe was inserted after load.",
+      "tabId": 1894443184,
+      "timestamp": 1795613271843
+    },
+    {
+      "alternativeExplanations": [
+        "A viewability, verification or cookie-sync frame inserted by an ordinary ad.",
+        "A consent or login helper frame."
+      ],
+      "category": "ad_delivery_behaviour",
+      "confidence": "low",
+      "confidenceRationale": "A hidden cross-origin frame was observed, but no ad-selection request preceded it in the same frame lineage, and such frames are common in ordinary advertising.",
+      "dedupKey": "267288c5",
+      "detectionId": "54f11970-4f5d-4b69-8933-f3769efcd071",
+      "eventIds": [
+        "a61236bc-4ea4-4e89-bd13-c6d16d112102"
+      ],
+      "evidence": [
+        {
+          "eventIds": [
+            "a61236bc-4ea4-4e89-bd13-c6d16d112102"
+          ],
+          "kind": "observed",
+          "observed": "The page sensor observed a hidden cross-origin iframe targeting ssum-sec.casalemedia.com inserted 58 ms after the frame loaded in a frame on js-sec.indexww.com."
+        }
+      ],
+      "firstEventTimestamp": 1795613335118,
+      "limitations": [
+        "Page signals come from an opt-in content script in sub-frames and report structural facts only (element kind, size class, target hostname); page text, cookie values and full URLs are never collected.",
+        "A hostile page can suppress or imitate these DOM signals; absence of a signal is not evidence that nothing happened, and a signal alone does not show what the inserted element did."
+      ],
+      "matchedIndicatorIds": [],
+      "missingVisibility": [
+        "Third-party context flags are not available from this browser sensor.",
+        "Firefox tracking-protection classification is not available from this browser sensor.",
+        "Response bodies cannot be inspected by this browser sensor.",
+        "What code actually executed inside the page, and its effect on the device, is not observed; only network metadata and, where enabled, bounded analysis of selected response text are available."
+      ],
+      "occurrenceCount": 1,
+      "recommendedActions": [
+        "Review the listed events and the cited research before drawing conclusions.",
+        "If you have reason to believe you are personally targeted, seek help from a digital-security helpline (for example Access Now's Digital Security Helpline) rather than acting on this alert alone."
+      ],
+      "references": [
+        {
+          "title": "The Citizen Lab — How Discover-Tech turned targeted ads into a pipeline for spyware (2026-10-15)",
+          "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
+        },
+        {
+          "title": "Confiant — ADINT: Weaponized Ad Tech for Zero-Click Spyware and Mass Identity Vacuuming (2026-10-15)",
+          "url": "https://blog.confiant.com/p/adint-weaponized-ad-tech-for-zero-click-spyware-and-mass-identity-vacuuming"
+        }
+      ],
+      "ruleId": "page.hidden_iframe_after_load",
+      "ruleName": "Hidden cross-origin iframe inserted after load",
+      "ruleVersion": "1.0.0",
+      "severity": "suspicious",
+      "significance": "In the documented chain, selected devices received code that inserted a 1x1 frame to load the next stage. A hidden frame alone is common; together with a preceding ad-selection request it matches that step.",
+      "subjectHostnames": [
+        "js-sec.indexww.com",
+        "ssum-sec.casalemedia.com"
+      ],
+      "summary": "A hidden cross-origin iframe was inserted after load.",
+      "tabId": 1894443186,
+      "timestamp": 1795613335118
+    },
+    {
+      "alternativeExplanations": [
+        "A viewability, verification or cookie-sync frame inserted by an ordinary ad.",
+        "A consent or login helper frame."
+      ],
+      "category": "ad_delivery_behaviour",
+      "confidence": "low",
+      "confidenceRationale": "A hidden cross-origin frame was observed, but no ad-selection request preceded it in the same frame lineage, and such frames are common in ordinary advertising.",
+      "dedupKey": "b7a35757",
+      "detectionId": "c344d35c-d12a-4850-b0cd-e0d3f6a1531a",
+      "eventIds": [
+        "011bcbff-9b9c-4d03-8d25-48f24678d75a"
+      ],
+      "evidence": [
+        {
+          "eventIds": [
+            "011bcbff-9b9c-4d03-8d25-48f24678d75a"
+          ],
+          "kind": "observed",
+          "observed": "The page sensor observed a hidden cross-origin iframe targeting ssum-sec.casalemedia.com inserted 33 ms after the frame loaded in a frame on js-sec.indexww.com."
+        }
+      ],
+      "firstEventTimestamp": 1795613399949,
+      "limitations": [
+        "Page signals come from an opt-in content script in sub-frames and report structural facts only (element kind, size class, target hostname); page text, cookie values and full URLs are never collected.",
+        "A hostile page can suppress or imitate these DOM signals; absence of a signal is not evidence that nothing happened, and a signal alone does not show what the inserted element did."
+      ],
+      "matchedIndicatorIds": [],
+      "missingVisibility": [
+        "Third-party context flags are not available from this browser sensor.",
+        "Firefox tracking-protection classification is not available from this browser sensor.",
+        "Response bodies cannot be inspected by this browser sensor.",
+        "What code actually executed inside the page, and its effect on the device, is not observed; only network metadata and, where enabled, bounded analysis of selected response text are available."
+      ],
+      "occurrenceCount": 1,
+      "recommendedActions": [
+        "Review the listed events and the cited research before drawing conclusions.",
+        "If you have reason to believe you are personally targeted, seek help from a digital-security helpline (for example Access Now's Digital Security Helpline) rather than acting on this alert alone."
+      ],
+      "references": [
+        {
+          "title": "The Citizen Lab — How Discover-Tech turned targeted ads into a pipeline for spyware (2026-10-15)",
+          "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
+        },
+        {
+          "title": "Confiant — ADINT: Weaponized Ad Tech for Zero-Click Spyware and Mass Identity Vacuuming (2026-10-15)",
+          "url": "https://blog.confiant.com/p/adint-weaponized-ad-tech-for-zero-click-spyware-and-mass-identity-vacuuming"
+        }
+      ],
+      "ruleId": "page.hidden_iframe_after_load",
+      "ruleName": "Hidden cross-origin iframe inserted after load",
+      "ruleVersion": "1.0.0",
+      "severity": "suspicious",
+      "significance": "In the documented chain, selected devices received code that inserted a 1x1 frame to load the next stage. A hidden frame alone is common; together with a preceding ad-selection request it matches that step.",
+      "subjectHostnames": [
+        "js-sec.indexww.com",
+        "ssum-sec.casalemedia.com"
+      ],
+      "summary": "A hidden cross-origin iframe was inserted after load.",
+      "tabId": 1894443188,
+      "timestamp": 1795613399949
+    },
+    {
+      "alternativeExplanations": [
+        "A viewability, verification or cookie-sync frame inserted by an ordinary ad.",
+        "A consent or login helper frame."
+      ],
+      "category": "ad_delivery_behaviour",
+      "confidence": "low",
+      "confidenceRationale": "A hidden cross-origin frame was observed, but no ad-selection request preceded it in the same frame lineage, and such frames are common in ordinary advertising.",
+      "dedupKey": "d4c5b5e6",
+      "detectionId": "5b2016a4-9059-49b2-a923-deb858ec8575",
+      "eventIds": [
+        "cd7b4dc1-d068-4b55-bdff-1620c4b0cdb9"
+      ],
+      "evidence": [
+        {
+          "eventIds": [
+            "cd7b4dc1-d068-4b55-bdff-1620c4b0cdb9"
+          ],
+          "kind": "observed",
+          "observed": "The page sensor observed a hidden cross-origin iframe targeting ssum-sec.casalemedia.com inserted 110 ms after the frame loaded in a frame on js-sec.indexww.com."
+        }
+      ],
+      "firstEventTimestamp": 1795613589468,
+      "limitations": [
+        "Page signals come from an opt-in content script in sub-frames and report structural facts only (element kind, size class, target hostname); page text, cookie values and full URLs are never collected.",
+        "A hostile page can suppress or imitate these DOM signals; absence of a signal is not evidence that nothing happened, and a signal alone does not show what the inserted element did."
+      ],
+      "matchedIndicatorIds": [],
+      "missingVisibility": [
+        "Third-party context flags are not available from this browser sensor.",
+        "Firefox tracking-protection classification is not available from this browser sensor.",
+        "Response bodies cannot be inspected by this browser sensor.",
+        "What code actually executed inside the page, and its effect on the device, is not observed; only network metadata and, where enabled, bounded analysis of selected response text are available."
+      ],
+      "occurrenceCount": 1,
+      "recommendedActions": [
+        "Review the listed events and the cited research before drawing conclusions.",
+        "If you have reason to believe you are personally targeted, seek help from a digital-security helpline (for example Access Now's Digital Security Helpline) rather than acting on this alert alone."
+      ],
+      "references": [
+        {
+          "title": "The Citizen Lab — How Discover-Tech turned targeted ads into a pipeline for spyware (2026-10-15)",
+          "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
+        },
+        {
+          "title": "Confiant — ADINT: Weaponized Ad Tech for Zero-Click Spyware and Mass Identity Vacuuming (2026-10-15)",
+          "url": "https://blog.confiant.com/p/adint-weaponized-ad-tech-for-zero-click-spyware-and-mass-identity-vacuuming"
+        }
+      ],
+      "ruleId": "page.hidden_iframe_after_load",
+      "ruleName": "Hidden cross-origin iframe inserted after load",
+      "ruleVersion": "1.0.0",
+      "severity": "suspicious",
+      "significance": "In the documented chain, selected devices received code that inserted a 1x1 frame to load the next stage. A hidden frame alone is common; together with a preceding ad-selection request it matches that step.",
+      "subjectHostnames": [
+        "js-sec.indexww.com",
+        "ssum-sec.casalemedia.com"
+      ],
+      "summary": "A hidden cross-origin iframe was inserted after load.",
+      "tabId": 1894443194,
+      "timestamp": 1795613589468
+    },
+    {
+      "alternativeExplanations": [
+        "A viewability, verification or cookie-sync frame inserted by an ordinary ad.",
+        "A consent or login helper frame."
+      ],
+      "category": "ad_delivery_behaviour",
+      "confidence": "low",
+      "confidenceRationale": "A hidden cross-origin frame was observed, but no ad-selection request preceded it in the same frame lineage, and such frames are common in ordinary advertising.",
+      "dedupKey": "e55fcadb",
+      "detectionId": "a31f5834-4edd-4e1e-8050-1321b995f11a",
+      "eventIds": [
+        "5b62f17b-7bea-4995-9d42-ccb5a7058be5"
+      ],
+      "evidence": [
+        {
+          "eventIds": [
+            "5b62f17b-7bea-4995-9d42-ccb5a7058be5"
+          ],
+          "kind": "observed",
+          "observed": "The page sensor observed a hidden cross-origin iframe targeting secure-assets.rubiconproject.com inserted 4 ms after the frame loaded in a frame on ms-cookie-sync.presage.io."
+        }
+      ],
+      "firstEventTimestamp": 1795613589526,
+      "limitations": [
+        "Page signals come from an opt-in content script in sub-frames and report structural facts only (element kind, size class, target hostname); page text, cookie values and full URLs are never collected.",
+        "A hostile page can suppress or imitate these DOM signals; absence of a signal is not evidence that nothing happened, and a signal alone does not show what the inserted element did."
+      ],
+      "matchedIndicatorIds": [],
+      "missingVisibility": [
+        "Third-party context flags are not available from this browser sensor.",
+        "Firefox tracking-protection classification is not available from this browser sensor.",
+        "Response bodies cannot be inspected by this browser sensor.",
+        "What code actually executed inside the page, and its effect on the device, is not observed; only network metadata and, where enabled, bounded analysis of selected response text are available."
+      ],
+      "occurrenceCount": 2,
+      "recommendedActions": [
+        "Review the listed events and the cited research before drawing conclusions.",
+        "If you have reason to believe you are personally targeted, seek help from a digital-security helpline (for example Access Now's Digital Security Helpline) rather than acting on this alert alone."
+      ],
+      "references": [
+        {
+          "title": "The Citizen Lab — How Discover-Tech turned targeted ads into a pipeline for spyware (2026-10-15)",
+          "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
+        },
+        {
+          "title": "Confiant — ADINT: Weaponized Ad Tech for Zero-Click Spyware and Mass Identity Vacuuming (2026-10-15)",
+          "url": "https://blog.confiant.com/p/adint-weaponized-ad-tech-for-zero-click-spyware-and-mass-identity-vacuuming"
+        }
+      ],
+      "ruleId": "page.hidden_iframe_after_load",
+      "ruleName": "Hidden cross-origin iframe inserted after load",
+      "ruleVersion": "1.0.0",
+      "severity": "suspicious",
+      "significance": "In the documented chain, selected devices received code that inserted a 1x1 frame to load the next stage. A hidden frame alone is common; together with a preceding ad-selection request it matches that step.",
+      "subjectHostnames": [
+        "ms-cookie-sync.presage.io",
+        "secure-assets.rubiconproject.com"
+      ],
+      "summary": "A hidden cross-origin iframe was inserted after load.",
+      "tabId": 1894443194,
+      "timestamp": 1795613589527
+    },
+    {
+      "alternativeExplanations": [
+        "A viewability, verification or cookie-sync frame inserted by an ordinary ad.",
+        "A consent or login helper frame."
+      ],
+      "category": "ad_delivery_behaviour",
+      "confidence": "low",
+      "confidenceRationale": "A hidden cross-origin frame was observed, but no ad-selection request preceded it in the same frame lineage, and such frames are common in ordinary advertising.",
+      "dedupKey": "a34ec9b9",
+      "detectionId": "d2e9b2c6-89b6-4364-b597-1653bfdd263f",
+      "eventIds": [
+        "822b0039-2da5-4df7-bdce-02d22e7419a8"
+      ],
+      "evidence": [
+        {
+          "eventIds": [
+            "822b0039-2da5-4df7-bdce-02d22e7419a8"
+          ],
+          "kind": "observed",
+          "observed": "The page sensor observed a hidden cross-origin iframe targeting ssbsync.smartadserver.com inserted 5 ms after the frame loaded in a frame on ms-cookie-sync.presage.io."
+        }
+      ],
+      "firstEventTimestamp": 1795613589526,
+      "limitations": [
+        "Page signals come from an opt-in content script in sub-frames and report structural facts only (element kind, size class, target hostname); page text, cookie values and full URLs are never collected.",
+        "A hostile page can suppress or imitate these DOM signals; absence of a signal is not evidence that nothing happened, and a signal alone does not show what the inserted element did."
+      ],
+      "matchedIndicatorIds": [],
+      "missingVisibility": [
+        "Third-party context flags are not available from this browser sensor.",
+        "Firefox tracking-protection classification is not available from this browser sensor.",
+        "Response bodies cannot be inspected by this browser sensor.",
+        "What code actually executed inside the page, and its effect on the device, is not observed; only network metadata and, where enabled, bounded analysis of selected response text are available."
+      ],
+      "occurrenceCount": 2,
+      "recommendedActions": [
+        "Review the listed events and the cited research before drawing conclusions.",
+        "If you have reason to believe you are personally targeted, seek help from a digital-security helpline (for example Access Now's Digital Security Helpline) rather than acting on this alert alone."
+      ],
+      "references": [
+        {
+          "title": "The Citizen Lab — How Discover-Tech turned targeted ads into a pipeline for spyware (2026-10-15)",
+          "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
+        },
+        {
+          "title": "Confiant — ADINT: Weaponized Ad Tech for Zero-Click Spyware and Mass Identity Vacuuming (2026-10-15)",
+          "url": "https://blog.confiant.com/p/adint-weaponized-ad-tech-for-zero-click-spyware-and-mass-identity-vacuuming"
+        }
+      ],
+      "ruleId": "page.hidden_iframe_after_load",
+      "ruleName": "Hidden cross-origin iframe inserted after load",
+      "ruleVersion": "1.0.0",
+      "severity": "suspicious",
+      "significance": "In the documented chain, selected devices received code that inserted a 1x1 frame to load the next stage. A hidden frame alone is common; together with a preceding ad-selection request it matches that step.",
+      "subjectHostnames": [
+        "ms-cookie-sync.presage.io",
+        "ssbsync.smartadserver.com"
+      ],
+      "summary": "A hidden cross-origin iframe was inserted after load.",
+      "tabId": 1894443194,
+      "timestamp": 1795613589527
+    },
+    {
+      "alternativeExplanations": [
+        "A viewability, verification or cookie-sync frame inserted by an ordinary ad.",
+        "A consent or login helper frame."
+      ],
+      "category": "ad_delivery_behaviour",
+      "confidence": "low",
+      "confidenceRationale": "A hidden cross-origin frame was observed, but no ad-selection request preceded it in the same frame lineage, and such frames are common in ordinary advertising.",
+      "dedupKey": "34c6fc6c",
+      "detectionId": "d272ad4f-e5f8-4b6d-a532-475b1c1c0f46",
+      "eventIds": [
+        "15068666-c156-40a8-8dd2-71633fd0b3aa"
+      ],
+      "evidence": [
+        {
+          "eventIds": [
+            "15068666-c156-40a8-8dd2-71633fd0b3aa"
+          ],
+          "kind": "observed",
+          "observed": "The page sensor observed a hidden cross-origin iframe targeting ssum-sec.casalemedia.com inserted 16 ms after the frame loaded in a frame on js-sec.indexww.com."
+        }
+      ],
+      "firstEventTimestamp": 1795614690679,
+      "limitations": [
+        "Page signals come from an opt-in content script in sub-frames and report structural facts only (element kind, size class, target hostname); page text, cookie values and full URLs are never collected.",
+        "A hostile page can suppress or imitate these DOM signals; absence of a signal is not evidence that nothing happened, and a signal alone does not show what the inserted element did."
+      ],
+      "matchedIndicatorIds": [],
+      "missingVisibility": [
+        "Third-party context flags are not available from this browser sensor.",
+        "Firefox tracking-protection classification is not available from this browser sensor.",
+        "Response bodies cannot be inspected by this browser sensor.",
+        "What code actually executed inside the page, and its effect on the device, is not observed; only network metadata and, where enabled, bounded analysis of selected response text are available."
+      ],
+      "occurrenceCount": 2,
+      "recommendedActions": [
+        "Review the listed events and the cited research before drawing conclusions.",
+        "If you have reason to believe you are personally targeted, seek help from a digital-security helpline (for example Access Now's Digital Security Helpline) rather than acting on this alert alone."
+      ],
+      "references": [
+        {
+          "title": "The Citizen Lab — How Discover-Tech turned targeted ads into a pipeline for spyware (2026-10-15)",
+          "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
+        },
+        {
+          "title": "Confiant — ADINT: Weaponized Ad Tech for Zero-Click Spyware and Mass Identity Vacuuming (2026-10-15)",
+          "url": "https://blog.confiant.com/p/adint-weaponized-ad-tech-for-zero-click-spyware-and-mass-identity-vacuuming"
+        }
+      ],
+      "ruleId": "page.hidden_iframe_after_load",
+      "ruleName": "Hidden cross-origin iframe inserted after load",
+      "ruleVersion": "1.0.0",
+      "severity": "suspicious",
+      "significance": "In the documented chain, selected devices received code that inserted a 1x1 frame to load the next stage. A hidden frame alone is common; together with a preceding ad-selection request it matches that step.",
+      "subjectHostnames": [
+        "js-sec.indexww.com",
+        "ssum-sec.casalemedia.com"
+      ],
+      "summary": "A hidden cross-origin iframe was inserted after load.",
+      "tabId": 1894443196,
+      "timestamp": 1795614709771
+    },
+    {
+      "alternativeExplanations": [
+        "A viewability, verification or cookie-sync frame inserted by an ordinary ad.",
+        "A consent or login helper frame."
+      ],
+      "category": "ad_delivery_behaviour",
+      "confidence": "low",
+      "confidenceRationale": "A hidden cross-origin frame was observed, but no ad-selection request preceded it in the same frame lineage, and such frames are common in ordinary advertising.",
+      "dedupKey": "519b8202",
+      "detectionId": "ac9b9f25-de72-4434-848c-38f623a6d28d",
+      "eventIds": [
+        "f15cafe1-0a38-4cb1-a0b2-a8185fca2d2a"
+      ],
+      "evidence": [
+        {
+          "eventIds": [
+            "f15cafe1-0a38-4cb1-a0b2-a8185fca2d2a"
+          ],
+          "kind": "observed",
+          "observed": "The page sensor observed a hidden cross-origin iframe targeting ssum-sec.casalemedia.com inserted 11 ms after the frame loaded in a frame on js-sec.indexww.com."
+        }
+      ],
+      "firstEventTimestamp": 1795614754105,
+      "limitations": [
+        "Page signals come from an opt-in content script in sub-frames and report structural facts only (element kind, size class, target hostname); page text, cookie values and full URLs are never collected.",
+        "A hostile page can suppress or imitate these DOM signals; absence of a signal is not evidence that nothing happened, and a signal alone does not show what the inserted element did."
+      ],
+      "matchedIndicatorIds": [],
+      "missingVisibility": [
+        "Third-party context flags are not available from this browser sensor.",
+        "Firefox tracking-protection classification is not available from this browser sensor.",
+        "Response bodies cannot be inspected by this browser sensor.",
+        "What code actually executed inside the page, and its effect on the device, is not observed; only network metadata and, where enabled, bounded analysis of selected response text are available."
+      ],
+      "occurrenceCount": 2,
+      "recommendedActions": [
+        "Review the listed events and the cited research before drawing conclusions.",
+        "If you have reason to believe you are personally targeted, seek help from a digital-security helpline (for example Access Now's Digital Security Helpline) rather than acting on this alert alone."
+      ],
+      "references": [
+        {
+          "title": "The Citizen Lab — How Discover-Tech turned targeted ads into a pipeline for spyware (2026-10-15)",
+          "url": "https://citizenlab.ca/research/how-discover-tech-turned-targeted-ads-into-a-pipeline-for-spyware/"
+        },
+        {
+          "title": "Confiant — ADINT: Weaponized Ad Tech for Zero-Click Spyware and Mass Identity Vacuuming (2026-10-15)",
+          "url": "https://blog.confiant.com/p/adint-weaponized-ad-tech-for-zero-click-spyware-and-mass-identity-vacuuming"
+        }
+      ],
+      "ruleId": "page.hidden_iframe_after_load",
+      "ruleName": "Hidden cross-origin iframe inserted after load",
+      "ruleVersion": "1.0.0",
+      "severity": "suspicious",
+      "significance": "In the documented chain, selected devices received code that inserted a 1x1 frame to load the next stage. A hidden frame alone is common; together with a preceding ad-selection request it matches that step.",
+      "subjectHostnames": [
+        "js-sec.indexww.com",
+        "ssum-sec.casalemedia.com"
+      ],
+      "summary": "A hidden cross-origin iframe was inserted after load.",
+      "tabId": 1894443198,
+      "timestamp": 1795614773233
+    }
+  ],
+  "disclaimer": "AdTripwire records observable indicators only. Absence of detections is not evidence that a device is free of spyware. Infrastructure matches describe exposure to documented infrastructure, not confirmed compromise.",
+  "events": [
+    {
+      "browser": "firefox",
+      "correlationId": "tab:1894443156",
+      "destination": {
+        "hostname": "js-sec.indexww.com",
+        "pathPattern": "/",
+        "queryParamNames": [],
+        "redacted": true,
+        "scheme": "https"
+      },
+      "eventId": "5ecebf0b-01b5-4c9a-90aa-bc3509c89fc9",
+      "eventType": "page_signal",
+      "evidenceQuality": "direct",
+      "frameContext": {
+        "ancestorFrameIds": [
+          0
+        ],
+        "ancestorHostnames": [
+          "www.dagsavisen.no"
+        ],
+        "depth": 1,
+        "documentHostname": "js-sec.indexww.com",
+        "frameId": 56,
+        "parentFrameId": 0,
+        "thirdParty": true,
+        "topHostname": "www.dagsavisen.no"
+      },
+      "matchedIndicators": [],
+      "matchedRules": [
+        "page.hidden_iframe_after_load"
+      ],
+      "observationLimitations": [],
+      "pageSignal": {
+        "crossOrigin": true,
+        "kind": "hidden_iframe_inserted",
+        "msSinceLoad": 49,
+        "targetHostname": "ssum-sec.casalemedia.com"
+      },
+      "requestStatus": "unknown",
+      "sensor": "page",
+      "tabId": 1894443156,
+      "timestamp": 1795611356466
+    },
+    {
+      "browser": "firefox",
+      "correlationId": "tab:1894443158",
+      "destination": {
+        "hostname": "js-sec.indexww.com",
+        "pathPattern": "/",
+        "queryParamNames": [],
+        "redacted": true,
+        "scheme": "https"
+      },
+      "eventId": "724413e4-c41b-493f-ab10-9578cc1594be",
+      "eventType": "page_signal",
+      "evidenceQuality": "direct",
+      "frameContext": {
+        "ancestorFrameIds": [
+          0
+        ],
+        "ancestorHostnames": [
+          "www.abcnyheter.no"
+        ],
+        "depth": 1,
+        "documentHostname": "js-sec.indexww.com",
+        "frameId": 99,
+        "parentFrameId": 0,
+        "thirdParty": true,
+        "topHostname": "www.abcnyheter.no"
+      },
+      "matchedIndicators": [],
+      "matchedRules": [
+        "page.hidden_iframe_after_load"
+      ],
+      "observationLimitations": [],
+      "pageSignal": {
+        "crossOrigin": true,
+        "kind": "hidden_iframe_inserted",
+        "msSinceLoad": 88,
+        "targetHostname": "ssum-sec.casalemedia.com"
+      },
+      "requestStatus": "unknown",
+      "sensor": "page",
+      "tabId": 1894443158,
+      "timestamp": 1795611466876
+    },
+    {
+      "browser": "firefox",
+      "correlationId": "tab:1894443162",
+      "destination": {
+        "hostname": "js-sec.indexww.com",
+        "pathPattern": "/",
+        "queryParamNames": [],
+        "redacted": true,
+        "scheme": "https"
+      },
+      "eventId": "07e988c9-7456-44d6-a4b4-e86f2f6b1ce9",
+      "eventType": "page_signal",
+      "evidenceQuality": "direct",
+      "frameContext": {
+        "ancestorFrameIds": [
+          0
+        ],
+        "ancestorHostnames": [
+          "www.nationen.no"
+        ],
+        "depth": 1,
+        "documentHostname": "js-sec.indexww.com",
+        "frameId": 138,
+        "parentFrameId": 0,
+        "thirdParty": true,
+        "topHostname": "www.nationen.no"
+      },
+      "matchedIndicators": [],
+      "matchedRules": [
+        "page.hidden_iframe_after_load"
+      ],
+      "observationLimitations": [],
+      "pageSignal": {
+        "crossOrigin": true,
+        "kind": "hidden_iframe_inserted",
+        "msSinceLoad": 42,
+        "targetHostname": "ssum-sec.casalemedia.com"
+      },
+      "requestStatus": "unknown",
+      "sensor": "page",
+      "tabId": 1894443162,
+      "timestamp": 1795611652499
+    },
+    {
+      "browser": "firefox",
+      "correlationId": "tab:1894443168",
+      "destination": {
+        "hostname": "www.dn.no",
+        "pathPattern": "/",
+        "queryParamNames": [],
+        "redacted": true,
+        "scheme": "https"
+      },
+      "eventId": "85a6fada-18ab-4c3c-b53a-2008b388b868",
+      "eventType": "page_signal",
+      "evidenceQuality": "direct",
+      "frameContext": {
+        "ancestorFrameIds": [
+          0
+        ],
+        "ancestorHostnames": [
+          "www.dn.no"
+        ],
+        "depth": 1,
+        "documentHostname": "www.dn.no",
+        "frameId": 200,
+        "parentFrameId": 0,
+        "thirdParty": true,
+        "topHostname": "www.dn.no"
+      },
+      "matchedIndicators": [],
+      "matchedRules": [
+        "page.hidden_iframe_after_load"
+      ],
+      "observationLimitations": [],
+      "pageSignal": {
+        "crossOrigin": true,
+        "kind": "hidden_iframe_inserted",
+        "msSinceLoad": 727,
+        "targetHostname": "cm.g.doubleclick.net"
+      },
+      "requestStatus": "unknown",
+      "sensor": "page",
+      "tabId": 1894443168,
+      "timestamp": 1795611841297
+    },
+    {
+      "browser": "firefox",
+      "correlationId": "tab:1894443168",
+      "destination": {
+        "hostname": "cdn.connectad.io",
+        "pathPattern": "/",
+        "queryParamNames": [],
+        "redacted": true,
+        "scheme": "https"
+      },
+      "eventId": "98a17141-70e1-4f9e-9136-92b0079521ef",
+      "eventType": "page_signal",
+      "evidenceQuality": "direct",
+      "frameContext": {
+        "ancestorFrameIds": [
+          0
+        ],
+        "ancestorHostnames": [
+          "www.dn.no"
+        ],
+        "depth": 1,
+        "documentHostname": "cdn.connectad.io",
+        "frameId": 209,
+        "parentFrameId": 0,
+        "thirdParty": true,
+        "topHostname": "www.dn.no"
+      },
+      "matchedIndicators": [],
+      "matchedRules": [
+        "page.hidden_iframe_after_load"
+      ],
+      "observationLimitations": [],
+      "pageSignal": {
+        "crossOrigin": true,
+        "kind": "hidden_iframe_inserted",
+        "msSinceLoad": 5,
+        "targetHostname": "sync-eu.connectad.io"
+      },
+      "requestStatus": "unknown",
+      "sensor": "page",
+      "tabId": 1894443168,
+      "timestamp": 1795611843583
+    },
+    {
+      "browser": "firefox",
+      "correlationId": "tab:1894443168",
+      "destination": {
+        "hostname": "js-sec.indexww.com",
+        "pathPattern": "/",
+        "queryParamNames": [],
+        "redacted": true,
+        "scheme": "https"
+      },
+      "eventId": "820d1cf9-a9b7-4a35-bdbf-b534c4f8a7fa",
+      "eventType": "page_signal",
+      "evidenceQuality": "direct",
+      "frameContext": {
+        "ancestorFrameIds": [
+          0
+        ],
+        "ancestorHostnames": [
+          "www.dn.no"
+        ],
+        "depth": 1,
+        "documentHostname": "js-sec.indexww.com",
+        "frameId": 213,
+        "parentFrameId": 0,
+        "thirdParty": true,
+        "topHostname": "www.dn.no"
+      },
+      "matchedIndicators": [],
+      "matchedRules": [
+        "page.hidden_iframe_after_load"
+      ],
+      "observationLimitations": [],
+      "pageSignal": {
+        "crossOrigin": true,
+        "kind": "hidden_iframe_inserted",
+        "msSinceLoad": 75,
+        "targetHostname": "ssum-sec.casalemedia.com"
+      },
+      "requestStatus": "unknown",
+      "sensor": "page",
+      "tabId": 1894443168,
+      "timestamp": 1795611843626
+    },
+    {
+      "browser": "firefox",
+      "correlationId": "tab:1894443168",
+      "destination": {
+        "hostname": "sync-eu.connectad.io",
+        "pathPattern": "/",
+        "queryParamNames": [],
+        "redacted": true,
+        "scheme": "https"
+      },
+      "eventId": "80539b2e-834d-4bc0-8d59-789031f8f9a8",
+      "eventType": "page_signal",
+      "evidenceQuality": "direct",
+      "frameContext": {
+        "ancestorFrameIds": [
+          209,
+          0
+        ],
+        "ancestorHostnames": [
+          "cdn.connectad.io",
+          "www.dn.no"
+        ],
+        "depth": 2,
+        "documentHostname": "sync-eu.connectad.io",
+        "frameId": 218,
+        "parentFrameId": 209,
+        "thirdParty": true,
+        "topHostname": "www.dn.no"
+      },
+      "matchedIndicators": [],
+      "matchedRules": [
+        "page.hidden_iframe_after_load"
+      ],
+      "observationLimitations": [],
+      "pageSignal": {
+        "crossOrigin": true,
+        "kind": "hidden_iframe_inserted",
+        "msSinceLoad": 3,
+        "targetHostname": "eus.rubiconproject.com"
+      },
+      "requestStatus": "unknown",
+      "sensor": "page",
+      "tabId": 1894443168,
+      "timestamp": 1795611843674
+    },
+    {
+      "browser": "firefox",
+      "correlationId": "tab:1894443168",
+      "destination": {
+        "hostname": "sync-eu.connectad.io",
+        "pathPattern": "/",
+        "queryParamNames": [],
+        "redacted": true,
+        "scheme": "https"
+      },
+      "eventId": "2e0cc48d-71f9-473c-8a94-92840a624efe",
+      "eventType": "page_signal",
+      "evidenceQuality": "direct",
+      "frameContext": {
+        "ancestorFrameIds": [
+          209,
+          0
+        ],
+        "ancestorHostnames": [
+          "cdn.connectad.io",
+          "www.dn.no"
+        ],
+        "depth": 2,
+        "documentHostname": "sync-eu.connectad.io",
+        "frameId": 218,
+        "parentFrameId": 209,
+        "thirdParty": true,
+        "topHostname": "www.dn.no"
+      },
+      "matchedIndicators": [],
+      "matchedRules": [
+        "page.hidden_iframe_after_load"
+      ],
+      "observationLimitations": [],
+      "pageSignal": {
+        "crossOrigin": true,
+        "kind": "hidden_iframe_inserted",
+        "msSinceLoad": 6,
+        "targetHostname": "ib.adnxs.com"
+      },
+      "requestStatus": "unknown",
+      "sensor": "page",
+      "tabId": 1894443168,
+      "timestamp": 1795611843677
+    },
+    {
+      "browser": "firefox",
+      "correlationId": "tab:1894443168",
+      "destination": {
+        "hostname": "sync-eu.connectad.io",
+        "pathPattern": "/",
+        "queryParamNames": [],
+        "redacted": true,
+        "scheme": "https"
+      },
+      "eventId": "9e7a8635-e90f-4560-ba1a-9af092d65303",
+      "eventType": "page_signal",
+      "evidenceQuality": "direct",
+      "frameContext": {
+        "ancestorFrameIds": [
+          209,
+          0
+        ],
+        "ancestorHostnames": [
+          "cdn.connectad.io",
+          "www.dn.no"
+        ],
+        "depth": 2,
+        "documentHostname": "sync-eu.connectad.io",
+        "frameId": 218,
+        "parentFrameId": 209,
+        "thirdParty": true,
+        "topHostname": "www.dn.no"
+      },
+      "matchedIndicators": [],
+      "matchedRules": [
+        "page.hidden_iframe_after_load"
+      ],
+      "observationLimitations": [],
+      "pageSignal": {
+        "crossOrigin": true,
+        "kind": "hidden_iframe_inserted",
+        "msSinceLoad": 9,
+        "targetHostname": "cm.adform.net"
+      },
+      "requestStatus": "unknown",
+      "sensor": "page",
+      "tabId": 1894443168,
+      "timestamp": 1795611843680
+    },
+    {
+      "browser": "firefox",
+      "correlationId": "tab:1894443168",
+      "destination": {
+        "hostname": "sync-eu.connectad.io",
+        "pathPattern": "/",
+        "queryParamNames": [],
+        "redacted": true,
+        "scheme": "https"
+      },
+      "eventId": "d4b1d105-7031-4e40-aa72-a4168a3f8ad5",
+      "eventType": "page_signal",
+      "evidenceQuality": "direct",
+      "frameContext": {
+        "ancestorFrameIds": [
+          209,
+          0
+        ],
+        "ancestorHostnames": [
+          "cdn.connectad.io",
+          "www.dn.no"
+        ],
+        "depth": 2,
+        "documentHostname": "sync-eu.connectad.io",
+        "frameId": 218,
+        "parentFrameId": 209,
+        "thirdParty": true,
+        "topHostname": "www.dn.no"
+      },
+      "matchedIndicators": [],
+      "matchedRules": [
+        "page.hidden_iframe_after_load"
+      ],
+      "observationLimitations": [],
+      "pageSignal": {
+        "crossOrigin": true,
+        "kind": "hidden_iframe_inserted",
+        "msSinceLoad": 102,
+        "targetHostname": "pixel.rubiconproject.com"
+      },
+      "requestStatus": "unknown",
+      "sensor": "page",
+      "tabId": 1894443168,
+      "timestamp": 1795611843773
+    },
+    {
+      "browser": "firefox",
+      "correlationId": "tab:1894443170",
+      "destination": {
+        "hostname": "js-sec.indexww.com",
+        "pathPattern": "/",
+        "queryParamNames": [],
+        "redacted": true,
+        "scheme": "https"
+      },
+      "eventId": "f40699fd-be25-45af-90ee-c4568b642f19",
+      "eventType": "page_signal",
+      "evidenceQuality": "direct",
+      "frameContext": {
+        "ancestorFrameIds": [
+          0
+        ],
+        "ancestorHostnames": [
+          "www.finansavisen.no"
+        ],
+        "depth": 1,
+        "documentHostname": "js-sec.indexww.com",
+        "frameId": 291,
+        "parentFrameId": 0,
+        "thirdParty": true,
+        "topHostname": "www.finansavisen.no"
+      },
+      "matchedIndicators": [],
+      "matchedRules": [
+        "page.hidden_iframe_after_load"
+      ],
+      "observationLimitations": [],
+      "pageSignal": {
+        "crossOrigin": true,
+        "kind": "hidden_iframe_inserted",
+        "msSinceLoad": 49,
+        "targetHostname": "ssum-sec.casalemedia.com"
+      },
+      "requestStatus": "unknown",
+      "sensor": "page",
+      "tabId": 1894443170,
+      "timestamp": 1795611906861
+    },
+    {
+      "browser": "firefox",
+      "correlationId": "tab:1894443170",
+      "destination": {
+        "hostname": "ms-cookie-sync.presage.io",
+        "pathPattern": "/",
+        "queryParamNames": [],
+        "redacted": true,
+        "scheme": "https"
+      },
+      "eventId": "7db19e6f-3add-47e5-8c0c-5a48573f0fe9",
+      "eventType": "page_signal",
+      "evidenceQuality": "direct",
+      "frameContext": {
+        "ancestorFrameIds": [
+          0
+        ],
+        "ancestorHostnames": [
+          "www.finansavisen.no"
+        ],
+        "depth": 1,
+        "documentHostname": "ms-cookie-sync.presage.io",
+        "frameId": 288,
+        "parentFrameId": 0,
+        "thirdParty": true,
+        "topHostname": "www.finansavisen.no"
+      },
+      "matchedIndicators": [],
+      "matchedRules": [
+        "page.hidden_iframe_after_load"
+      ],
+      "observationLimitations": [],
+      "pageSignal": {
+        "crossOrigin": true,
+        "kind": "hidden_iframe_inserted",
+        "msSinceLoad": 4,
+        "targetHostname": "ssbsync.smartadserver.com"
+      },
+      "requestStatus": "unknown",
+      "sensor": "page",
+      "tabId": 1894443170,
+      "timestamp": 1795611906896
+    },
+    {
+      "browser": "firefox",
+      "correlationId": "tab:1894443170",
+      "destination": {
+        "hostname": "ms-cookie-sync.presage.io",
+        "pathPattern": "/",
+        "queryParamNames": [],
+        "redacted": true,
+        "scheme": "https"
+      },
+      "eventId": "4706562f-91c0-47cd-8c19-4259185ac17b",
+      "eventType": "page_signal",
+      "evidenceQuality": "direct",
+      "frameContext": {
+        "ancestorFrameIds": [
+          0
+        ],
+        "ancestorHostnames": [
+          "www.finansavisen.no"
+        ],
+        "depth": 1,
+        "documentHostname": "ms-cookie-sync.presage.io",
+        "frameId": 288,
+        "parentFrameId": 0,
+        "thirdParty": true,
+        "topHostname": "www.finansavisen.no"
+      },
+      "matchedIndicators": [],
+      "matchedRules": [
+        "page.hidden_iframe_after_load"
+      ],
+      "observationLimitations": [],
+      "pageSignal": {
+        "crossOrigin": true,
+        "kind": "hidden_iframe_inserted",
+        "msSinceLoad": 4,
+        "targetHostname": "secure-assets.rubiconproject.com"
+      },
+      "requestStatus": "unknown",
+      "sensor": "page",
+      "tabId": 1894443170,
+      "timestamp": 1795611906897
+    },
+    {
+      "browser": "firefox",
+      "correlationId": "tab:1894443170",
+      "destination": {
+        "hostname": "js-sec.indexww.com",
+        "pathPattern": "/",
+        "queryParamNames": [],
+        "redacted": true,
+        "scheme": "https"
+      },
+      "eventId": "da720db9-0ec6-4e70-82a3-54f7629540d0",
+      "eventType": "page_signal",
+      "evidenceQuality": "direct",
+      "frameContext": {
+        "ancestorFrameIds": [
+          0
+        ],
+        "ancestorHostnames": [
+          "www.finansavisen.no"
+        ],
+        "depth": 1,
+        "documentHostname": "js-sec.indexww.com",
+        "frameId": 331,
+        "parentFrameId": 0,
+        "thirdParty": true,
+        "topHostname": "www.finansavisen.no"
+      },
+      "matchedIndicators": [],
+      "matchedRules": [
+        "page.hidden_iframe_after_load"
+      ],
+      "observationLimitations": [],
+      "pageSignal": {
+        "crossOrigin": true,
+        "kind": "hidden_iframe_inserted",
+        "msSinceLoad": 84,
+        "targetHostname": "ssum-sec.casalemedia.com"
+      },
+      "requestStatus": "unknown",
+      "sensor": "page",
+      "tabId": 1894443170,
+      "timestamp": 1795612507609
+    },
+    {
+      "browser": "firefox",
+      "correlationId": "tab:1894443170",
+      "destination": {
+        "hostname": "ms-cookie-sync.presage.io",
+        "pathPattern": "/",
+        "queryParamNames": [],
+        "redacted": true,
+        "scheme": "https"
+      },
+      "eventId": "6b134889-81da-46c7-972b-6813ecf072b6",
+      "eventType": "page_signal",
+      "evidenceQuality": "direct",
+      "frameContext": {
+        "ancestorFrameIds": [
+          0
+        ],
+        "ancestorHostnames": [
+          "www.finansavisen.no"
+        ],
+        "depth": 1,
+        "documentHostname": "ms-cookie-sync.presage.io",
+        "frameId": 324,
+        "parentFrameId": 0,
+        "thirdParty": true,
+        "topHostname": "www.finansavisen.no"
+      },
+      "matchedIndicators": [],
+      "matchedRules": [
+        "page.hidden_iframe_after_load"
+      ],
+      "observationLimitations": [],
+      "pageSignal": {
+        "crossOrigin": true,
+        "kind": "hidden_iframe_inserted",
+        "msSinceLoad": 7,
+        "targetHostname": "secure-assets.rubiconproject.com"
+      },
+      "requestStatus": "unknown",
+      "sensor": "page",
+      "tabId": 1894443170,
+      "timestamp": 1795612507656
+    },
+    {
+      "browser": "firefox",
+      "correlationId": "tab:1894443170",
+      "destination": {
+        "hostname": "ms-cookie-sync.presage.io",
+        "pathPattern": "/",
+        "queryParamNames": [],
+        "redacted": true,
+        "scheme": "https"
+      },
+      "eventId": "586905d7-a142-4757-8e26-24d035098692",
+      "eventType": "page_signal",
+      "evidenceQuality": "direct",
+      "frameContext": {
+        "ancestorFrameIds": [
+          0
+        ],
+        "ancestorHostnames": [
+          "www.finansavisen.no"
+        ],
+        "depth": 1,
+        "documentHostname": "ms-cookie-sync.presage.io",
+        "frameId": 324,
+        "parentFrameId": 0,
+        "thirdParty": true,
+        "topHostname": "www.finansavisen.no"
+      },
+      "matchedIndicators": [],
+      "matchedRules": [
+        "page.hidden_iframe_after_load"
+      ],
+      "observationLimitations": [],
+      "pageSignal": {
+        "crossOrigin": true,
+        "kind": "hidden_iframe_inserted",
+        "msSinceLoad": 12,
+        "targetHostname": "ssbsync.smartadserver.com"
+      },
+      "requestStatus": "unknown",
+      "sensor": "page",
+      "tabId": 1894443170,
+      "timestamp": 1795612507661
+    },
+    {
+      "browser": "firefox",
+      "correlationId": "tab:1894443170",
+      "destination": {
+        "hostname": "tv.finansavisen.no",
+        "pathPattern": "/",
+        "queryParamNames": [],
+        "redacted": true,
+        "scheme": "https"
+      },
+      "eventId": "b10b991d-f6f2-483e-b176-5b5df6d374e0",
+      "eventType": "page_signal",
+      "evidenceQuality": "direct",
+      "frameContext": {
+        "ancestorFrameIds": [
+          0
+        ],
+        "ancestorHostnames": [
+          "www.finansavisen.no"
+        ],
+        "depth": 1,
+        "documentHostname": "tv.finansavisen.no",
+        "frameId": 343,
+        "parentFrameId": 0,
+        "thirdParty": true,
+        "topHostname": "www.finansavisen.no"
+      },
+      "matchedIndicators": [],
+      "matchedRules": [
+        "page.hidden_iframe_after_load"
+      ],
+      "observationLimitations": [],
+      "pageSignal": {
+        "crossOrigin": true,
+        "kind": "hidden_iframe_inserted",
+        "msSinceLoad": 1988,
+        "targetHostname": "cdn.btloader.com"
+      },
+      "requestStatus": "unknown",
+      "sensor": "page",
+      "tabId": 1894443170,
+      "timestamp": 1795612786798
+    },
+    {
+      "browser": "firefox",
+      "correlationId": "tab:1894443170",
+      "destination": {
+        "hostname": "tv.finansavisen.no",
+        "pathPattern": "/",
+        "queryParamNames": [],
+        "redacted": true,
+        "scheme": "https"
+      },
+      "eventId": "8a92ab78-263f-4914-8801-144a64e7df1f",
+      "eventType": "page_signal",
+      "evidenceQuality": "direct",
+      "frameContext": {
+        "ancestorFrameIds": [
+          0
+        ],
+        "ancestorHostnames": [
+          "www.finansavisen.no"
+        ],
+        "depth": 1,
+        "documentHostname": "tv.finansavisen.no",
+        "frameId": 343,
+        "parentFrameId": 0,
+        "thirdParty": true,
+        "topHostname": "www.finansavisen.no"
+      },
+      "matchedIndicators": [],
+      "matchedRules": [
+        "page.hidden_iframe_after_load"
+      ],
+      "observationLimitations": [],
+      "pageSignal": {
+        "crossOrigin": true,
+        "kind": "hidden_iframe_inserted",
+        "msSinceLoad": 1990,
+        "targetHostname": "btloader.com"
+      },
+      "requestStatus": "unknown",
+      "sensor": "page",
+      "tabId": 1894443170,
+      "timestamp": 1795612786800
+    },
+    {
+      "browser": "firefox",
+      "correlationId": "tab:1894443170",
+      "destination": {
+        "hostname": "tv.finansavisen.no",
+        "pathPattern": "/",
+        "queryParamNames": [],
+        "redacted": true,
+        "scheme": "https"
+      },
+      "eventId": "1980fc4b-f69e-462b-8e02-1ffd0cc23c58",
+      "eventType": "page_signal",
+      "evidenceQuality": "direct",
+      "frameContext": {
+        "ancestorFrameIds": [
+          0
+        ],
+        "ancestorHostnames": [
+          "www.finansavisen.no"
+        ],
+        "depth": 1,
+        "documentHostname": "tv.finansavisen.no",
+        "frameId": 343,
+        "parentFrameId": 0,
+        "thirdParty": true,
+        "topHostname": "www.finansavisen.no"
+      },
+      "matchedIndicators": [],
+      "matchedRules": [
+        "page.hidden_iframe_after_load"
+      ],
+      "observationLimitations": [],
+      "pageSignal": {
+        "crossOrigin": true,
+        "kind": "hidden_iframe_inserted",
+        "msSinceLoad": 2071,
+        "targetHostname": "cm.g.doubleclick.net"
+      },
+      "requestStatus": "unknown",
+      "sensor": "page",
+      "tabId": 1894443170,
+      "timestamp": 1795612786880
+    },
+    {
+      "browser": "firefox",
+      "correlationId": "tab:1894443170",
+      "destination": {
+        "hostname": "tv.finansavisen.no",
+        "pathPattern": "/",
+        "queryParamNames": [],
+        "redacted": true,
+        "scheme": "https"
+      },
+      "eventId": "6a97d18d-50a6-4142-bf75-9c31c55e5e97",
+      "eventType": "page_signal",
+      "evidenceQuality": "direct",
+      "frameContext": {
+        "ancestorFrameIds": [
+          0
+        ],
+        "ancestorHostnames": [
+          "www.finansavisen.no"
+        ],
+        "depth": 1,
+        "documentHostname": "tv.finansavisen.no",
+        "frameId": 343,
+        "parentFrameId": 0,
+        "thirdParty": true,
+        "topHostname": "www.finansavisen.no"
+      },
+      "matchedIndicators": [],
+      "matchedRules": [
+        "page.hidden_iframe_after_load"
+      ],
+      "observationLimitations": [],
+      "pageSignal": {
+        "crossOrigin": true,
+        "kind": "hidden_iframe_inserted",
+        "msSinceLoad": 5302,
+        "targetHostname": "js-sec.indexww.com"
+      },
+      "requestStatus": "unknown",
+      "sensor": "page",
+      "tabId": 1894443170,
+      "timestamp": 1795612790112
+    },
+    {
+      "browser": "firefox",
+      "correlationId": "tab:1894443170",
+      "destination": {
+        "hostname": "tv.finansavisen.no",
+        "pathPattern": "/",
+        "queryParamNames": [],
+        "redacted": true,
+        "scheme": "https"
+      },
+      "eventId": "d29a9cde-7717-4407-8f4e-bbb1044e555f",
+      "eventType": "page_signal",
+      "evidenceQuality": "direct",
+      "frameContext": {
+        "ancestorFrameIds": [
+          0
+        ],
+        "ancestorHostnames": [
+          "www.finansavisen.no"
+        ],
+        "depth": 1,
+        "documentHostname": "tv.finansavisen.no",
+        "frameId": 343,
+        "parentFrameId": 0,
+        "thirdParty": true,
+        "topHostname": "www.finansavisen.no"
+      },
+      "matchedIndicators": [],
+      "matchedRules": [
+        "page.hidden_iframe_after_load"
+      ],
+      "observationLimitations": [],
+      "pageSignal": {
+        "crossOrigin": true,
+        "kind": "hidden_iframe_inserted",
+        "msSinceLoad": 5302,
+        "targetHostname": "eus.rubiconproject.com"
+      },
+      "requestStatus": "unknown",
+      "sensor": "page",
+      "tabId": 1894443170,
+      "timestamp": 1795612790112
+    },
+    {
+      "browser": "firefox",
+      "correlationId": "tab:1894443170",
+      "destination": {
+        "hostname": "tv.finansavisen.no",
+        "pathPattern": "/",
+        "queryParamNames": [],
+        "redacted": true,
+        "scheme": "https"
+      },
+      "eventId": "718408c7-28c2-4813-b2dc-168097e5568a",
+      "eventType": "page_signal",
+      "evidenceQuality": "direct",
+      "frameContext": {
+        "ancestorFrameIds": [
+          0
+        ],
+        "ancestorHostnames": [
+          "www.finansavisen.no"
+        ],
+        "depth": 1,
+        "documentHostname": "tv.finansavisen.no",
+        "frameId": 343,
+        "parentFrameId": 0,
+        "thirdParty": true,
+        "topHostname": "www.finansavisen.no"
+      },
+      "matchedIndicators": [],
+      "matchedRules": [
+        "page.hidden_iframe_after_load"
+      ],
+      "observationLimitations": [],
+      "pageSignal": {
+        "crossOrigin": true,
+        "kind": "hidden_iframe_inserted",
+        "msSinceLoad": 5302,
+        "targetHostname": "ads.pubmatic.com"
+      },
+      "requestStatus": "unknown",
+      "sensor": "page",
+      "tabId": 1894443170,
+      "timestamp": 1795612790112
+    },
+    {
+      "browser": "firefox",
+      "correlationId": "tab:1894443170",
+      "destination": {
+        "hostname": "tv.finansavisen.no",
+        "pathPattern": "/",
+        "queryParamNames": [],
+        "redacted": true,
+        "scheme": "https"
+      },
+      "eventId": "d5ceb9f7-6dae-43ef-9267-a6d141f31d66",
+      "eventType": "page_signal",
+      "evidenceQuality": "direct",
+      "frameContext": {
+        "ancestorFrameIds": [
+          0
+        ],
+        "ancestorHostnames": [
+          "www.finansavisen.no"
+        ],
+        "depth": 1,
+        "documentHostname": "tv.finansavisen.no",
+        "frameId": 343,
+        "parentFrameId": 0,
+        "thirdParty": true,
+        "topHostname": "www.finansavisen.no"
+      },
+      "matchedIndicators": [],
+      "matchedRules": [
+        "page.hidden_iframe_after_load"
+      ],
+      "observationLimitations": [],
+      "pageSignal": {
+        "crossOrigin": true,
+        "kind": "hidden_iframe_inserted",
+        "msSinceLoad": 5303,
+        "targetHostname": "sync.richaudience.com"
+      },
+      "requestStatus": "unknown",
+      "sensor": "page",
+      "tabId": 1894443170,
+      "timestamp": 1795612790112
+    },
+    {
+      "browser": "firefox",
+      "correlationId": "tab:1894443180",
+      "destination": {
+        "hostname": "js-sec.indexww.com",
+        "pathPattern": "/",
+        "queryParamNames": [],
+        "redacted": true,
+        "scheme": "https"
+      },
+      "eventId": "f812dd00-6a82-413a-b5b6-ea5f6ca85d9e",
+      "eventType": "page_signal",
+      "evidenceQuality": "direct",
+      "frameContext": {
+        "ancestorFrameIds": [
+          0
+        ],
+        "ancestorHostnames": [
+          "www.nordlys.no"
+        ],
+        "depth": 1,
+        "documentHostname": "js-sec.indexww.com",
+        "frameId": 418,
+        "parentFrameId": 0,
+        "thirdParty": true,
+        "topHostname": "www.nordlys.no"
+      },
+      "matchedIndicators": [],
+      "matchedRules": [
+        "page.hidden_iframe_after_load"
+      ],
+      "observationLimitations": [],
+      "pageSignal": {
+        "crossOrigin": true,
+        "kind": "hidden_iframe_inserted",
+        "msSinceLoad": 58,
+        "targetHostname": "ssum-sec.casalemedia.com"
+      },
+      "requestStatus": "unknown",
+      "sensor": "page",
+      "tabId": 1894443180,
+      "timestamp": 1795613085130
+    },
+    {
+      "browser": "firefox",
+      "correlationId": "tab:1894443184",
+      "destination": {
+        "hostname": "js-sec.indexww.com",
+        "pathPattern": "/",
+        "queryParamNames": [],
+        "redacted": true,
+        "scheme": "https"
+      },
+      "eventId": "68315010-7334-4a76-802e-93993d0bae31",
+      "eventType": "page_signal",
+      "evidenceQuality": "direct",
+      "frameContext": {
+        "ancestorFrameIds": [
+          0
+        ],
+        "ancestorHostnames": [
+          "www.sa.no"
+        ],
+        "depth": 1,
+        "documentHostname": "js-sec.indexww.com",
+        "frameId": 456,
+        "parentFrameId": 0,
+        "thirdParty": true,
+        "topHostname": "www.sa.no"
+      },
+      "matchedIndicators": [],
+      "matchedRules": [
+        "page.hidden_iframe_after_load"
+      ],
+      "observationLimitations": [],
+      "pageSignal": {
+        "crossOrigin": true,
+        "kind": "hidden_iframe_inserted",
+        "msSinceLoad": 19,
+        "targetHostname": "ssum-sec.casalemedia.com"
+      },
+      "requestStatus": "unknown",
+      "sensor": "page",
+      "tabId": 1894443184,
+      "timestamp": 1795613271843
+    },
+    {
+      "browser": "firefox",
+      "correlationId": "tab:1894443186",
+      "destination": {
+        "hostname": "js-sec.indexww.com",
+        "pathPattern": "/",
+        "queryParamNames": [],
+        "redacted": true,
+        "scheme": "https"
+      },
+      "eventId": "a61236bc-4ea4-4e89-bd13-c6d16d112102",
+      "eventType": "page_signal",
+      "evidenceQuality": "direct",
+      "frameContext": {
+        "ancestorFrameIds": [
+          0
+        ],
+        "ancestorHostnames": [
+          "www.oa.no"
+        ],
+        "depth": 1,
+        "documentHostname": "js-sec.indexww.com",
+        "frameId": 484,
+        "parentFrameId": 0,
+        "thirdParty": true,
+        "topHostname": "www.oa.no"
+      },
+      "matchedIndicators": [],
+      "matchedRules": [
+        "page.hidden_iframe_after_load"
+      ],
+      "observationLimitations": [],
+      "pageSignal": {
+        "crossOrigin": true,
+        "kind": "hidden_iframe_inserted",
+        "msSinceLoad": 58,
+        "targetHostname": "ssum-sec.casalemedia.com"
+      },
+      "requestStatus": "unknown",
+      "sensor": "page",
+      "tabId": 1894443186,
+      "timestamp": 1795613335118
+    },
+    {
+      "browser": "firefox",
+      "correlationId": "tab:1894443188",
+      "destination": {
+        "hostname": "js-sec.indexww.com",
+        "pathPattern": "/",
+        "queryParamNames": [],
+        "redacted": true,
+        "scheme": "https"
+      },
+      "eventId": "011bcbff-9b9c-4d03-8d25-48f24678d75a",
+      "eventType": "page_signal",
+      "evidenceQuality": "direct",
+      "frameContext": {
+        "ancestorFrameIds": [
+          0
+        ],
+        "ancestorHostnames": [
+          "www.rb.no"
+        ],
+        "depth": 1,
+        "documentHostname": "js-sec.indexww.com",
+        "frameId": 507,
+        "parentFrameId": 0,
+        "thirdParty": true,
+        "topHostname": "www.rb.no"
+      },
+      "matchedIndicators": [],
+      "matchedRules": [
+        "page.hidden_iframe_after_load"
+      ],
+      "observationLimitations": [],
+      "pageSignal": {
+        "crossOrigin": true,
+        "kind": "hidden_iframe_inserted",
+        "msSinceLoad": 33,
+        "targetHostname": "ssum-sec.casalemedia.com"
+      },
+      "requestStatus": "unknown",
+      "sensor": "page",
+      "tabId": 1894443188,
+      "timestamp": 1795613399949
+    },
+    {
+      "browser": "firefox",
+      "correlationId": "tab:1894443194",
+      "destination": {
+        "hostname": "js-sec.indexww.com",
+        "pathPattern": "/",
+        "queryParamNames": [],
+        "redacted": true,
+        "scheme": "https"
+      },
+      "eventId": "cd7b4dc1-d068-4b55-bdff-1620c4b0cdb9",
+      "eventType": "page_signal",
+      "evidenceQuality": "direct",
+      "frameContext": {
+        "ancestorFrameIds": [
+          0
+        ],
+        "ancestorHostnames": [
+          "www.finansavisen.no"
+        ],
+        "depth": 1,
+        "documentHostname": "js-sec.indexww.com",
+        "frameId": 562,
+        "parentFrameId": 0,
+        "thirdParty": true,
+        "topHostname": "www.finansavisen.no"
+      },
+      "matchedIndicators": [],
+      "matchedRules": [
+        "page.hidden_iframe_after_load"
+      ],
+      "observationLimitations": [],
+      "pageSignal": {
+        "crossOrigin": true,
+        "kind": "hidden_iframe_inserted",
+        "msSinceLoad": 110,
+        "targetHostname": "ssum-sec.casalemedia.com"
+      },
+      "requestStatus": "unknown",
+      "sensor": "page",
+      "tabId": 1894443194,
+      "timestamp": 1795613589468
+    },
+    {
+      "browser": "firefox",
+      "correlationId": "tab:1894443194",
+      "destination": {
+        "hostname": "ms-cookie-sync.presage.io",
+        "pathPattern": "/",
+        "queryParamNames": [],
+        "redacted": true,
+        "scheme": "https"
+      },
+      "eventId": "5b62f17b-7bea-4995-9d42-ccb5a7058be5",
+      "eventType": "page_signal",
+      "evidenceQuality": "direct",
+      "frameContext": {
+        "ancestorFrameIds": [
+          0
+        ],
+        "ancestorHostnames": [
+          "www.finansavisen.no"
+        ],
+        "depth": 1,
+        "documentHostname": "ms-cookie-sync.presage.io",
+        "frameId": 561,
+        "parentFrameId": 0,
+        "thirdParty": true,
+        "topHostname": "www.finansavisen.no"
+      },
+      "matchedIndicators": [],
+      "matchedRules": [
+        "page.hidden_iframe_after_load"
+      ],
+      "observationLimitations": [],
+      "pageSignal": {
+        "crossOrigin": true,
+        "kind": "hidden_iframe_inserted",
+        "msSinceLoad": 4,
+        "targetHostname": "secure-assets.rubiconproject.com"
+      },
+      "requestStatus": "unknown",
+      "sensor": "page",
+      "tabId": 1894443194,
+      "timestamp": 1795613589526
+    },
+    {
+      "browser": "firefox",
+      "correlationId": "tab:1894443194",
+      "destination": {
+        "hostname": "ms-cookie-sync.presage.io",
+        "pathPattern": "/",
+        "queryParamNames": [],
+        "redacted": true,
+        "scheme": "https"
+      },
+      "eventId": "822b0039-2da5-4df7-bdce-02d22e7419a8",
+      "eventType": "page_signal",
+      "evidenceQuality": "direct",
+      "frameContext": {
+        "ancestorFrameIds": [
+          0
+        ],
+        "ancestorHostnames": [
+          "www.finansavisen.no"
+        ],
+        "depth": 1,
+        "documentHostname": "ms-cookie-sync.presage.io",
+        "frameId": 561,
+        "parentFrameId": 0,
+        "thirdParty": true,
+        "topHostname": "www.finansavisen.no"
+      },
+      "matchedIndicators": [],
+      "matchedRules": [
+        "page.hidden_iframe_after_load"
+      ],
+      "observationLimitations": [],
+      "pageSignal": {
+        "crossOrigin": true,
+        "kind": "hidden_iframe_inserted",
+        "msSinceLoad": 5,
+        "targetHostname": "ssbsync.smartadserver.com"
+      },
+      "requestStatus": "unknown",
+      "sensor": "page",
+      "tabId": 1894443194,
+      "timestamp": 1795613589526
+    },
+    {
+      "browser": "firefox",
+      "correlationId": "tab:1894443196",
+      "destination": {
+        "hostname": "js-sec.indexww.com",
+        "pathPattern": "/",
+        "queryParamNames": [],
+        "redacted": true,
+        "scheme": "https"
+      },
+      "eventId": "15068666-c156-40a8-8dd2-71633fd0b3aa",
+      "eventType": "page_signal",
+      "evidenceQuality": "direct",
+      "frameContext": {
+        "ancestorFrameIds": [
+          0
+        ],
+        "ancestorHostnames": [
+          "www.kk.no"
+        ],
+        "depth": 1,
+        "documentHostname": "js-sec.indexww.com",
+        "frameId": 592,
+        "parentFrameId": 0,
+        "thirdParty": true,
+        "topHostname": "www.kk.no"
+      },
+      "matchedIndicators": [],
+      "matchedRules": [
+        "page.hidden_iframe_after_load"
+      ],
+      "observationLimitations": [],
+      "pageSignal": {
+        "crossOrigin": true,
+        "kind": "hidden_iframe_inserted",
+        "msSinceLoad": 16,
+        "targetHostname": "ssum-sec.casalemedia.com"
+      },
+      "requestStatus": "unknown",
+      "sensor": "page",
+      "tabId": 1894443196,
+      "timestamp": 1795614690679
+    },
+    {
+      "browser": "firefox",
+      "correlationId": "tab:1894443198",
+      "destination": {
+        "hostname": "js-sec.indexww.com",
+        "pathPattern": "/",
+        "queryParamNames": [],
+        "redacted": true,
+        "scheme": "https"
+      },
+      "eventId": "f15cafe1-0a38-4cb1-a0b2-a8185fca2d2a",
+      "eventType": "page_signal",
+      "evidenceQuality": "direct",
+      "frameContext": {
+        "ancestorFrameIds": [
+          0
+        ],
+        "ancestorHostnames": [
+          "www.seher.no"
+        ],
+        "depth": 1,
+        "documentHostname": "js-sec.indexww.com",
+        "frameId": 637,
+        "parentFrameId": 0,
+        "thirdParty": true,
+        "topHostname": "www.seher.no"
+      },
+      "matchedIndicators": [],
+      "matchedRules": [
+        "page.hidden_iframe_after_load"
+      ],
+      "observationLimitations": [],
+      "pageSignal": {
+        "crossOrigin": true,
+        "kind": "hidden_iframe_inserted",
+        "msSinceLoad": 11,
+        "targetHostname": "ssum-sec.casalemedia.com"
+      },
+      "requestStatus": "unknown",
+      "sensor": "page",
+      "tabId": 1894443198,
+      "timestamp": 1795614754105
+    }
+  ],
+  "exportedAt": "2026-11-25T13:54:36.521Z",
+  "indicatorSets": [
+    {
+      "asOf": "2026-10-18",
+      "id": "adfection-2026",
+      "license": "CC0-1.0 (indicator data via Zero Breach; facts from the cited reports)",
+      "version": "2026.11.02"
+    }
+  ],
+  "productVersion": "0.5.0",
+  "redaction": {
+    "hostnamesPseudonymised": false,
+    "note": "Default profile: sensitive values are never recorded; hostnames are shown as observed.",
+    "profile": "default",
+    "redactedFields": [
+      "browsing history outside detections",
+      "cookie values and request or response headers",
+      "full urls (replaced by host, path pattern and parameter names)",
+      "path segments that look like tokens or identifiers",
+      "request and response bodies",
+      "url credentials",
+      "url fragments",
+      "url query parameter values"
+    ]
+  },
+  "rulesetVersion": "22r-efb38a4f",
+  "schema": "adtripwire.evidence-export",
+  "schemaVersion": "1.0.0",
+  "visibilityLimitations": [
+    "A browser extension cannot inspect the device itself, so it cannot detect installed spyware, operating-system compromise, or exploits delivered outside the browser.",
+    "A browser extension cannot see network traffic outside the browser, such as other applications, DNS lookups, or device-level connections.",
+    "Encrypted content is visible only where the browser exposes it to the extension; requests blocked by other extensions or the browser may not be observed.",
+    "Indicator sets describe documented infrastructure as of their published date and are not exhaustive."
+  ]
+}
