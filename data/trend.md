@@ -1,8 +1,8 @@
 # AdTripwire exposure trend
 
-Generated 2026-11-25 14:43 UTC from 198 run(s) in `~/exposure/remote/rigs`.
+Generated 2026-11-26 14:52 UTC from 207 run(s) in `~/exposure/remote/rigs`.
 
-Period: 2026-11-02 – 2026-11-25 (24 day(s)).
+Period: 2026-11-02 – 2026-11-26 (25 day(s)).
 
 ## Signals that matter
 
@@ -63,12 +63,15 @@ Period: 2026-11-02 – 2026-11-25 (24 day(s)).
 | 2026-11-24 | chromium / Pixel 5 | www.gazeta.ru | `known_infra.surveillance_contact` | suspicious (repeat contact in the same run) | events.myweb3id.io |
 | 2026-11-25 | chromium / Pixel 5 | lenta.ru | `known_infra.surveillance_contact` | suspicious | events.myweb3id.io |
 | 2026-11-25 | chromium / Pixel 5 | www.gazeta.ru | `known_infra.surveillance_contact` | suspicious (repeat contact in the same run) | events.myweb3id.io |
+| 2026-11-26 | chromium / Pixel 5 | lenta.ru | `known_infra.surveillance_contact` | suspicious | events.myweb3id.io |
+| 2026-11-26 | chromium / Pixel 5 | ria.ru | `known_infra.surveillance_contact` | suspicious (repeat contact in the same run) | events.myweb3id.io |
+| 2026-11-26 | chromium / Pixel 5 | www.gazeta.ru | `known_infra.surveillance_contact` | suspicious (repeat contact in the same run) | events.myweb3id.io |
 
 ## Documented hosts seen
 
 | Host | First seen | Last seen | Days | Variants | Sites |
 |---|---|---|---:|---|---|
-| events.myweb3id.io | 2026-11-02 | 2026-11-25 | 20 | chromium, chromium / Pixel 5, chromium / yandex-ad-sites | ria.ru, lenta.ru, www.gazeta.ru |
+| events.myweb3id.io | 2026-11-02 | 2026-11-26 | 21 | chromium, chromium / Pixel 5, chromium / yandex-ad-sites | ria.ru, lenta.ru, www.gazeta.ru |
 | tracookiepixel.xyz | 2026-11-02 | 2026-11-04 | 2 | chromium / Pixel 5, chromium | www.goal.com, www.independent.co.uk |
 
 ## How requests to documented hosts ended
@@ -120,6 +123,9 @@ Period: 2026-11-02 – 2026-11-25 (24 day(s)).
 | 2026-11-24 | chromium / Pixel 5 | www.gazeta.ru | events.myweb3id.io | 1 request(s): failed: net::ERR_NAME_NOT_RESOLVED |
 | 2026-11-25 | chromium / Pixel 5 | lenta.ru | events.myweb3id.io | 1 request(s): failed: net::ERR_NAME_NOT_RESOLVED |
 | 2026-11-25 | chromium / Pixel 5 | www.gazeta.ru | events.myweb3id.io | 1 request(s): failed: net::ERR_NAME_NOT_RESOLVED |
+| 2026-11-26 | chromium / Pixel 5 | lenta.ru | events.myweb3id.io | 1 request(s): failed: net::ERR_NAME_NOT_RESOLVED |
+| 2026-11-26 | chromium / Pixel 5 | ria.ru | events.myweb3id.io | 1 request(s): failed: net::ERR_NAME_NOT_RESOLVED |
+| 2026-11-26 | chromium / Pixel 5 | www.gazeta.ru | events.myweb3id.io | 1 request(s): failed: net::ERR_NAME_NOT_RESOLVED |
 
 ## Runs
 
@@ -323,6 +329,15 @@ Period: 2026-11-02 – 2026-11-25 (24 day(s)).
 | 2026-11-25 | chromium / Pixel 5 / norway | 24/24 | 0 | 11877 | 32 | 0 | 0 | 0 | 0 | 39 |
 | 2026-11-25 | firefox | 50/50 | 0 | 38077 | 43 | 0 | 0 | 12 | 30 | 511 |
 | 2026-11-25 | firefox / norway-sector | 15/15 | 1 | 4998 | 18 | 0 | 0 | 3 | 3 | 72 |
+| 2026-11-26 | chromium | 50/50 | 0 | 22501 | 29 | 0 | 0 | 0 | 0 | 55 |
+| 2026-11-26 | chromium / iPhone 15 | 50/50 | 1 | 29632 | 34 | 0 | 0 | 0 | 0 | 106 |
+| 2026-11-26 | chromium / mena-africa | 25/25 | 0 | 4197 | 1 | 0 | 0 | 0 | 0 | 43 |
+| 2026-11-26 | chromium / norway | 24/24 | 0 | 11858 | 31 | 0 | 0 | 0 | 0 | 41 |
+| 2026-11-26 | chromium / Pixel 5 | 50/50 | 0 | 36945 | 36 | 0 | 0 | 1 | 1 | 250 |
+| 2026-11-26 | chromium / Pixel 5 / mena-africa | 25/25 | 0 | 7828 | 21 | 0 | 0 | 0 | 0 | 54 |
+| 2026-11-26 | chromium / Pixel 5 / norway | 24/24 | 0 | 12111 | 33 | 0 | 0 | 0 | 0 | 37 |
+| 2026-11-26 | firefox | 50/50 | 2 | 41255 | 45 | 0 | 0 | 10 | 34 | 541 |
+| 2026-11-26 | firefox / norway-sector | 15/15 | 2 | 4702 | 18 | 0 | 0 | 3 | 3 | 61 |
 
 ## Reading this
 
